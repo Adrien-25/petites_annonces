@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <!--Faire savoir au navigateur que le site Web est optimisé pour les mobiles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Importer la police d'icônes Google-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Importer materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
+    <title>{% block title %}Base Twig{% endblock title %} </title>
+    {% endblock head %}
+</head>
+<body>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+        {% block javascript %}
+        <!--Lien JavaScript materialize-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        {% endblock javascript %}
+    </footer> 
+</body>
+</html>
