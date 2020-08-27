@@ -1,0 +1,119 @@
+Début le 25/08/2020
+
+Projet - petites annonces 		
+		
+		
+ - Il doit permettre de :		
+	-Poster une annonce	
+	-Lister les annonces
+	-Modifier une annonce
+	-Supprimer une annonce
+		
+		
+		
+		
+Cycle pour poster une annonce		
+	Sur la page listant les annonces afficher un lien permettant de publier une annonce	
+	Lorsque la personne arrive sur le formulaire permettant de poster une annonce elle devra saisir	
+		. Adresse mail
+		. Nom
+		. Prénom
+		. Téléphone
+		. Catégorie de l'annonce : Immobilier, Auto-Moto, Emploi, Animaux, Services, Vacances, Affaires pro, Autres
+		. Image de mise en avant de l'annonce (optionnel)
+		. Texte de l'annonce
+		. Captcha
+__Lorsque la personne poste son annonce, elle reçois un mail dans lequel il y a un lien demandant de confimer la publication de l'annonce.
+	__Dans ce même courriel, il doit y avoir un lien permettant de modifier l'annonce.
+	__Une fois confirmé alors l'annonce est publié sur la page d'annonce et l'utilisateur reçoit un courriel lui permettant supprimer l'annonce. 	
+	__Lorsque l'annonce est mise en ligne il ne doit plus être possible de la modifier avec le lien du premier courriel
+		
+Cycle pour lister les annonces		
+	Au chargement de la page d'accueil on voit les dix premières annonces. Lorsque l'ascenseur est en bas de la liste, on affiche les dix annonces suivantes 	
+	Pour les annonces n'ayant pas d'image afficher une image par défaut	
+	Sous l'annonce on propose de télécharger l'annonce en PDF	
+		
+		
+		
+		
+		
+les plus : On ne réalise les plus que si vous avez le temps
+	infinite scroll pour l'affichage des annonces
+	faire un beau courriel avec la librairie MJML		
+	Tâche cron qui supprime les annonces qui sont en attente de publication à n+2 jours de la date de création	
+	Tâche cron qui supprime les annonces qui sont publiées à n+15 jours de la date de création. Envoyer un mail à la personne de la suppression de son annonce	
+		
+		
+		
+	Le formulaires seront validés par JS	
+	Technos : Composer, PHP POO, TWIG pour le rendu frontend, SASS(optionnel), GIT, JS, HTML, CSS, librairie PHP pour les PDF, AltoRouteur pour le routeur
+	Remarque :  On ne veut pas de pattern MVC, on reste en programmation objet POO simple
+	Remarque : Pensez à crypter les accès de validation et modification	
+		
+		
+		
+		
+   Equipes		
+	Guillaume Perbet Back - Guillaume blondel Front	
+	Alexandre Front - Jérémy Mathieu Back	
+	Fouad Back - Adrien schmidt Front	
+	Lisa Front - Sonia Back	
+	Clovis Front - Vanessa Back	
+	Léa Front, Stéphane Back	
+	Adrien Paturot Back - Arnaud et Jessica Front	
+		
+	-Lead DEV	
+		Guillaume perbet : Jessica, Vanessa, Lea, Guillaume Blondel
+		Adrien Paturot : Sonia, Fouad, Adrien Schmidt, clovis
+		Mathieu Jérémy : Lisa, Arnaud, Alexandre, Stéphane
+		
+	Support Photoshop, Illustrator : Lisa, Arnaud et Sonia	
+		
+	Si dans son équipe personne ne peut pas résoudre le soucis alors ont fait appel au lead Dev	
+		
+		
+A rendre pour Date de début + 10 jours		
+
+
+
+:::**/***En local */
+/*Nom de la base de donnée*/
+// define('DATABASE', 'annonces');
+// /*Identifiant de la base de donnée*/ 
+// define('USER', 'root');
+// /*Mot de passe de la base de donnée*/ 
+// define('PWD', '');
+// /*Hôte de la base de donnée */
+// define('HOST','localhost');
+
+
+/*Connexion à la base de donnée*/
+// try {
+//     // En local
+//     $dbh = new PDO('mysql:host='.HOST.';port=3308;dbname='.DATABASE, USER, PWD, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+//     // En prod
+   
+//     // $dbh = new PDO('mysql:host='.HOST.';dbname='.DATABASE, USER, PWD, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+//     } catch (PDOException $e) {
+//     print "Erreur !: " . $e->getMessage() . "<br/>";
+//     die();
+// }
+
+
+.htaccess
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^public
+RewriteRule ^(.*)$ public/$1 [L]
+
+
+pensez a définir un constante avec define qui permettra de redireger les requete avec les rtoues dans vos templates
+le setbase path permettrons de définir les sous dossiers sur le serveur de l'acs qui est le serveur de production
+define ( 'BASE_PATH', '/votre-nom/votre-dossier/')
+$router->setBasePath('/votre-nom/votre-dossier/');
+
+pour installer altorouter//
+composer require altorouter/altorouter
+
+
+pour le autoload
+composer dump-autoload
