@@ -9,7 +9,7 @@
     <!--Importer la police d'icônes Google-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Importer materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../../public/sass/materialize.scss" media="screen,projection" />
+    <link href="css/style.css" rel="stylesheet">
 
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
@@ -18,23 +18,7 @@
 <body>
     <main>
         {% block content %}
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Logo</a>
-                <form>
-                    <div class="input-field">
-                        <input id="search" type="search" required>
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
-                </form>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
-                </ul>
-            </div>
-        </nav>
+        Bonjour
         {% endblock content %}
     </main>
     <footer>

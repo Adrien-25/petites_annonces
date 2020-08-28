@@ -28,17 +28,22 @@ if($match !== null){
     $match['target']();
     // $match['target']($match['params']['slug'], $match['params']['id']);
 }
-
-
-
     $db = new App\Database('petites-annonces');
 
     use App\Twig;
 
-     //render template
-     $twig = new Twig('base.html.twig');
-     $twig->render([
+        //render template
+        $twig = new Twig('base.html.twig');
+        $twig->render([
             //  'connexion' => $categories->data,
-         ]);
- });
-    ?>
+            ]);
+
+    
+
+$loader = new \Twig\Loader\FilesystemLoader('../application/template/');
+$twig = new \Twig\Environment($loader, [
+    'cache' => false,
+]); 
+$template = $twig->load('pages/index.html.twig');
+echo $template->render([]);
+?>
