@@ -1,0 +1,9 @@
+{
+  "name": "petites_annonces",
+  "version": "1.0.0",
+  "description": "petites_annonces",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./public/sass/app.scss:./public/css/style.css"
+  }
+}

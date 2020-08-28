@@ -1,5 +1,19 @@
-body {
-  background-color: red;
+.bg-1 {
+  background-color: #084BB8 !important;
+  color: white !important;
+}
+
+.bg-2 {
+  background-color: #b87508 !important;
+  color: white !important;
+}
+
+.border-1 {
+  border-color: #084BB8 !important;
+}
+
+.border-2 {
+  border-color: #b87508 !important;
 }
 
 /*# sourceMappingURL=style.css.map */
