@@ -7,7 +7,7 @@ class Twig{
 
     public function __construct($template_name)
     {
-        $loader = new \Twig\Loader\FilesystemLoader('../template');
+        $loader = new \Twig\Loader\FilesystemLoader(dirname(dirname(__FILE__)).'/template');
         $twig = new \Twig\Environment($loader, [
             'cache' => '../cache',
             'debug' => true,
