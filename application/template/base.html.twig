@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Importer materialize.css-->
     <link href="css/style.css" rel="stylesheet">
-
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
 </head>
@@ -18,7 +17,25 @@
 <body>
     <main>
         {% block content %}
-        Bonjour
+        <div class="header">
+            <a href="" class="icon" onclick="Burger()">
+                <i class="material-icons">menu</i>
+            </a>
+            <a href="#default" class="logo">LamaShop</a>
+            <div>
+                <form action="">
+                    <div>
+                        <select id="categorie" name="categorie" form="carform">
+                            <option value="0">Toutes nos catégories</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" id="fname" name="fname">
+                    </div>
+                </form>
+
+            </div>
+        </div>
         {% endblock content %}
     </main>
     <footer>

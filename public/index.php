@@ -1,25 +1,33 @@
 <?php
-    require_once '../vendor/autoload.php';
-    $uri = $_SERVER['REQUEST_uri'];
+require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
+define('BASE_PATH', '/petites-annonces/public');
+// pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
+define('SERVER_URI', $_SERVER['REQUEST_METHOD'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['REMOTE_PORT'].BASE_PATH);
+//  $uri = $_SERVER['REQUEST_uri'];
+ 
+
 // pour initialiser altorouter
 $router = new AltoRouter();
+$router->setBasePath(BASE_PATH);
+
+// print_r(dirname(__FILE__));
 // Renseignement des routes
 // on précise la méthode ici 'get' ensuite la route à matché '/' et la cible ça peut être n'importe quoi par exemple une fonction
-$router->map('GET', '/', function(){
-    // dans le cas ou on est dans la page d'accueil
-    echo 'salut';
-});
+// $router->map('GET', '/', function(){
+//     // dans le cas ou on est dans la page d'accueil
+//     echo 'salut';
+// });
 
-$router->map('GET', '/nous-contacter', function(){
+$router->map('GET', '/lister', function(){
     // dans le cas ou on est dans la page de contact
-    echo 'Nous contacter';
+    \App\Lister::appelLister();
 });
 
 // slug est une chaîne de caratère avec des tirets .ici le slug peut être n'importe quoi[*] et -[i] veut dire un entier (:slug et :id pour récupérer des paramètres)
-$router->map('GET', '/annonce/[*:slug]-[i:id]', function($slug, $id){
-    // dans le cas ou on est dans la page 
-    echo " je suis dans l'annonce $slug avec le numero $id ";
-});
+// $router->map('GET', '/annonce/[*:slug]-[i:id]', function($slug, $id){
+//     // dans le cas ou on est dans la page 
+//     echo " je suis dans l'annonce $slug avec le numero $id ";
+// });
 // méthodes match pour trouver un résultat
 $match = $router->match();
 if($match !== null){
@@ -28,7 +36,10 @@ if($match !== null){
     $match['target']();
     // $match['target']($match['params']['slug'], $match['params']['id']);
 }
-    $db = new App\Database('petites-annonces');
+
+
+
+    $db = new App\Database('annonces');
 
     use App\Twig;
 
@@ -40,10 +51,4 @@ if($match !== null){
 
     
 
-$loader = new \Twig\Loader\FilesystemLoader('../application/template/');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false,
-]); 
-$template = $twig->load('pages/index.html.twig');
-echo $template->render([]);
 ?>

@@ -1,13 +1,8 @@
 <?php
  
-require_once dirname(dirname(dirname(__FILE__))).'/vendor/autoload.php';
-$loader = new \Twig\Loader\FilesystemLoader(dirname(dirname(__FILE__)).'/template');
-$twig = new \Twig\Environment($loader, array(
-    'cache' => dirname(dirname(__FILE__)).'/cache',
-    'debug' => true,
-));
-$twig->addExtension(new \Twig\Extension\DebugExtension());
+require_once '../vendor/autoload.php';
 
+// dirname — Renvoie le chemin du dossier parent
 
 $db = new \App\Database();
 
@@ -25,3 +20,4 @@ var_dump($post);
     <?php endforeach; ?>
 
 </ul>
+?>
