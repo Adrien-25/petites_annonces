@@ -29,7 +29,6 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         $this->blocks = [
             'head' => [$this, 'block_head'],
             'title' => [$this, 'block_title'],
-            'content' => [$this, 'block_content'],
             'add' => [$this, 'block_add'],
             'javascript' => [$this, 'block_javascript'],
         ];
@@ -51,62 +50,52 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
 <body>
     <main>
-        ";
-        // line 26
-        $this->displayBlock('content', $context, $blocks);
-        // line 47
-        echo "        <nav class=\"navbar navbar-expand-lg navbar-dark bg-1\">
-            <a class=\"navbar-brand\" href=\"#\">Navbar</a>
-            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"
-                aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-            </button>
-
-            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-                <ul class=\"navbar-nav mr-auto\">
-                    <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Link</a>
-                    </li>
-                    <li class=\"nav-item dropdown\">
-                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
-                            data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                            Dropdown
-                        </a>
-                        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                            <a class=\"dropdown-item\" href=\"#\">Action</a>
-                            <a class=\"dropdown-item\" href=\"#\">Another action</a>
-                            <div class=\"dropdown-divider\"></div>
-                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>
-                        </div>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link disabled\" href=\"#\">Disabled</a>
-                    </li>
-                </ul>
-                <form class=\"form-inline my-2 my-lg-0\">
-                    <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-                    <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
-                </form>
+        <!--Navbar-->
+        <nav class=\"navbar navbar-dark bg-dark justify-content-between\">
+            <div class=\"container\">
+                <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
+                <div class=\"d-flex\">
+                    <!-- Formulaire de recherche -->
+                    <form class=\"form-inline mr-4\">
+                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\" id=\"SearchForm\">
+                            <option selected>Catégories</option>
+                            <option value=\"Immobilier\">Immobilier</option>
+                        </select>
+                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\" aria-label=\"Search\">
+                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i class=\"material-icons text-light\">search</i></button>
+                    </form>
+                    <!-- Lien vers page poster -->
+                    <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
+                        <span class=\"d-flex mr-2\">
+                            <i class=\"material-icons\">add_circle_outline</i>
+                        </span>
+                        <span class=\"font-weight-bold\">Poster une annonce</span>
+                    </a>
+                </div>
             </div>
         </nav>
 ";
-        // line 84
+        // line 50
         $this->displayBlock('add', $context, $blocks);
-        // line 87
+        // line 53
         echo "    </main>
     <footer>
 
     </footer>
     ";
-        // line 91
+        // line 57
         $this->displayBlock('javascript', $context, $blocks);
-        // line 105
+        // line 71
         echo "</body>
 
-</html>";
+</html>
+<!-- Formulaire de recherche 
+                <form class=\"form-inline\">
+                    <div class=\"my-0\">
+                        <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">
+                        </div>
+                    </form>
+                    -->";
     }
 
     // line 5
@@ -141,47 +130,20 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         echo "Base Twig";
     }
 
-    // line 26
-    public function block_content($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        // line 27
-        echo "        <div class=\"header\">
-            <a href=\"\" class=\"icon\" onclick=\"Burger()\">
-                <i class=\"material-icons\">menu</i>
-            </a>
-            <a href=\"#default\" class=\"logo\">LamaShop</a>
-            <div>
-                <form action=\"\">
-                    <div>
-                        <select id=\"categorie\" name=\"categorie\" form=\"carform\">
-                            <option value=\"0\">Toutes nos catégories</option>
-                        </select>
-                    </div>
-                    <div>
-                        <input type=\"text\" id=\"fname\" name=\"fname\">
-                    </div>
-                </form>
-
-            </div>
-        </div>
-        ";
-    }
-
-    // line 84
+    // line 50
     public function block_add($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 85
+        // line 51
         echo "    
 ";
     }
 
-    // line 91
+    // line 57
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 92
+        // line 58
         echo "    <!--Lien JavaScript Bootstrap-->
     <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
         integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\">
@@ -204,7 +166,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
     public function getDebugInfo()
     {
-        return array (  185 => 92,  181 => 91,  176 => 85,  172 => 84,  149 => 27,  145 => 26,  133 => 20,  117 => 6,  113 => 5,  107 => 105,  105 => 91,  99 => 87,  97 => 84,  58 => 47,  56 => 26,  50 => 22,  48 => 5,  42 => 1,);
+        return array (  147 => 58,  143 => 57,  138 => 51,  134 => 50,  122 => 20,  106 => 6,  102 => 5,  89 => 71,  87 => 57,  81 => 53,  79 => 50,  49 => 22,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -234,62 +196,28 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
 <body>
     <main>
-        {% block content %}
-        <div class=\"header\">
-            <a href=\"\" class=\"icon\" onclick=\"Burger()\">
-                <i class=\"material-icons\">menu</i>
-            </a>
-            <a href=\"#default\" class=\"logo\">LamaShop</a>
-            <div>
-                <form action=\"\">
-                    <div>
-                        <select id=\"categorie\" name=\"categorie\" form=\"carform\">
-                            <option value=\"0\">Toutes nos catégories</option>
+        <!--Navbar-->
+        <nav class=\"navbar navbar-dark bg-dark justify-content-between\">
+            <div class=\"container\">
+                <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
+                <div class=\"d-flex\">
+                    <!-- Formulaire de recherche -->
+                    <form class=\"form-inline mr-4\">
+                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\" id=\"SearchForm\">
+                            <option selected>Catégories</option>
+                            <option value=\"Immobilier\">Immobilier</option>
                         </select>
-                    </div>
-                    <div>
-                        <input type=\"text\" id=\"fname\" name=\"fname\">
-                    </div>
-                </form>
-
-            </div>
-        </div>
-        {% endblock content %}
-        <nav class=\"navbar navbar-expand-lg navbar-dark bg-1\">
-            <a class=\"navbar-brand\" href=\"#\">Navbar</a>
-            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"
-                aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-            </button>
-
-            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-                <ul class=\"navbar-nav mr-auto\">
-                    <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Link</a>
-                    </li>
-                    <li class=\"nav-item dropdown\">
-                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
-                            data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                            Dropdown
-                        </a>
-                        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                            <a class=\"dropdown-item\" href=\"#\">Action</a>
-                            <a class=\"dropdown-item\" href=\"#\">Another action</a>
-                            <div class=\"dropdown-divider\"></div>
-                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>
-                        </div>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link disabled\" href=\"#\">Disabled</a>
-                    </li>
-                </ul>
-                <form class=\"form-inline my-2 my-lg-0\">
-                    <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-                    <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
-                </form>
+                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\" aria-label=\"Search\">
+                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i class=\"material-icons text-light\">search</i></button>
+                    </form>
+                    <!-- Lien vers page poster -->
+                    <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
+                        <span class=\"d-flex mr-2\">
+                            <i class=\"material-icons\">add_circle_outline</i>
+                        </span>
+                        <span class=\"font-weight-bold\">Poster une annonce</span>
+                    </a>
+                </div>
             </div>
         </nav>
 {% block add %}
@@ -315,6 +243,13 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     {% endblock javascript %}
 </body>
 
-</html>", "./base.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\base.html.twig");
+</html>
+<!-- Formulaire de recherche 
+                <form class=\"form-inline\">
+                    <div class=\"my-0\">
+                        <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">
+                        </div>
+                    </form>
+                    -->", "./base.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\base.html.twig");
     }
 }

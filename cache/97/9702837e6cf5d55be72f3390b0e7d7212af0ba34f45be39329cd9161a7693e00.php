@@ -113,17 +113,17 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         <div class=\"card-body d-flex justify-content-between align-items-center\">
           <a href=\"modifier.php?id=";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["produit"] ?? null), "id", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "id", [], "any", false, false, false, 30), "html", null, true);
             echo "\" class=\"btn btn-info\"><i class=\"far   fa-edit\"></i></a>
           <button class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#supprimerProduit";
             // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["produit"] ?? null), "id", [], "any", false, false, false, 31), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "id", [], "any", false, false, false, 31), "html", null, true);
             echo "\"><i
               class=\"far  fa-trash-alt\"></i></button>
             </div>
             <div class=\"modal fade\" role=\"dialog\" style=\"margin-top:250px;\" id=\"supprimerProduit";
             // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["produit"] ?? null), "id", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "id", [], "any", false, false, false, 34), "html", null, true);
             echo "\" tabindex=\"-1\"
               data-backdrop=\"true\" aria-labelledby=\"exampleModalLabel\"  aria-hidden=\"true\">
               <div class=\"modal-dialog\" role=\"document\">
@@ -139,7 +139,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
                     <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\" aria-label=\"Close\">Annuler</button>
                     <a href=\"supprimer.php?id=";
             // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["produit"] ?? null), "id", [], "any", false, false, false, 47), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "id", [], "any", false, false, false, 47), "html", null, true);
             echo "\" class=\"btn btn-primary\">Supprimer</a>
                   </div>
                 </div>
@@ -207,11 +207,11 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
               target=\"_blank\">Voir le manuel d'utilisation</a></li>
         </ul>
         <div class=\"card-body d-flex justify-content-between align-items-center\">
-          <a href=\"modifier.php?id={{produit.id}}\" class=\"btn btn-info\"><i class=\"far   fa-edit\"></i></a>
-          <button class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#supprimerProduit{{produit.id}}\"><i
+          <a href=\"modifier.php?id={{annonce.id}}\" class=\"btn btn-info\"><i class=\"far   fa-edit\"></i></a>
+          <button class=\"btn btn-info\" data-toggle=\"modal\" data-target=\"#supprimerProduit{{annonce.id}}\"><i
               class=\"far  fa-trash-alt\"></i></button>
             </div>
-            <div class=\"modal fade\" role=\"dialog\" style=\"margin-top:250px;\" id=\"supprimerProduit{{produit.id}}\" tabindex=\"-1\"
+            <div class=\"modal fade\" role=\"dialog\" style=\"margin-top:250px;\" id=\"supprimerProduit{{annonce.id}}\" tabindex=\"-1\"
               data-backdrop=\"true\" aria-labelledby=\"exampleModalLabel\"  aria-hidden=\"true\">
               <div class=\"modal-dialog\" role=\"document\">
                 <div class=\"modal-content\">
@@ -224,7 +224,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
                   </div>
                   <div class=\"modal-footer\">
                     <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\" aria-label=\"Close\">Annuler</button>
-                    <a href=\"supprimer.php?id={{produit.id}}\" class=\"btn btn-primary\">Supprimer</a>
+                    <a href=\"supprimer.php?id={{annonce.id}}\" class=\"btn btn-primary\">Supprimer</a>
                   </div>
                 </div>
               </div>

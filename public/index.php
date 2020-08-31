@@ -5,8 +5,6 @@ define('BASE_PATH', '/petites-annonces/public');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
 define('SERVER_URI', $_SERVER['REQUEST_METHOD'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['REMOTE_PORT'].BASE_PATH);
 
- 
-
 // pour initialiser altorouter
 $router = new AltoRouter();
 $router->setBasePath(BASE_PATH);
@@ -27,10 +25,6 @@ $router->map('GET', '/accueil', function(){
     $chargeTwig->render(['listes_annonces'=> $value]);
     
 });
-
-   
-
-
 // // slug est une chaîne de caratère avec des tirets .ici le slug peut être n'importe quoi[*] et -[i] veut dire un entier (:slug et :id pour récupérer des paramètres)
 // // $router->map('GET', '/annonce/[*:slug]-[i:id]', function($slug, $id){
 // //     // dans le cas ou on est dans la page 
@@ -46,7 +40,4 @@ if($match !== null){
 }
 // $dbh = new App\Database('annonces');
 
-    
-
-   
-    ?>
+?>
