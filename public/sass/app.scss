@@ -1,0 +1,17 @@
+$primary-color : #084BB8;
+$secondary-color: #b87508;
+
+.bg-1{
+    background-color: $primary-color!important;
+    color: white!important;
+}
+.bg-2{
+    background-color: $secondary-color!important;
+    color: white!important;
+}
+.border-1{
+    border-color: $primary-color!important;
+}
+.border-2{
+    border-color: $secondary-color!important;
+}
