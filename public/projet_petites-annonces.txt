@@ -189,3 +189,12 @@ De même, les méthodes qui servent à récupérer des valeurs sont appelées de
 //      echo "$post->utilisateur_id";
 //       echo "$post->ann_description";
 //  }
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule .* - [L]
+RewriteRule . index.php [L]
+
+
+
+
+npm run sass
