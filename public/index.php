@@ -1,4 +1,5 @@
 <?php
+
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
 define('BASE_PATH', '/petites-annonces/public');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
@@ -10,6 +11,7 @@ define('SERVER_URI', $_SERVER['REQUEST_METHOD'].'://'.$_SERVER['SERVER_NAME'].':
 $router = new AltoRouter();
 $router->setBasePath(BASE_PATH);
 
+
 // // print_r(dirname(__FILE__));
 // // Renseignement des routes
 // // on précise la méthode ici 'get' ensuite la route à matché '/' et la cible ça peut être n'importe quoi par exemple une fonction
@@ -18,10 +20,15 @@ $router->setBasePath(BASE_PATH);
 // //     echo 'salut';
 // // });
 
-$router->map('GET', '/lister', function(){
+$router->map('GET', '/accueil', function(){
     // dans le cas ou on est dans la page de contact
-    \App\Lister::appelLister();
+    $value = \App\Lister::appelLister();
+    $chargeTwig = new \App\Twig('pages/index.html.twig');
+    $chargeTwig->render(['listes_annonces'=> $value]);
+    
 });
+
+   
 
 
 // // slug est une chaîne de caratère avec des tirets .ici le slug peut être n'importe quoi[*] et -[i] veut dire un entier (:slug et :id pour récupérer des paramètres)
@@ -37,17 +44,9 @@ if($match !== null){
     
     // $match['target']($match['params']['slug'], $match['params']['id']);
 }
+// $dbh = new App\Database('annonces');
 
+    
 
-
-    $dbh = new App\Database('annonces');
-
-    // use App\Twig;
-
-    //  //render template
-    //  $twig = new Twig('base.html.twig');
-    //  $twig->render([
-    //         //  'connexion' => $categories->data,
-    //      ]);
- 
+   
     ?>
