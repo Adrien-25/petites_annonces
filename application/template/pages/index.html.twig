@@ -12,11 +12,11 @@
           <p class="card-text"><span style="color: red;">{{annonce.ann_prix}} <i class="fas fa-euro-sign"></i></span></p>
         </div>
         <ul class="list-group ">
-          <li class="list-group-item"> {{annonce.categorie_id}}</li>
+          <li class="list-group-item"> {{annonce.cat_libelle}}</li>
           
           <li class="list-group-item"><i class="fas fa-globe"></i> {{annonce.ann_description}} </li>
          
-          <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> {{annonce.utilisateur_id}}</li>
+          <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> {{annonce.email}}</li>
      
           <li class="list-group-item">publié le {{annonce.ann_date_ecriture|date("d/m/Y")}}</li>
           {# <li class="list-group-item">Fin de garantie le {{produit.date_fin_garantie|date("d/m/Y")}}</li> #}

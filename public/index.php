@@ -25,21 +25,39 @@ $router->map('GET', '/accueil', function(){
     $value = \App\Lister::appelLister();
     $chargeTwig = new \App\Twig('pages/index.html.twig');
     $chargeTwig->render(['listes_annonces'=> $value]);
+   var_dump($value);
     
 });
+
+$router->map('GET', '/poster', function(){
+    // dans le cas ou on est dans la page de contact
+    $value = \App\Poster::FaitlePoster();
+    $chargeTwig = new \App\Twig('pages/poster.html.twig');
+    $chargeTwig->render(['listes_annonces'=> $value]);
+  var_dump($value);
+    
+});
+
+// $router->map('GET', '/poster', function(){
+//     // dans le cas ou on est dans la page de contact
+//     $value = \App\Lister::appelLister();
+//     $chargeTwig = new \App\Twig('pages/index.html.twig');
+//     $chargeTwig->render(['listes_annonces'=> $value]);
+    
+// });
 
    
 
 
 // // slug est une chaîne de caratère avec des tirets .ici le slug peut être n'importe quoi[*] et -[i] veut dire un entier (:slug et :id pour récupérer des paramètres)
 // // $router->map('GET', '/annonce/[*:slug]-[i:id]', function($slug, $id){
-// //     // dans le cas ou on est dans la page 
-// //     echo " je suis dans l'annonce $slug avec le numero $id ";
-// // });
-// // méthodes match pour trouver un résultat
-$match = $router->match();
-if($match !== null){
+    // //     // dans le cas ou on est dans la page 
+    // //     echo " je suis dans l'annonce $slug avec le numero $id ";
+    // // });
+    // // méthodes match pour trouver un résultat
     //  call_user_func_array ..appelle la fonction de rappel avec les paramètres rassemblés en tableau
+    $match = $router->match();
+    if($match !== null){
     call_user_func_array($match['target'], $match['params']);
     
     // $match['target']($match['params']['slug'], $match['params']['id']);
