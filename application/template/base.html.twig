@@ -23,62 +23,28 @@
 
 <body>
     <main>
-        {% block content %}
-        <div class="header">
-            <a href="" class="icon" onclick="Burger()">
-                <i class="material-icons">menu</i>
-            </a>
-            <a href="#default" class="logo">LamaShop</a>
-            <div>
-                <form action="">
-                    <div>
-                        <select id="categorie" name="categorie" form="carform">
-                            <option value="0">Toutes nos catégories</option>
+        <!--Navbar-->
+        <nav class="navbar navbar-dark bg-dark justify-content-between">
+            <div class="container">
+                <a class="navbar-brand" href="#">LamaShop</a>
+                <div class="d-flex">
+                    <!-- Formulaire de recherche -->
+                    <form class="form-inline mr-4">
+                        <select class="custom-select rounded-0 bg-danger text-light border-0 font-weight-bold" id="SearchForm">
+                            <option selected>Catégories</option>
+                            <option value="Immobilier">Immobilier</option>
                         </select>
-                    </div>
-                    <div>
-                        <input type="text" id="fname" name="fname">
-                    </div>
-                </form>
-
-            </div>
-        </div>
-        {% endblock content %}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-1">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                        <input class="form-control rounded-0 border-0" type="search" placeholder="Une petite envie ?" aria-label="Search">
+                        <button class="btn rounded-0 rounded-right d-flex bg-danger" type="submit"><i class="material-icons text-light">search</i></button>
+                    </form>
+                    <!-- Lien vers page poster -->
+                    <a href="#" class="btn btn-danger d-flex p-2" type="button">
+                        <span class="d-flex mr-2">
+                            <i class="material-icons">add_circle_outline</i>
+                        </span>
+                        <span class="font-weight-bold">Poster une annonce</span>
+                    </a>
+                </div>
             </div>
         </nav>
 {% block add %}
@@ -105,3 +71,10 @@
 </body>
 
 </html>
+<!-- Formulaire de recherche 
+                <form class="form-inline">
+                    <div class="my-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        </div>
+                    </form>
+                    -->
