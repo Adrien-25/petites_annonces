@@ -45,13 +45,13 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     ";
         // line 5
         $this->displayBlock('head', $context, $blocks);
-        // line 22
+        // line 24
         echo "</head>
 
 <body>
     <main>
-        <!--Navbar-->
-        <nav class=\"navbar navbar-dark bg-dark justify-content-between\">
+        <!--Barre de navigation-->
+        <nav class=\"navbar navbar-dark bg-dark justify-content-between mb-5\">
             <div class=\"container\">
                 <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
                 <div class=\"d-flex\">
@@ -75,27 +75,18 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
             </div>
         </nav>
 ";
-        // line 50
+        // line 52
         $this->displayBlock('add', $context, $blocks);
-        // line 53
+        // line 55
         echo "    </main>
     <footer>
-
     </footer>
     ";
-        // line 57
+        // line 58
         $this->displayBlock('javascript', $context, $blocks);
         // line 71
         echo "</body>
-
-</html>
-<!-- Formulaire de recherche 
-                <form class=\"form-inline\">
-                    <div class=\"my-0\">
-                        <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">
-                        </div>
-                    </form>
-                    -->";
+</html>";
     }
 
     // line 5
@@ -108,17 +99,19 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
     <!--Importer la police d'icônes Google-->
     <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
-
+    <!--Lien page de style-->
     <link href=\"css/style.css\" rel=\"stylesheet\">
+    <!--Jquery CDN-->
+    <script src=\"https://code.jquery.com/jquery-3.5.1.min.js\"></script>
     <!--Lien CDN Bootstrap-->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\"
         integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
     <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"
         integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\">
     </script>
-
+    <!--Titre-->
     <title>";
-        // line 20
+        // line 22
         $this->displayBlock('title', $context, $blocks);
         echo " </title>
     ";
@@ -130,32 +123,31 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         echo "Base Twig";
     }
 
-    // line 50
+    // line 52
     public function block_add($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 51
+        // line 53
         echo "    
 ";
     }
 
-    // line 57
+    // line 58
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 58
+        // line 59
         echo "    <!--Lien JavaScript Bootstrap-->
-    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
-        integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\">
-    </script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"
         integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\">
     </script>
     <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js\"
         integrity=\"sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k\" crossorigin=\"anonymous\">
     </script>
-    <!--fontawesome-->
-    <script src=\"https://kit.fontawesome.com/7fbb9a7a75.js\" crossorigin=\"anonymous\"></script>
+    <!--Infinite scroll-->
+    <script src=\"../public/assets/node_modules/infinite-scroll/dist/infinite-scroll.pkgd.js\"></script>
+    <script src=\"../public/js/app.js\"></script>
+    
     ";
     }
 
@@ -166,7 +158,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
     public function getDebugInfo()
     {
-        return array (  147 => 58,  143 => 57,  138 => 51,  134 => 50,  122 => 20,  106 => 6,  102 => 5,  89 => 71,  87 => 57,  81 => 53,  79 => 50,  49 => 22,  47 => 5,  41 => 1,);
+        return array (  140 => 59,  136 => 58,  131 => 53,  127 => 52,  115 => 22,  97 => 6,  93 => 5,  88 => 71,  86 => 58,  81 => 55,  79 => 52,  49 => 24,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -181,23 +173,25 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
     <!--Importer la police d'icônes Google-->
     <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
-
+    <!--Lien page de style-->
     <link href=\"css/style.css\" rel=\"stylesheet\">
+    <!--Jquery CDN-->
+    <script src=\"https://code.jquery.com/jquery-3.5.1.min.js\"></script>
     <!--Lien CDN Bootstrap-->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\"
         integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
     <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"
         integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\">
     </script>
-
+    <!--Titre-->
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
 </head>
 
 <body>
     <main>
-        <!--Navbar-->
-        <nav class=\"navbar navbar-dark bg-dark justify-content-between\">
+        <!--Barre de navigation-->
+        <nav class=\"navbar navbar-dark bg-dark justify-content-between mb-5\">
             <div class=\"container\">
                 <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
                 <div class=\"d-flex\">
@@ -225,31 +219,21 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 {% endblock add %}
     </main>
     <footer>
-
     </footer>
     {% block javascript %}
     <!--Lien JavaScript Bootstrap-->
-    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
-        integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\">
-    </script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"
         integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\">
     </script>
     <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js\"
         integrity=\"sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k\" crossorigin=\"anonymous\">
     </script>
-    <!--fontawesome-->
-    <script src=\"https://kit.fontawesome.com/7fbb9a7a75.js\" crossorigin=\"anonymous\"></script>
+    <!--Infinite scroll-->
+    <script src=\"../public/assets/node_modules/infinite-scroll/dist/infinite-scroll.pkgd.js\"></script>
+    <script src=\"../public/js/app.js\"></script>
+    
     {% endblock javascript %}
 </body>
-
-</html>
-<!-- Formulaire de recherche 
-                <form class=\"form-inline\">
-                    <div class=\"my-0\">
-                        <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">
-                        </div>
-                    </form>
-                    -->", "./base.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\base.html.twig");
+</html>", "./base.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\base.html.twig");
     }
 }

@@ -5,5 +5,8 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./public/sass/app.scss:./public/css/style.css"
+  },
+  "dependencies": {
+    "infinite-scroll": "^3.0.6"
   }
 }

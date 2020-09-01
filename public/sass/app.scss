@@ -15,3 +15,22 @@ $secondary-color: #b87508;
 .border-2{
     border-color: $secondary-color!important;
 }
+.mw-500{
+    max-width: 500px;
+}
+.mh-500{
+    max-height: 500px;
+}
+.fs-20{
+    font-size:20px; 
+}
+
+.page-load-status {
+    display: none; /* hidden by default */
+    padding-top: 20px;
+    border-top: 1px solid #DDD;
+    text-align: center;
+    color: #777;
+}
+
+/* loader ellips in separate pen CSS */
