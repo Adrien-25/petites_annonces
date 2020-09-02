@@ -55,8 +55,67 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
     {
         $macros = $this->macros;
         // line 4
-        echo "
-        
+        echo "<div class=\"container\">
+      <div class=\"row\">
+            <div class=\"col-12\">
+
+                  <center>
+                        <h3>Formulaire de publication d'annonce</h3>
+                  </center>
+                  <form action=\"\" method=\"POST\">
+                        <div class=\"form-row\">
+                              
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"exampleInputEmail1\">Email</label>
+                                    <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\"
+                                          aria-describedby=\"emailHelp\">
+                              </div>
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"exampleInputPassword1 \">Prenom</label>
+                                    <input type=\"text\" class=\"form-control\" id=\"exampleInputPassword1\">
+                              </div>
+
+                        </div>
+
+                        <div class=\"form-row\">
+
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
+                                    <label for=\"exampleCheck1\">Nom</label>
+                                    <input type=\"text\" class=\"form-control\" id=\"exampleCheck1\">
+                              </div>
+                              <div class=\"form-group  col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"exampletel\">Téléphone</label>
+                                    <input type=\"text\" class=\"form-control\" id=\"exampletel\">
+                              </div>
+
+                        </div>
+
+                        <div class=\"form-row\">
+                              
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"example3\">Prix en euros</label>
+                                    <input type=\"text\" class=\"form-control\" id=\"example3\">
+                              </div>
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
+                                    <select class=\"form-control\" id=\"example4\">
+                                          <option value=\"selected\">Faites votre choix</option>
+                                          <option>Animalerie</option>
+                                          <option>Emploi</option>
+                                          <option>Auto/Moto</option>
+                                          <option>Bricolage</option>
+                                          <option value=\"\">Maison</option>
+                                    </select>
+                              </div>
+
+                        </div>
+
+                        <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\">Envoyer</button>
+                  </form>
+            </div>
+
+      </div>
+</div>
 ";
     }
 
@@ -80,8 +139,67 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
         return new Source("{% extends \"./base.html.twig\" %}
 {% block title %}Poster une annonce{% endblock title %}
 {% block add %}
+<div class=\"container\">
+      <div class=\"row\">
+            <div class=\"col-12\">
 
-        
+                  <center>
+                        <h3>Formulaire de publication d'annonce</h3>
+                  </center>
+                  <form action=\"\" method=\"POST\">
+                        <div class=\"form-row\">
+                              
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"exampleInputEmail1\">Email</label>
+                                    <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\"
+                                          aria-describedby=\"emailHelp\">
+                              </div>
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"exampleInputPassword1 \">Prenom</label>
+                                    <input type=\"text\" class=\"form-control\" id=\"exampleInputPassword1\">
+                              </div>
+
+                        </div>
+
+                        <div class=\"form-row\">
+
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
+                                    <label for=\"exampleCheck1\">Nom</label>
+                                    <input type=\"text\" class=\"form-control\" id=\"exampleCheck1\">
+                              </div>
+                              <div class=\"form-group  col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"exampletel\">Téléphone</label>
+                                    <input type=\"text\" class=\"form-control\" id=\"exampletel\">
+                              </div>
+
+                        </div>
+
+                        <div class=\"form-row\">
+                              
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"example3\">Prix en euros</label>
+                                    <input type=\"text\" class=\"form-control\" id=\"example3\">
+                              </div>
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
+                                    <select class=\"form-control\" id=\"example4\">
+                                          <option value=\"selected\">Faites votre choix</option>
+                                          <option>Animalerie</option>
+                                          <option>Emploi</option>
+                                          <option>Auto/Moto</option>
+                                          <option>Bricolage</option>
+                                          <option value=\"\">Maison</option>
+                                    </select>
+                              </div>
+
+                        </div>
+
+                        <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\">Envoyer</button>
+                  </form>
+            </div>
+
+      </div>
+</div>
 {% endblock add %}", "pages/poster.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\pages\\poster.html.twig");
     }
 }

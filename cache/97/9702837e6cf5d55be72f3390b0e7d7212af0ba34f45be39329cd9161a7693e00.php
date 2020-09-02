@@ -65,7 +65,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         foreach ($context['_seq'] as $context["_key"] => $context["annonce"]) {
             // line 8
             echo "    <div class=\"col-sm-12 col-md-6 col-lg-4 card\" style=\"width: 28rem;\">
-        <img class=\"card-img-top\" src=\"../.../../public/assets/medias/jouets.jpg\" alt=\"image catégorie produit \">
+        <img class=\"card-img-top\" src=\"assets/medias/vélos.jpg\" alt=\"image catégorie produit \">
         <div class=\"card-body d-flex justify-content-between  \">
           <h5 class=\"card-title\">";
             // line 11
@@ -186,7 +186,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
       
     {% for annonce in listes_annonces %}
     <div class=\"col-sm-12 col-md-6 col-lg-4 card\" style=\"width: 28rem;\">
-        <img class=\"card-img-top\" src=\"../.../../public/assets/medias/jouets.jpg\" alt=\"image catégorie produit \">
+        <img class=\"card-img-top\" src=\"assets/medias/vélos.jpg\" alt=\"image catégorie produit \">
         <div class=\"card-body d-flex justify-content-between  \">
           <h5 class=\"card-title\">{{annonce.ann_titre}}</h5>
           <p class=\"card-text\"><span style=\"color: red;\">{{annonce.ann_prix}} <i class=\"fas fa-euro-sign\"></i></span></p>

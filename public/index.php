@@ -1,7 +1,7 @@
 <?php
 
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
-define('BASE_PATH', '/petites-annonces/public');
+define('BASE_PATH', '');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
 define('SERVER_URI', $_SERVER['REQUEST_METHOD'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['REMOTE_PORT'].BASE_PATH);
 
@@ -31,38 +31,32 @@ $router->map('GET', '/accueil', function(){
 
 $router->map('GET', '/poster', function(){
     // dans le cas ou on est dans la page de contact
-    $value = \App\Poster::FaitlePoster();
-    $chargeTwig = new \App\Twig('pages/poster.html.twig');
-    $chargeTwig->render(['listes_annonces'=> $value]);
-  var_dump($value);
-    
-});
+ $posts = \App\Poster::faitlePoste();
 
-// $router->map('GET', '/poster', function(){
-//     // dans le cas ou on est dans la page de contact
-//     $value = \App\Lister::appelLister();
-//     $chargeTwig = new \App\Twig('pages/index.html.twig');
-//     $chargeTwig->render(['listes_annonces'=> $value]);
+    $charge1Twig = new \App\Twig('pages/poster.html.twig');
+    $charge1Twig->render([]);
+  
+  
+});
     
-// });
+$match = $router->match();
+    // call closure or throw 404 status
+if( is_array($match) && is_callable( $match['target'] ) ) {
+	call_user_func_array( $match['target'], $match['params'] ); 
+} else {
+	// no route was matched
+	header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+}
+
+
 
    
 
 
-// // slug est une chaîne de caratère avec des tirets .ici le slug peut être n'importe quoi[*] et -[i] veut dire un entier (:slug et :id pour récupérer des paramètres)
-// // $router->map('GET', '/annonce/[*:slug]-[i:id]', function($slug, $id){
-    // //     // dans le cas ou on est dans la page 
-    // //     echo " je suis dans l'annonce $slug avec le numero $id ";
-    // // });
-    // // méthodes match pour trouver un résultat
-    //  call_user_func_array ..appelle la fonction de rappel avec les paramètres rassemblés en tableau
-    $match = $router->match();
-    if($match !== null){
-    call_user_func_array($match['target'], $match['params']);
+
     
-    // $match['target']($match['params']['slug'], $match['params']['id']);
-}
-// $dbh = new App\Database('annonces');
+    
+
 
     
 

@@ -198,3 +198,7 @@ RewriteRule . index.php [L]
 
 Pour lancer sass 
 npm run sass
+
+
+
+'description'=>$ann_description, 'titre'=>$ann_titre, 'nom_image'=>$ann_image_nom, 'date_ecriture'=>$ann_date_ecriture, 'categorie'=>$categorie_id, 'nom'=>$usr_nom, 'prenom'=>$usr_prenom, 'telephone'=>$usr_telephone, 'email'=>$usr_email
