@@ -58,6 +58,9 @@ class Poster
             if(strlen(trim($_POST['email'])) !== 0){
                  self::$usr_email = trim($_POST['email']);
             }
+            if(strlen(trim($_POST['prix'])) !== 0){
+               self::$ann_prix = trim($_POST['prix']);
+               }
 
             self::$sql = "INSERT INTO annonce('utilisateur_id, categorie_id, ann_description, ann_titre, ann_prix, ann_date_ecriture, ann_image_url, ann_image_nom') VALUES(:utilisateur_id, :categorie_id, :ann_description, :ann_tire, :ann_prix, :ann_date_ecriture, :ann_image_url, :ann_image_nom;)";
              self::$sth = $dbh->prepare(self::$sql);

@@ -51,41 +51,49 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 <body>
     <main>
         <!--Navbar-->
-        <nav class=\"navbar navbar-dark bg-dark justify-content-between\">
-            <div class=\"container\">
-                <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
-                <div class=\"d-flex\">
-                    <!-- Formulaire de recherche -->
-                    <form class=\"form-inline mr-4\">
-                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\" id=\"SearchForm\">
-                            <option selected>Catégories</option>
-                            <option value=\"Immobilier\">Immobilier</option>
-                        </select>
-                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\" aria-label=\"Search\">
-                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i class=\"material-icons text-light\">search</i></button>
-                    </form>
-                    <!-- Lien vers page poster -->
-                    <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
-                        <span class=\"d-flex mr-2\">
-                            <i class=\"material-icons\">add_circle_outline</i>
-                        </span>
-                        <span class=\"font-weight-bold\">Poster une annonce</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
+        
+            
+
+                        <nav class=\"navbar navbar-dark bg-dark justify-content-between\">
+                            
+                                <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
+                                <div class=\"d-flex\">
+                                    <!-- Formulaire de recherche -->
+                                    <form class=\"form-inline mr-4\">
+                                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\" id=\"SearchForm\">
+                                            <option selected>Catégories</option>
+                                            <option value=\"Immobilier\">Immobilier</option>
+                                        </select>
+                                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\" aria-label=\"Search\">
+                                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i class=\"material-icons text-light\">search</i></button>
+                                    </form>
+                                    <!-- Lien vers page poster -->
+                                    <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
+                                        <span class=\"d-flex mr-2\">
+                                            <i class=\"material-icons\">add_circle_outline</i>
+                                        </span>
+                                        <span class=\"font-weight-bold\">Poster une annonce</span>
+                                    </a>
+                                
+                            </div>
+                        </nav>
+                   
+
+               
+           
+        
 ";
-        // line 50
+        // line 58
         $this->displayBlock('add', $context, $blocks);
-        // line 53
+        // line 61
         echo "    </main>
     <footer>
 
     </footer>
     ";
-        // line 57
+        // line 65
         $this->displayBlock('javascript', $context, $blocks);
-        // line 71
+        // line 79
         echo "</body>
 
 </html>
@@ -130,20 +138,20 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         echo "Base Twig";
     }
 
-    // line 50
+    // line 58
     public function block_add($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 51
+        // line 59
         echo "    
 ";
     }
 
-    // line 57
+    // line 65
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 58
+        // line 66
         echo "    <!--Lien JavaScript Bootstrap-->
     <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"
         integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\">
@@ -166,7 +174,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
     public function getDebugInfo()
     {
-        return array (  147 => 58,  143 => 57,  138 => 51,  134 => 50,  122 => 20,  106 => 6,  102 => 5,  89 => 71,  87 => 57,  81 => 53,  79 => 50,  49 => 22,  47 => 5,  41 => 1,);
+        return array (  155 => 66,  151 => 65,  146 => 59,  142 => 58,  130 => 20,  114 => 6,  110 => 5,  97 => 79,  95 => 65,  89 => 61,  87 => 58,  49 => 22,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -197,29 +205,37 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 <body>
     <main>
         <!--Navbar-->
-        <nav class=\"navbar navbar-dark bg-dark justify-content-between\">
-            <div class=\"container\">
-                <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
-                <div class=\"d-flex\">
-                    <!-- Formulaire de recherche -->
-                    <form class=\"form-inline mr-4\">
-                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\" id=\"SearchForm\">
-                            <option selected>Catégories</option>
-                            <option value=\"Immobilier\">Immobilier</option>
-                        </select>
-                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\" aria-label=\"Search\">
-                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i class=\"material-icons text-light\">search</i></button>
-                    </form>
-                    <!-- Lien vers page poster -->
-                    <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
-                        <span class=\"d-flex mr-2\">
-                            <i class=\"material-icons\">add_circle_outline</i>
-                        </span>
-                        <span class=\"font-weight-bold\">Poster une annonce</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
+        
+            
+
+                        <nav class=\"navbar navbar-dark bg-dark justify-content-between\">
+                            
+                                <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
+                                <div class=\"d-flex\">
+                                    <!-- Formulaire de recherche -->
+                                    <form class=\"form-inline mr-4\">
+                                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\" id=\"SearchForm\">
+                                            <option selected>Catégories</option>
+                                            <option value=\"Immobilier\">Immobilier</option>
+                                        </select>
+                                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\" aria-label=\"Search\">
+                                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i class=\"material-icons text-light\">search</i></button>
+                                    </form>
+                                    <!-- Lien vers page poster -->
+                                    <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
+                                        <span class=\"d-flex mr-2\">
+                                            <i class=\"material-icons\">add_circle_outline</i>
+                                        </span>
+                                        <span class=\"font-weight-bold\">Poster une annonce</span>
+                                    </a>
+                                
+                            </div>
+                        </nav>
+                   
+
+               
+           
+        
 {% block add %}
     
 {% endblock add %}
