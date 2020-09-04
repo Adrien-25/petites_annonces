@@ -45,7 +45,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     ";
         // line 5
         $this->displayBlock('head', $context, $blocks);
-        // line 24
+        // line 22
         echo "</head>
 
 <body>
@@ -57,12 +57,15 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                 <div class=\"d-flex\">
                     <!-- Formulaire de recherche -->
                     <form class=\"form-inline mr-4\">
-                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\" id=\"SearchForm\">
+                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\"
+                            id=\"SearchForm\">
                             <option selected>Catégories</option>
                             <option value=\"Immobilier\">Immobilier</option>
                         </select>
-                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\" aria-label=\"Search\">
-                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i class=\"material-icons text-light\">search</i></button>
+                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\"
+                            aria-label=\"Search\">
+                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i
+                                class=\"material-icons text-light\">search</i></button>
                     </form>
                     <!-- Lien vers page poster -->
                     <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
@@ -74,18 +77,20 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                 </div>
             </div>
         </nav>
-";
-        // line 52
+        ";
+        // line 53
         $this->displayBlock('add', $context, $blocks);
-        // line 55
+        // line 56
         echo "    </main>
     <footer>
     </footer>
     ";
-        // line 58
+        // line 59
         $this->displayBlock('javascript', $context, $blocks);
         // line 71
-        echo "</body>
+        echo "
+</body>
+
 </html>";
     }
 
@@ -101,17 +106,16 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
     <!--Lien page de style-->
     <link href=\"css/style.css\" rel=\"stylesheet\">
-    <!--Jquery CDN-->
-    <script src=\"https://code.jquery.com/jquery-3.5.1.min.js\"></script>
-    <!--Lien CDN Bootstrap-->
-    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\"
-        integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
-    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"
-        integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\">
-    </script>
+    <!--Lien CDN CSS Bootstrap-->
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\"
+        integrity=\"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS\" crossorigin=\"anonymous\">
+    ";
+        // line 17
+        echo "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
+
     <!--Titre-->
     <title>";
-        // line 22
+        // line 20
         $this->displayBlock('title', $context, $blocks);
         echo " </title>
     ";
@@ -123,31 +127,30 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         echo "Base Twig";
     }
 
-    // line 52
+    // line 53
     public function block_add($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 53
-        echo "    
-";
+        // line 54
+        echo "
+        ";
     }
 
-    // line 58
+    // line 59
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 59
-        echo "    <!--Lien JavaScript Bootstrap-->
+        // line 60
+        echo "    <!--Js-->
+    <script src=\"../public/js/app.js\"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"
         integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\">
     </script>
     <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js\"
         integrity=\"sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k\" crossorigin=\"anonymous\">
     </script>
-    <!--Infinite scroll-->
-    <script src=\"../public/assets/node_modules/infinite-scroll/dist/infinite-scroll.pkgd.js\"></script>
-    <script src=\"../public/js/app.js\"></script>
-    
+
     ";
     }
 
@@ -158,7 +161,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
     public function getDebugInfo()
     {
-        return array (  140 => 59,  136 => 58,  131 => 53,  127 => 52,  115 => 22,  97 => 6,  93 => 5,  88 => 71,  86 => 58,  81 => 55,  79 => 52,  49 => 24,  47 => 5,  41 => 1,);
+        return array (  144 => 60,  140 => 59,  135 => 54,  131 => 53,  119 => 20,  114 => 17,  102 => 6,  98 => 5,  91 => 71,  89 => 59,  84 => 56,  82 => 53,  49 => 22,  47 => 5,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -175,14 +178,12 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
     <!--Lien page de style-->
     <link href=\"css/style.css\" rel=\"stylesheet\">
-    <!--Jquery CDN-->
-    <script src=\"https://code.jquery.com/jquery-3.5.1.min.js\"></script>
-    <!--Lien CDN Bootstrap-->
-    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\"
-        integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
-    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"
-        integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\">
-    </script>
+    <!--Lien CDN CSS Bootstrap-->
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\"
+        integrity=\"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS\" crossorigin=\"anonymous\">
+    {# CDN jQuery #}
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
+
     <!--Titre-->
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
@@ -197,12 +198,15 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                 <div class=\"d-flex\">
                     <!-- Formulaire de recherche -->
                     <form class=\"form-inline mr-4\">
-                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\" id=\"SearchForm\">
+                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\"
+                            id=\"SearchForm\">
                             <option selected>Catégories</option>
                             <option value=\"Immobilier\">Immobilier</option>
                         </select>
-                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\" aria-label=\"Search\">
-                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i class=\"material-icons text-light\">search</i></button>
+                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\"
+                            aria-label=\"Search\">
+                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i
+                                class=\"material-icons text-light\">search</i></button>
                     </form>
                     <!-- Lien vers page poster -->
                     <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
@@ -214,26 +218,27 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                 </div>
             </div>
         </nav>
-{% block add %}
-    
-{% endblock add %}
+        {% block add %}
+
+        {% endblock add %}
     </main>
     <footer>
     </footer>
     {% block javascript %}
-    <!--Lien JavaScript Bootstrap-->
+    <!--Js-->
+    <script src=\"../public/js/app.js\"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"
         integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\">
     </script>
     <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js\"
         integrity=\"sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k\" crossorigin=\"anonymous\">
     </script>
-    <!--Infinite scroll-->
-    <script src=\"../public/assets/node_modules/infinite-scroll/dist/infinite-scroll.pkgd.js\"></script>
-    <script src=\"../public/js/app.js\"></script>
-    
+
     {% endblock javascript %}
+
 </body>
+
 </html>", "./base.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\base.html.twig");
     }
 }

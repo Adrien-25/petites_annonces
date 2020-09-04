@@ -55,14 +55,16 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     {
         $macros = $this->macros;
         // line 4
-        echo "<div class=\"scroller-layout\">
+        echo "<div id=\"scroller-layout\">
   ";
         // line 5
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["listes_annonces"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["annonce"]) {
             // line 6
-            echo "  <div class=\"container text-light mb-2 scroller-item\">
+            echo "  <div class=\"container text-light mb-2 scroller-item\" id=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_id", [], "any", false, false, false, 6), "html", null, true);
+            echo "\">
     <div class=\"border border-dark bg-dark p-1 d-flex justify-content-between\">
       <div class=\"\">
         <h2 class=\"\">";
@@ -97,13 +99,18 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     </div>
 
   </div>
+  
   ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
-        echo "<a class=\"pagination__next\">Next</a>
+        // line 25
+        echo "<div id=\"first-loader\" class=\"ajax-loader text-center m-2\" value=";
+        echo twig_escape_filter($this->env, ($context["Nbr_annonces"] ?? null), "html", null, true);
+        echo ">
+    <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
+  </div>
 </div>
 ";
     }
@@ -120,7 +127,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
 
     public function getDebugInfo()
     {
-        return array (  106 => 24,  95 => 19,  91 => 18,  82 => 12,  78 => 11,  74 => 10,  70 => 9,  65 => 6,  61 => 5,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  109 => 25,  97 => 19,  93 => 18,  84 => 12,  80 => 11,  76 => 10,  72 => 9,  65 => 6,  61 => 5,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -128,9 +135,9 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         return new Source("{% extends \"./base.html.twig\" %}
 {% block title %}listes des annonces{% endblock title %}
 {% block add %}
-<div class=\"scroller-layout\">
+<div id=\"scroller-layout\">
   {% for annonce in listes_annonces %}
-  <div class=\"container text-light mb-2 scroller-item\">
+  <div class=\"container text-light mb-2 scroller-item\" id=\"{{annonce.ann_id}}\">
     <div class=\"border border-dark bg-dark p-1 d-flex justify-content-between\">
       <div class=\"\">
         <h2 class=\"\">{{annonce.ann_titre}}</h2>
@@ -147,8 +154,11 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     </div>
 
   </div>
+  
   {% endfor %}
-<a class=\"pagination__next\">Next</a>
+<div id=\"first-loader\" class=\"ajax-loader text-center m-2\" value={{Nbr_annonces}}>
+    <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
+  </div>
 </div>
 {% endblock add %}", "pages/index.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\pages\\index.html.twig");
     }
