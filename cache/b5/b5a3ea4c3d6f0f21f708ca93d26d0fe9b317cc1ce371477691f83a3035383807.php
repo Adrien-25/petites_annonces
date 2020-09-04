@@ -115,7 +115,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         // line 19
         echo "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
     <!--Lien dropzone-->
-    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>dropzone-5.7.0\\dist\\dropzone.js
+    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>
     <!--Titre-->
     <title>";
         // line 23
@@ -191,7 +191,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     {# CDN jQuery #}
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
     <!--Lien dropzone-->
-    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>dropzone-5.7.0\\dist\\dropzone.js
+    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>
     <!--Titre-->
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
