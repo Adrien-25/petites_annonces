@@ -71,7 +71,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
             // line 9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_titre", [], "any", false, false, false, 9), "html", null, true);
             echo "</h2>
-        <p class=\"text-danger ml-2 font-weight-bold\">";
+        <p class=\"text-danger ml-2 prix\">";
             // line 10
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_prix", [], "any", false, false, false, 10), "html", null, true);
             echo " €</p>
@@ -84,10 +84,13 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_date_ecriture", [], "any", false, false, false, 12), "j m Y"), "html", null, true);
             echo "</p>
         <div>
-          <a href=\"\" class=\"btn bg-danger\">Détails</a>
+          <a href=\"/detail\" class=\"btn bg-danger\">Détails</a>
           <a href=\"\" class=\"btn bg-danger\">Télécharger PDF</a>
           <a href=\"\" class=\"btn bg-danger\">Modifier</a>
-          <a href=\"\" class=\"btn bg-danger\">Supprimer</a>
+          <a href=\"supprimer.php?";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_id", [], "any", false, false, false, 17), "html", null, true);
+            echo "\" class=\"btn bg-danger\">Supprimer</a>
         </div>
       </div>
       <img class=\"fit-picture mw-500 mh-500\" src=\"../public/assets/medias/";
@@ -99,16 +102,15 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 21), "html", null, true);
             echo "\">
     </div>
-
   </div>
-  
+
   ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
-        echo "<div id=\"first-loader\" class=\"ajax-loader text-center m-2\" value=";
+        // line 26
+        echo "  <div id=\"first-loader\" class=\"ajax-loader text-center m-2\" value=";
         echo twig_escape_filter($this->env, ($context["Nbr_annonces"] ?? null), "html", null, true);
         echo ">
     <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
@@ -129,7 +131,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
 
     public function getDebugInfo()
     {
-        return array (  111 => 27,  99 => 21,  95 => 20,  84 => 12,  80 => 11,  76 => 10,  72 => 9,  65 => 6,  61 => 5,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  113 => 26,  102 => 21,  98 => 20,  92 => 17,  84 => 12,  80 => 11,  76 => 10,  72 => 9,  65 => 6,  61 => 5,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -143,24 +145,23 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     <div class=\"border border-dark bg-dark p-1 d-flex justify-content-between\">
       <div class=\"\">
         <h2 class=\"\">{{annonce.ann_titre}}</h2>
-        <p class=\"text-danger ml-2 font-weight-bold\">{{annonce.ann_prix}} €</p>
+        <p class=\"text-danger ml-2 prix\">{{annonce.ann_prix}} €</p>
         <p class=\"ml-2 font-weight-bold\">{{annonce.categorie_id}}</p>
         <p class=\"ml-2 font-weight-bold\">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
         <div>
-          <a href=\"\" class=\"btn bg-danger\">Détails</a>
+          <a href=\"/detail\" class=\"btn bg-danger\">Détails</a>
           <a href=\"\" class=\"btn bg-danger\">Télécharger PDF</a>
           <a href=\"\" class=\"btn bg-danger\">Modifier</a>
-          <a href=\"\" class=\"btn bg-danger\">Supprimer</a>
+          <a href=\"supprimer.php?{{annonce.ann_id}}\" class=\"btn bg-danger\">Supprimer</a>
         </div>
       </div>
       <img class=\"fit-picture mw-500 mh-500\" src=\"../public/assets/medias/{{annonce.ann_image_url}}\"
         alt=\"{{annonce.ann_image_nom}}\">
     </div>
-
   </div>
-  
+
   {% endfor %}
-<div id=\"first-loader\" class=\"ajax-loader text-center m-2\" value={{Nbr_annonces}}>
+  <div id=\"first-loader\" class=\"ajax-loader text-center m-2\" value={{Nbr_annonces}}>
     <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
   </div>
 </div>

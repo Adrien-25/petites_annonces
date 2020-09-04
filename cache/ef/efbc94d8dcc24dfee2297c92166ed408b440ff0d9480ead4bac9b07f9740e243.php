@@ -61,20 +61,24 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_date_ecriture", [], "any", false, false, false, 8), "j m Y"), "html", null, true);
             echo "</p>
        <div>
-         <a href=\"\" class=\"btn bg-danger\">Détails</a>
+         <a href=\"/detail\" class=\"btn bg-danger\">Détails</a>
          <a href=\"\" class=\"btn bg-danger\">Télécharger PDF</a>
+         <a href=\"\" class=\"btn bg-danger\">Modifier</a>
+         <a href=\"supprimer.php?";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_id", [], "any", false, false, false, 13), "html", null, true);
+            echo "\" class=\"btn bg-danger\">Supprimer</a>
        </div>
      </div>
      <img class=\"fit-picture mw-500 mh-500\" src=\"../public/assets/medias/";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 14), "html", null, true);
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 16), "html", null, true);
             echo "\"
        alt=\"";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 15), "html", null, true);
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 17), "html", null, true);
             echo "\">
    </div>
-
  </div>
 
  ";
@@ -82,7 +86,7 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 21
+        // line 22
         echo " <div class=\"ajax-loader text-center m-2\">
    <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
  </div>
@@ -104,7 +108,7 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
 
     public function getDebugInfo()
     {
-        return array (  86 => 21,  74 => 15,  70 => 14,  61 => 8,  57 => 7,  53 => 6,  49 => 5,  42 => 2,  37 => 1,);
+        return array (  90 => 22,  79 => 17,  75 => 16,  69 => 13,  61 => 8,  57 => 7,  53 => 6,  49 => 5,  42 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -118,14 +122,15 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
        <p class=\"ml-2 font-weight-bold\">{{annonce.categorie_id}}</p>
        <p class=\"ml-2 font-weight-bold\">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
        <div>
-         <a href=\"\" class=\"btn bg-danger\">Détails</a>
+         <a href=\"/detail\" class=\"btn bg-danger\">Détails</a>
          <a href=\"\" class=\"btn bg-danger\">Télécharger PDF</a>
+         <a href=\"\" class=\"btn bg-danger\">Modifier</a>
+         <a href=\"supprimer.php?{{annonce.ann_id}}\" class=\"btn bg-danger\">Supprimer</a>
        </div>
      </div>
      <img class=\"fit-picture mw-500 mh-500\" src=\"../public/assets/medias/{{annonce.ann_image_url}}\"
        alt=\"{{annonce.ann_image_nom}}\">
    </div>
-
  </div>
 
  {% endfor %}
