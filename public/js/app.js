@@ -1,33 +1,59 @@
-//Infinite Scroll
-if( typeof(offset) == 'undefined' ){
-    var offset = 10;
-}
-$(window).on("scroll", function() {
-    //page height
-    var scrollHeight = $(document).height();
-    //scroll position
-    var scrollPos = $(window).height();
-    var scrollTop = $(window).scrollTop()+1000;
-    // fire if the scroll position is 300 pixels above the bottom of the page
-    console.log ('Hauteur'+scrollHeight);
-    console.log ('Position'+scrollPos);
-    console.log ('Top'+scrollTop);
+//INIT INFINITE SCROLL
+console.log('Start inf scroll');
 
-    if (scrollPos - scrollTop <= 0){
-        var urlcourante = document.location.href; 
-        document.location.href=urlcourante+'/'+offset;
-    }
+
+$(document).ready(function () {
+    windowOnScroll();
 });
 
-// window.addEventListener('load',function(){
-//     console.log('Bonjour');
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.open("GET", "ajax_info.txt", true);
-//     xhttp.send();
-//     xhttp.onreadystatechange = function() {
-//         if (this.readyState == 4 && this.status == 200) {
-//             document.getElementById("demo").innerHTML = this.responseText;
+function windowOnScroll() {
+    $(window).on("scroll", function (e) {
+        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+            lastId = $(".scroller-item:last").attr("id");
+            getMoreData(lastId);
+        }
+    });
+}
 
-//         }
-//     }
-// });
+function getMoreData(lastId) {
+    $(window).off("scroll");
+    var nbrAnnonceBDD = document.getElementById('first-loader').getAttribute('value');
+    var nbrAnnonceHTML = document.getElementsByClassName('scroller-item').length;
+    if (nbrAnnonceBDD>nbrAnnonceHTML){
+
+        $('.ajax-loader').show();
+        $.ajax({
+            url: 'index.php?offset=' + lastId,
+            type: "get",
+            beforeSend: function () {
+                $('.ajax-loader').show();
+            },
+    
+            success: function (data) {
+                setTimeout(function () {
+                    $('.ajax-loader').hide();
+                    $("#scroller-layout").append(data);
+                    windowOnScroll();
+                }, 1000);
+            }
+        });
+    } else {
+        var lastLoader = document.getElementsByClassName('ajax-loader')[1];
+        lastLoader.classList.add('d-none');
+        var noMoreLoad = document.getElementById('fin-annonce');
+        noMoreLoad.classList.remove('d-none');
+    }
+
+}
+// if (this.readyState == 4 && this.status == 200) {
+//     console.log(this.responseText);
+//     // function (data) {
+//     //     setTimeout(function () {
+//     //         $('.ajax-loader').hide();
+//     //         $("#scroller-layout").append(data);
+//     //         windowOnScroll();
+//     //     }, 1000);
+//     // }
+// };
+// xhttp.open("GET", "accueil?offset=" + lastId, true);
+// xhttp.send();
