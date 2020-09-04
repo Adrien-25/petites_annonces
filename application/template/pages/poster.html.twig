@@ -6,47 +6,46 @@
             <div class="col-12">
 
                   <center>
-                        <h3>Formulaire de publication d'annonce</h3>
+                        <h1 class="mb-5">Poster une annonce</h1>
                   </center>
-                  <form action="../../class/Poster.php" method="POST">
+                  <form action="poster" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
                         <div class="form-row">
-                              
-                              <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                                    <label for="exampleInputEmail1">Email</label>
-                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                                          aria-describedby="emailHelp">
+                              <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
+                                    <label for="Nom">Nom</label>
+                                    <input type="text" name="nom" class="form-control" required>
                               </div>
+
                               <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                                    <label for="exampleInputPassword1 ">Prenom</label>
-                                    <input type="text" name="prenom" class="form-control" id="exampleInputPassword1">
+                                    <label for="Prenom ">Prenom</label>
+                                    <input type="text" name="prenom" class="form-control" required>
                               </div>
 
                         </div>
 
                         <div class="form-row">
 
-                              <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
-                                    <label for="exampleCheck1">Nom</label>
-                                    <input type="text" name="nom" class="form-control" id="exampleCheck1">
+                              <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                                    <label for="Email">Email</label>
+                                    <input type="email" name="email" class="form-control" required>
                               </div>
                               <div class="form-group  col-sm-12 col-md-6 col-lg-6">
-                                    <label for="exampletel">Téléphone</label>
-                                    <input type="text" name="telephone" class="form-control" id="exampletel">
+                                    <label for="Telephone">Téléphone</label>
+                                    <input type="text" name="telephone" class="form-control" required>
                               </div>
 
                         </div>
 
                         <div class="form-row">
-                              
+
                               <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                                    <label for="example3">Prix en euros</label>
-                                    <input type="text" name="prix" class="form-control" id="example3">
+                                    <label for="Prix">Prix (€)</label>
+                                    <input type="text" name="prix" class="form-control" required>
                               </div>
                               <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                                    <label for="example4">Quelle catégorie fait partie votre annonce.</label>
-                                    <select class="form-control" name="categorie" id="example4">
-                                          <option value="selected">Faites votre choix</option>
-                                          <option value ="animalerie">Animalerie</option>
+                                    <label for="Categorie">Catégorie</label>
+                                    <select class="form-control" name="categorie" required>
+                                          {# <option value="none">Faites votre choix</option> #}
+                                          <option value="animalerie">Animalerie</option>
                                           <option value="emploi">Emploi</option>
                                           <option value="auto/moto">Auto/Moto</option>
                                           <option value="bricolage">Bricolage</option>
@@ -55,14 +54,24 @@
                               </div>
 
                         </div>
+                        <div class="dropzone needsclick text-center" id="upload-pic" action="poster">
+                              <div id="icon-delete" class="text-danger d-none">
+                                    <i class="material-icons">clear</i>
+                              </div>
+                              <div class="dz-message needsclick">
+                                    <i class="material-icons display-3 text-danger">cloud_download</i>
+                                    Déposer votre image ou cliquer dans la zone
+                              </div>
+                        </div>
                         <div class="row">
-                              <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                    <label for="desc">Veuillez saisir la description de votre annonce</label>
-                                    <textarea name="description" class="form-control rounded-0" id="desc" cols="30" rows="10"></textarea>
+                              <div class="form-group col-sm-12 col-md-12 col-lg-12 mt-3">
+                                    <label for="Description">Description de votre annonce</label>
+                                    <textarea name="description" class="form-control rounded-0" id="desc" cols="30"
+                                          rows="3" required></textarea>
                               </div>
                               <div class="form-group col-sm-12 col-md-12 col-lg-12">
-
-                                    <button type="submit" value="ajouter" class="btn btn-primary btn-lg btn-block">Envoyer</button>
+                                    <button type="submit" value="ajouter"
+                                          class="btn bg-danger btn-primary btn-lg btn-block border-0">Envoyer</button>
                               </div>
                         </div>
                   </form>
