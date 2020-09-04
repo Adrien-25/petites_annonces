@@ -17,14 +17,26 @@ $router->setBasePath(BASE_PATH);
 // //     // dans le cas ou on est dans la page d'accueil
 // //     echo 'salut';
 // // });
+if (!isset($_GET['offset'])){
+    $router->map('GET', '/accueil', function(){
+        // dans le cas ou on est dans la page de contact
+        $value = \App\Lister::appelLister();
+        $AnnonceLimit = $value['DataLimit'];
+        $nbrAnnonce = sizeof($value['DataAll']);
 
-$router->map('GET', '/accueil', function(){
-    // dans le cas ou on est dans la page de contact
-    $value = \App\Lister::appelLister();
-    $chargeTwig = new \App\Twig('pages/index.html.twig');
-    $chargeTwig->render(['listes_annonces'=> $value]);
-    
-});
+        $chargeTwig = new \App\Twig('pages/index.html.twig');
+        $chargeTwig->render(['listes_annonces'=> $AnnonceLimit,'Nbr_annonces'=>$nbrAnnonce]);
+    });
+} else if (isset($_GET['offset'])){
+    $router->map('GET', '/index.php', function(){
+        // dans le cas ou on est dans la page de d'accueil
+        $offset = $_GET['offset'];
+        $ajout = \App\Lister::ajouterAnnonces($offset);
+        $chargeTwig = new \App\Twig('pages/ajouterAnnonce.html.twig');
+        $chargeTwig->render(['listes_annonces'=> $ajout]);
+    });
+}
+
 // // slug est une chaîne de caratère avec des tirets .ici le slug peut être n'importe quoi[*] et -[i] veut dire un entier (:slug et :id pour récupérer des paramètres)
 // // $router->map('GET', '/annonce/[*:slug]-[i:id]', function($slug, $id){
 // //     // dans le cas ou on est dans la page 
