@@ -68,7 +68,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                                 class=\"material-icons text-light\">search</i></button>
                     </form>
                     <!-- Lien vers page poster -->
-                    <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
+                    <a href=\"poster\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
                         <span class=\"d-flex mr-2\">
                             <i class=\"material-icons\">add_circle_outline</i>
                         </span>
@@ -209,7 +209,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                                 class=\"material-icons text-light\">search</i></button>
                     </form>
                     <!-- Lien vers page poster -->
-                    <a href=\"#\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
+                    <a href=\"poster\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
                         <span class=\"d-flex mr-2\">
                             <i class=\"material-icons\">add_circle_outline</i>
                         </span>

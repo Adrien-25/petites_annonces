@@ -67,7 +67,7 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
      </div>
      <img class=\"fit-picture mw-500 mh-500\" src=\"../public/assets/medias/";
             // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 14), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 14), "html", null, true);
             echo ".jpg\"
        alt=\"";
             // line 15
@@ -122,7 +122,7 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
          <a href=\"\" class=\"btn bg-danger\">Télécharger PDF</a>
        </div>
      </div>
-     <img class=\"fit-picture mw-500 mh-500\" src=\"../public/assets/medias/{{annonce.ann_image_nom}}.jpg\"
+     <img class=\"fit-picture mw-500 mh-500\" src=\"../public/assets/medias/{{annonce.ann_image_url}}.jpg\"
        alt=\"{{annonce.ann_image_nom}}\">
    </div>
 
