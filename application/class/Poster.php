@@ -22,7 +22,7 @@ class Poster
     public $sql;
     public $sth;
     public $dbh;
-    public  function faitlePoste()
+    public  static function faitlePoste()
     {
 
        
@@ -75,7 +75,9 @@ class Poster
              self::$sth->bindParam(':ann_image_url', self::$ann_image_url, PDO::PARAM_STR);
              self::$sth->bindParam(':ann_image_nom', self::$ann_image_nom, PDO::PARAM_STR);
              self::$sth->execute();
+           
              return self::$sth->fetchAll(PDO::FETCH_OBJ);
+             
              
 
         } 
