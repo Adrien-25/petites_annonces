@@ -1,0 +1,27 @@
+ {% for annonce in listes_annonces %}
+ <div class="container text-light mb-2 scroller-item" id="{{annonce.ann_id}}">
+   <div class="border border-dark bg-dark p-1 d-flex justify-content-between">
+     <div class="">
+       <h2 class="">{{annonce.ann_titre}}</h2>
+       <p class="text-danger ml-2 font-weight-bold">{{annonce.ann_prix}} €</p>
+       <p class="ml-2 font-weight-bold">{{annonce.categorie_id}}</p>
+       <p class="ml-2 font-weight-bold">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
+       <div>
+         <a href="" class="btn bg-danger">Détails</a>
+         <a href="" class="btn bg-danger">Télécharger PDF</a>
+       </div>
+     </div>
+     <img class="fit-picture mw-500 mh-500" src="../public/assets/medias/{{annonce.ann_image_nom}}.jpg"
+       alt="{{annonce.ann_image_nom}}">
+   </div>
+
+ </div>
+
+ {% endfor %}
+ <div class="ajax-loader text-center m-2">
+   <img src="https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif">
+ </div>
+ <div id="fin-annonce" class="ajax-loader text-center d-none m-3">
+   Fin des annonces
+ </div>
+ </div>

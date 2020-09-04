@@ -16,4 +16,28 @@
   border-color: #b87508 !important;
 }
 
+.mw-500 {
+  max-width: 500px;
+}
+
+.mh-500 {
+  max-height: 500px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.ajax-loader {
+  display: block;
+  text-align: center;
+}
+
+.ajax-loader img {
+  width: 50px;
+  vertical-align: middle;
+}
+
+/* loader ellips in separate pen CSS */
+
 /*# sourceMappingURL=style.css.map */
