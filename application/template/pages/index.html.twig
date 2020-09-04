@@ -1,9 +1,9 @@
 {% extends "./base.html.twig" %}
 {% block title %}listes des annonces{% endblock title %}
 {% block add %}
-<div class="scroller-layout">
+<div id="scroller-layout">
   {% for annonce in listes_annonces %}
-  <div class="container text-light mb-2 scroller-item">
+  <div class="container text-light mb-2 scroller-item" id="{{annonce.ann_id}}">
     <div class="border border-dark bg-dark p-1 d-flex justify-content-between">
       <div class="">
         <h2 class="">{{annonce.ann_titre}}</h2>
@@ -20,7 +20,10 @@
     </div>
 
   </div>
+  
   {% endfor %}
-<a class="pagination__next">Next</a>
+<div id="first-loader" class="ajax-loader text-center m-2" value={{Nbr_annonces}}>
+    <img src="https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif">
+  </div>
 </div>
 {% endblock add %}
