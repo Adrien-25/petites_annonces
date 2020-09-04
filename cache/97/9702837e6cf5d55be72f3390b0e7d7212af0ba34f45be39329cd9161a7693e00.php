@@ -86,15 +86,17 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         <div>
           <a href=\"\" class=\"btn bg-danger\">Détails</a>
           <a href=\"\" class=\"btn bg-danger\">Télécharger PDF</a>
+          <a href=\"\" class=\"btn bg-danger\">Modifier</a>
+          <a href=\"\" class=\"btn bg-danger\">Supprimer</a>
         </div>
       </div>
       <img class=\"fit-picture mw-500 mh-500\" src=\"../public/assets/medias/";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 18), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 20), "html", null, true);
             echo "\"
         alt=\"";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 19), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 21), "html", null, true);
             echo "\">
     </div>
 
@@ -105,7 +107,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 27
         echo "<div id=\"first-loader\" class=\"ajax-loader text-center m-2\" value=";
         echo twig_escape_filter($this->env, ($context["Nbr_annonces"] ?? null), "html", null, true);
         echo ">
@@ -127,7 +129,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
 
     public function getDebugInfo()
     {
-        return array (  109 => 25,  97 => 19,  93 => 18,  84 => 12,  80 => 11,  76 => 10,  72 => 9,  65 => 6,  61 => 5,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  111 => 27,  99 => 21,  95 => 20,  84 => 12,  80 => 11,  76 => 10,  72 => 9,  65 => 6,  61 => 5,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -147,6 +149,8 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         <div>
           <a href=\"\" class=\"btn bg-danger\">Détails</a>
           <a href=\"\" class=\"btn bg-danger\">Télécharger PDF</a>
+          <a href=\"\" class=\"btn bg-danger\">Modifier</a>
+          <a href=\"\" class=\"btn bg-danger\">Supprimer</a>
         </div>
       </div>
       <img class=\"fit-picture mw-500 mh-500\" src=\"../public/assets/medias/{{annonce.ann_image_url}}\"

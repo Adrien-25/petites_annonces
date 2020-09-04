@@ -40,12 +40,11 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         // line 1
         echo "<!DOCTYPE html>
 <html lang=\"fr\">
-
 <head>
     ";
-        // line 5
+        // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 22
+        // line 25
         echo "</head>
 
 <body>
@@ -53,7 +52,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         <!--Barre de navigation-->
         <nav class=\"navbar navbar-dark bg-dark justify-content-between mb-5\">
             <div class=\"container\">
-                <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
+                <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
                 <div class=\"d-flex\">
                     <!-- Formulaire de recherche -->
                     <form class=\"form-inline mr-4\">
@@ -78,27 +77,27 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
             </div>
         </nav>
         ";
-        // line 53
-        $this->displayBlock('add', $context, $blocks);
         // line 56
+        $this->displayBlock('add', $context, $blocks);
+        // line 59
         echo "    </main>
     <footer>
     </footer>
     ";
-        // line 59
+        // line 62
         $this->displayBlock('javascript', $context, $blocks);
-        // line 71
+        // line 76
         echo "
 </body>
 
 </html>";
     }
 
-    // line 5
+    // line 4
     public function block_head($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 6
+        // line 5
         echo "    <meta charset=\"UTF-8\">
     <!--Faire savoir au navigateur que le site Web est optimisé pour les mobiles-->
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
@@ -106,16 +105,20 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
     <!--Lien page de style-->
     <link href=\"css/style.css\" rel=\"stylesheet\">
+    <link href=\"dropzone-5.7.0\\dist\\basic.css\" rel=\"stylesheet\">
+    <link href=\"dropzone-5.7.0\\dist\\dropzone.css\" rel=\"stylesheet\">
+    
     <!--Lien CDN CSS Bootstrap-->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\"
         integrity=\"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS\" crossorigin=\"anonymous\">
     ";
-        // line 17
+        // line 19
         echo "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
-
+    <!--Lien dropzone-->
+    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>dropzone-5.7.0\\dist\\dropzone.js
     <!--Titre-->
     <title>";
-        // line 20
+        // line 23
         $this->displayBlock('title', $context, $blocks);
         echo " </title>
     ";
@@ -127,22 +130,24 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         echo "Base Twig";
     }
 
-    // line 53
+    // line 56
     public function block_add($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 54
+        // line 57
         echo "
         ";
     }
 
-    // line 59
+    // line 62
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 60
+        // line 63
         echo "    <!--Js-->
-    <script src=\"../public/js/app.js\"></script>
+    <script src=\"../public/js/infiniteScroll.js\"></script>
+    <script src=\"../public/js/dragAndDrop.js\"></script>
+    <script src=\"../public/js/formValidation.js\"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"
         integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\">
@@ -161,14 +166,13 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
     public function getDebugInfo()
     {
-        return array (  144 => 60,  140 => 59,  135 => 54,  131 => 53,  119 => 20,  114 => 17,  102 => 6,  98 => 5,  91 => 71,  89 => 59,  84 => 56,  82 => 53,  49 => 22,  47 => 5,  41 => 1,);
+        return array (  147 => 63,  143 => 62,  138 => 57,  134 => 56,  122 => 23,  116 => 19,  101 => 5,  97 => 4,  90 => 76,  88 => 62,  83 => 59,  81 => 56,  48 => 25,  46 => 4,  41 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
 <html lang=\"fr\">
-
 <head>
     {% block head %}
     <meta charset=\"UTF-8\">
@@ -178,12 +182,16 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
     <!--Lien page de style-->
     <link href=\"css/style.css\" rel=\"stylesheet\">
+    <link href=\"dropzone-5.7.0\\dist\\basic.css\" rel=\"stylesheet\">
+    <link href=\"dropzone-5.7.0\\dist\\dropzone.css\" rel=\"stylesheet\">
+    
     <!--Lien CDN CSS Bootstrap-->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\"
         integrity=\"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS\" crossorigin=\"anonymous\">
     {# CDN jQuery #}
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
-
+    <!--Lien dropzone-->
+    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>dropzone-5.7.0\\dist\\dropzone.js
     <!--Titre-->
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
@@ -194,7 +202,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         <!--Barre de navigation-->
         <nav class=\"navbar navbar-dark bg-dark justify-content-between mb-5\">
             <div class=\"container\">
-                <a class=\"navbar-brand\" href=\"#\">LamaShop</a>
+                <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
                 <div class=\"d-flex\">
                     <!-- Formulaire de recherche -->
                     <form class=\"form-inline mr-4\">
@@ -226,7 +234,9 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     </footer>
     {% block javascript %}
     <!--Js-->
-    <script src=\"../public/js/app.js\"></script>
+    <script src=\"../public/js/infiniteScroll.js\"></script>
+    <script src=\"../public/js/dragAndDrop.js\"></script>
+    <script src=\"../public/js/formValidation.js\"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"
         integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\">
