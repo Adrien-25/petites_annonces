@@ -37,7 +37,7 @@ $router->map('GET', '/getLastArticle/[i:offset]', function($offset){
 
 $router->map('GET', '/poster', function(){
     // dans le cas ou on est dans la page de contact
- $posts = \App\Poster::faitlePoste();
+    $posts = \App\Poster::faitlePoste();
 
     $charge1Twig = new \App\Twig('pages/poster.html.twig');
     $charge1Twig->render([]);
