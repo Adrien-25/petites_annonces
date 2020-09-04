@@ -58,6 +58,10 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
         echo "<div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
+                  ";
+        // line 7
+        echo twig_var_dump($this->env, $context, ...[0 => ($context["nouvelinsertion"] ?? null)]);
+        echo "
 
                   <center>
                         <h3>Formulaire de publication d'annonce</h3>
@@ -98,14 +102,15 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
                                     <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-                                    <select class=\"form-control\" name=\"categorie\" id=\"example4\">
+                                    <input list=\"categories\" id=\"example4\" class=\"form-control\" name=\"categorie\">
+                                    <datalist id=\"categories\"  >
                                           <option value=\"selected\">Faites votre choix</option>
                                           <option value =\"animalerie\">Animalerie</option>
                                           <option value=\"emploi\">Emploi</option>
                                           <option value=\"auto/moto\">Auto/Moto</option>
                                           <option value=\"bricolage\">Bricolage</option>
                                           <option value=\"maison\">Maison</option>
-                                    </select>
+                                    </datalist>
                               </div>
 
                         </div>
@@ -139,7 +144,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 
     public function getDebugInfo()
     {
-        return array (  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  63 => 7,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -150,6 +155,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 <div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
+                  {{ dump(nouvelinsertion) }}
 
                   <center>
                         <h3>Formulaire de publication d'annonce</h3>
@@ -190,14 +196,15 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
                                     <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-                                    <select class=\"form-control\" name=\"categorie\" id=\"example4\">
+                                    <input list=\"categories\" id=\"example4\" class=\"form-control\" name=\"categorie\">
+                                    <datalist id=\"categories\"  >
                                           <option value=\"selected\">Faites votre choix</option>
                                           <option value =\"animalerie\">Animalerie</option>
                                           <option value=\"emploi\">Emploi</option>
                                           <option value=\"auto/moto\">Auto/Moto</option>
                                           <option value=\"bricolage\">Bricolage</option>
                                           <option value=\"maison\">Maison</option>
-                                    </select>
+                                    </datalist>
                               </div>
 
                         </div>

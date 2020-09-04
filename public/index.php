@@ -34,7 +34,7 @@ $router->map('GET', '/poster', function(){
  $posts = \App\Poster::faitlePoste();
 
     $charge1Twig = new \App\Twig('pages/poster.html.twig');
-    $charge1Twig->render([]);
+    $charge1Twig->render(['nouvelinsertion'=>self::$sth]);
   
   
 });
