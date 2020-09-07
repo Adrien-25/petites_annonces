@@ -28,7 +28,13 @@ $router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
 });
 
 
+<<<<<<< HEAD
 $router->map('GET|POST', '/poster', function(){
+=======
+$router->map('GET', '/poster', function(){
+    // dans le cas ou on est dans la page de contact
+    $posts = \App\Poster::faitlePoste();
+>>>>>>> d5fa1441d20953df58eb492393b2e5f828caccc5
 
     
 $ann_prix = "";
