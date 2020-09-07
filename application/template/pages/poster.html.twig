@@ -4,11 +4,14 @@
 <div class="container">
       <div class="row">
             <div class="col-12">
-
                   <center>
                         <h1 class="mb-5">Poster une annonce</h1>
                   </center>
                   <form action="poster" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
+                        <div class="d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0">
+                                    <label for="titre">Titre</label>
+                                    <input type="text" name="titre" class="form-control" required>
+                              </div>
                         <div class="form-row">
                               <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
                                     <label for="Nom">Nom</label>
@@ -54,7 +57,7 @@
                               </div>
 
                         </div>
-                        <div class="dropzone needsclick text-center" id="upload-pic" action="poster">
+                        <div class="dropzone needsclick text-center" id="upload-pic" name="nom_image" action="poster">
                               <div id="icon-delete" class="text-danger d-none">
                                     <i class="material-icons">clear</i>
                               </div>

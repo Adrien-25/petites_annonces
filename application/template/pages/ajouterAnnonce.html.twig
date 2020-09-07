@@ -1,21 +1,35 @@
  {% for annonce in listes_annonces %}
- <div class="container text-light mb-2 scroller-item" id="{{annonce.ann_id}}">
-   <div class="border border-dark bg-dark p-1 d-flex justify-content-between">
-     <div class="">
-       <h2 class="">{{annonce.ann_titre}}</h2>
-       <p class="text-danger ml-2 font-weight-bold">{{annonce.ann_prix}} €</p>
-       <p class="ml-2 font-weight-bold">{{annonce.categorie_id}}</p>
-       <p class="ml-2 font-weight-bold">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
-       <div>
-         <a href="" class="btn bg-danger">Détails</a>
-         <a href="" class="btn bg-danger">Télécharger PDF</a>
-       </div>
-     </div>
-     <img class="fit-picture mw-500 mh-500" src="../public/assets/medias/{{annonce.ann_image_url}}"
-       alt="{{annonce.ann_image_nom}}">
-   </div>
+  <div class="scroller-item d-flex justify-content-between text-dark border border-dark bg-light p-2 mb-2 col-lg-5" id="{{annonce.ann_id}}">
+    <div class="d-flex justify-content-between flex-column">
+        <h2>{{annonce.ann_titre}}</h2>
+        <p class="text-danger ml-2 prix">{{annonce.ann_prix}} €</p>
+        <p class="ml-2 font-italic">{{annonce.cat_libelle}}</p>
+        <p class="ml-2 font-weight-bold">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
+        <div class="d-flex">
+          <a href="annonce/{{annonce.ann_id}}" class="btn bg-danger text-light d-flex justify-content-center">
+            <i class="material-icons mr-2">pageview</i>
+            <span>Détails</span>
+          </a>
+          <a href="" class="btn bg-danger text-light d-flex justify-content-center ml-3">
+            <i class="material-icons mr-2">picture_as_pdf</i>
+            <span>Télécharger</span>
+          </a>
+          {# <a href="modifier.php?{{annonce.ann_id}}" class="btn bg-danger">Modifier</a>
+          <a href="supprimer.php?{{annonce.ann_id}}" class="btn bg-danger">Supprimer</a> #}
+        </div>
+      </div>
+      {% if annonce.ann_image_url %}
+      {% set image = annonce.ann_image_url %}
+      {% else %}
+      {% set image = annonce.cat_libelle %}
+      {% endif %}
+      <div class="d-flex align-items-center justify-content-xl-end p-0 col-xl-6 col-lg-12">
+        <img class="fit-picture mw-500 mh-500 card-img-top" src="../public/assets/medias/{{image}}"
+          alt="{{annonce.ann_image_nom}}">
+      </div>
+    
+  </div>
 
- </div>
 
  {% endfor %}
  <div class="ajax-loader text-center m-2">

@@ -1,6 +1,53 @@
 {% extends "./base.html.twig" %}
+{% block head %}
+   <meta charset="UTF-8">
+    <!--Faire savoir au navigateur que le site Web est optimisé pour les mobiles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Importer la police d'icônes Google-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Lien page de style-->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../dropzone-5.7.0\dist\basic.css" rel="stylesheet">
+    <link href="../dropzone-5.7.0\dist\dropzone.css" rel="stylesheet">
+    
+    <!--Lien CDN CSS Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    {# CDN jQuery #}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Lien dropzone-->
+    <script src="../dropzone-5.7.0\dist\dropzone.js"></script>
+{% endblock head %}
 {% block title %}Détail de l'annonce{% endblock title %}
 {% block add %}
-
-        
+{% set ann_contenu = annonce[0] %}
+{{dump(ann_contenu)}}
+<div>
+    <div>
+        <img class="img_annonce"
+        src="../assets/medias/{{ann_contenu.ann_image_url}}"
+        alt="{{ann_contenu.ann_image_nom}}">
+    </div>
+</div>
+{{ann_contenu.ann_titre}}  
+{{ann_contenu.ann_prix}}  
+{{ann_contenu.ann_description}}  
+{{ann_contenu.ann_date_ecriture}}  
+{{ann_contenu.cat_libelle}}  
+{{ann_contenu.email}} 
+ 
 {% endblock add %}
+{% block javascript %}
+    <!--Js-->
+    <script src="../js/infiniteScroll.js"></script>
+    <script src="../js/dragAndDrop.js"></script>
+    <script src="../js/formValidation.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+
+{% endblock javascript %}
