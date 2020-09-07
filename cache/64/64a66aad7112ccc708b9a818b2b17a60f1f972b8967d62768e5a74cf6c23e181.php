@@ -58,67 +58,47 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
         echo "<div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
-<<<<<<< HEAD
-                 
-
-=======
->>>>>>> front
                   <center>
-                        <h3>Formulaire de publication d'annonce</h3>
+                        <h1 class=\"mb-5\">Poster une annonce</h1>
                   </center>
-<<<<<<< HEAD
-                  <form action=\"/poster\" method=\"POST\">
-=======
                   <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
                         <div class=\"d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0\">
                                     <label for=\"titre\">Titre</label>
                                     <input type=\"text\" name=\"titre\" class=\"form-control\" required>
                               </div>
->>>>>>> front
                         <div class=\"form-row\">
-                             
-                              
-                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"titre\">Titre</label>
-                                    <input type=\"text\" name=\"titre\" class=\"form-control\" id=\"titre\">
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
+                                    <label for=\"Nom\">Nom</label>
+                                    <input type=\"text\" name=\"nom\" class=\"form-control\" required>
                               </div>
+
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"exampleInputPassword1 \">Prenom</label>
-                                    <input type=\"text\" name=\"prenom\" class=\"form-control\" id=\"exampleInputPassword1\">
+                                    <label for=\"Prenom \">Prenom</label>
+                                    <input type=\"text\" name=\"prenom\" class=\"form-control\" required>
                               </div>
 
                         </div>
 
                         <div class=\"form-row\">
 
-                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
-                                    <label for=\"exampleCheck1\">Nom</label>
-                                    <input type=\"text\" name=\"nom\" class=\"form-control\" id=\"exampleCheck1\">
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"Email\">Email</label>
+                                    <input type=\"email\" name=\"email\" class=\"form-control\" required>
                               </div>
                               <div class=\"form-group  col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"exampletel\">Téléphone</label>
-                                    <input type=\"text\" name=\"telephone\" class=\"form-control\" id=\"exampletel\">
+                                    <label for=\"Telephone\">Téléphone</label>
+                                    <input type=\"text\" name=\"telephone\" class=\"form-control\" required>
                               </div>
 
                         </div>
 
                         <div class=\"form-row\">
-                              
+
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"example3\">Prix en euros</label>
-                                    <input type=\"text\" name=\"prix\" class=\"form-control\" id=\"example3\">
+                                    <label for=\"Prix\">Prix (€)</label>
+                                    <input type=\"text\" name=\"prix\" class=\"form-control\" required>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-<<<<<<< HEAD
-                                    <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-                                    
-                                    <select class=\"form-control\"  name=\"categorie\" >
-                                          <option value=\"selected\">Faites votre choix</option>
-                                          <option value =\"2\">Animalerie</option>
-                                          <option value=\"3\">Emploi</option>
-                                          <option value=\"4\">Auto/Moto</option>
-                                         <option value=\"1\">Loisirs</option>
-=======
                                     <label for=\"Categorie\">Catégorie</label>
                                     <select class=\"form-control\" name=\"categorie\" required>
                                           ";
@@ -128,13 +108,10 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                           <option value=\"auto/moto\">Auto/Moto</option>
                                           <option value=\"bricolage\">Bricolage</option>
                                           <option value=\"maison\">Maison</option>
->>>>>>> front
                                     </select>
                               </div>
 
                         </div>
-<<<<<<< HEAD
-=======
                         <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" name=\"nom_image\" action=\"poster\">
                               <div id=\"icon-delete\" class=\"text-danger d-none\">
                                     <i class=\"material-icons\">clear</i>
@@ -144,19 +121,17 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     Déposer votre image ou cliquer dans la zone
                               </div>
                         </div>
->>>>>>> front
                         <div class=\"row\">
-                              <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
-                                    <label for=\"desc\">Veuillez saisir la description de votre annonce</label>
-                                    <textarea name=\"description\" class=\"form-control rounded-0\" id=\"desc\" cols=\"30\" rows=\"10\"></textarea>
+                              <div class=\"form-group col-sm-12 col-md-12 col-lg-12 mt-3\">
+                                    <label for=\"Description\">Description de votre annonce</label>
+                                    <textarea name=\"description\" class=\"form-control rounded-0\" id=\"desc\" cols=\"30\"
+                                          rows=\"3\" required></textarea>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
-                                    <label for=\"exampleInputEmail1\">Email</label>
-                                    <input type=\"email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\"
-                                          aria-describedby=\"emailHelp\">
-                                    </div>
+                                    <button type=\"submit\" value=\"ajouter\"
+                                          class=\"btn bg-danger btn-primary btn-lg btn-block border-0\">Envoyer</button>
                               </div>
-                              <button type=\"submit\" value=\"ajouter\" class=\"btn btn-primary btn-lg btn-block\">Envoyer</button>
+                              
                   </form>
             </div>
       </div>
@@ -178,11 +153,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 
     public function getDebugInfo()
     {
-<<<<<<< HEAD
-        return array (  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
-=======
         return array (  106 => 51,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
->>>>>>> front
     }
 
     public function getSourceContext()
@@ -193,71 +164,59 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 <div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
-<<<<<<< HEAD
-                 
-
-=======
->>>>>>> front
                   <center>
-                        <h3>Formulaire de publication d'annonce</h3>
+                        <h1 class=\"mb-5\">Poster une annonce</h1>
                   </center>
-<<<<<<< HEAD
-                  <form action=\"/poster\" method=\"POST\">
-=======
                   <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
                         <div class=\"d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0\">
                                     <label for=\"titre\">Titre</label>
                                     <input type=\"text\" name=\"titre\" class=\"form-control\" required>
                               </div>
->>>>>>> front
                         <div class=\"form-row\">
-                             
-                              
-                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"titre\">Titre</label>
-                                    <input type=\"text\" name=\"titre\" class=\"form-control\" id=\"titre\">
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
+                                    <label for=\"Nom\">Nom</label>
+                                    <input type=\"text\" name=\"nom\" class=\"form-control\" required>
                               </div>
+
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"exampleInputPassword1 \">Prenom</label>
-                                    <input type=\"text\" name=\"prenom\" class=\"form-control\" id=\"exampleInputPassword1\">
+                                    <label for=\"Prenom \">Prenom</label>
+                                    <input type=\"text\" name=\"prenom\" class=\"form-control\" required>
                               </div>
 
                         </div>
 
                         <div class=\"form-row\">
 
-                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
-                                    <label for=\"exampleCheck1\">Nom</label>
-                                    <input type=\"text\" name=\"nom\" class=\"form-control\" id=\"exampleCheck1\">
+                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                                    <label for=\"Email\">Email</label>
+                                    <input type=\"email\" name=\"email\" class=\"form-control\" required>
                               </div>
                               <div class=\"form-group  col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"exampletel\">Téléphone</label>
-                                    <input type=\"text\" name=\"telephone\" class=\"form-control\" id=\"exampletel\">
+                                    <label for=\"Telephone\">Téléphone</label>
+                                    <input type=\"text\" name=\"telephone\" class=\"form-control\" required>
                               </div>
 
                         </div>
 
                         <div class=\"form-row\">
-                              
+
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"example3\">Prix en euros</label>
-                                    <input type=\"text\" name=\"prix\" class=\"form-control\" id=\"example3\">
+                                    <label for=\"Prix\">Prix (€)</label>
+                                    <input type=\"text\" name=\"prix\" class=\"form-control\" required>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-                                    
-                                    <select class=\"form-control\"  name=\"categorie\" >
-                                          <option value=\"selected\">Faites votre choix</option>
-                                          <option value =\"2\">Animalerie</option>
-                                          <option value=\"3\">Emploi</option>
-                                          <option value=\"4\">Auto/Moto</option>
-                                         <option value=\"1\">Loisirs</option>
+                                    <label for=\"Categorie\">Catégorie</label>
+                                    <select class=\"form-control\" name=\"categorie\" required>
+                                          {# <option value=\"none\">Faites votre choix</option> #}
+                                          <option value=\"animalerie\">Animalerie</option>
+                                          <option value=\"emploi\">Emploi</option>
+                                          <option value=\"auto/moto\">Auto/Moto</option>
+                                          <option value=\"bricolage\">Bricolage</option>
+                                          <option value=\"maison\">Maison</option>
                                     </select>
                               </div>
 
                         </div>
-<<<<<<< HEAD
-=======
                         <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" name=\"nom_image\" action=\"poster\">
                               <div id=\"icon-delete\" class=\"text-danger d-none\">
                                     <i class=\"material-icons\">clear</i>
@@ -267,19 +226,17 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     Déposer votre image ou cliquer dans la zone
                               </div>
                         </div>
->>>>>>> front
                         <div class=\"row\">
-                              <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
-                                    <label for=\"desc\">Veuillez saisir la description de votre annonce</label>
-                                    <textarea name=\"description\" class=\"form-control rounded-0\" id=\"desc\" cols=\"30\" rows=\"10\"></textarea>
+                              <div class=\"form-group col-sm-12 col-md-12 col-lg-12 mt-3\">
+                                    <label for=\"Description\">Description de votre annonce</label>
+                                    <textarea name=\"description\" class=\"form-control rounded-0\" id=\"desc\" cols=\"30\"
+                                          rows=\"3\" required></textarea>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
-                                    <label for=\"exampleInputEmail1\">Email</label>
-                                    <input type=\"email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\"
-                                          aria-describedby=\"emailHelp\">
-                                    </div>
+                                    <button type=\"submit\" value=\"ajouter\"
+                                          class=\"btn bg-danger btn-primary btn-lg btn-block border-0\">Envoyer</button>
                               </div>
-                              <button type=\"submit\" value=\"ajouter\" class=\"btn btn-primary btn-lg btn-block\">Envoyer</button>
+                              
                   </form>
             </div>
       </div>
