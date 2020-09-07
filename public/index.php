@@ -1,5 +1,4 @@
 <?php
-
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
 define('BASE_PATH', '/petites-annonces/public');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
@@ -8,7 +7,6 @@ define('SERVER_URI', $_SERVER['REQUEST_METHOD'].'://'.$_SERVER['SERVER_NAME'].':
 // pour initialiser altorouter
 $router = new AltoRouter();
 $router->setBasePath(BASE_PATH);
-
 
 // print_r(dirname(__FILE__));
 // Renseignement des routes
@@ -23,9 +21,15 @@ $router->map('GET', '/accueil', function(){
     $value = \App\Lister::appelLister();
     $AnnonceLimit = $value['DataLimit'];
     $nbrAnnonce = sizeof($value['DataAll']);
-
     $chargeTwig = new \App\Twig('pages/index.html.twig');
     $chargeTwig->render(['listes_annonces'=> $AnnonceLimit,'Nbr_annonces'=>$nbrAnnonce]);
+});
+
+$router->map('GET', '/annonce/[i:id]', function($id){
+    // dans le cas ou on est dans la page de détail
+    $donnee = \App\Annonce::donneeAnnonce($id);
+    $chargeTwig = new \App\Twig('pages/annonce.html.twig');
+    $chargeTwig->render(['annonce'=>$donnee]);
 });
 $router->map('GET', '/getLastArticle/[i:offset]', function($offset){
     // dans le cas ou on est dans la page de d'accueil

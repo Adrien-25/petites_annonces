@@ -17,15 +17,19 @@
 }
 
 .mw-500 {
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .mh-500 {
-  max-height: 500px;
+  max-height: 400px;
 }
 
 .fs-20 {
   font-size: 20px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .ajax-loader {
@@ -43,7 +47,6 @@
   border-radius: 5px;
   border: 2px dashed #0087f7;
   border-image: none;
-  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -59,6 +62,41 @@
   cursor: pointer;
 }
 
+.prix {
+  font-size: 2rem;
+}
+
+.annonce-info {
+  flex-direction: column;
+}
+
+.icons_annonce {
+  font-size: 35px;
+}
+
+.img_annonce {
+  max-width: 650px;
+  max-height: 650px;
+}
+
+.search-bar {
+  flex-grow: 3;
+}
+
+.search-bar select {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.search-bar button {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .scroller-item {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
 /* loader ellips in separate pen CSS */
 
 /*# sourceMappingURL=style.css.map */
