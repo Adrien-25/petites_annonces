@@ -58,11 +58,14 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
         echo "<div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
-
                   <center>
                         <h1 class=\"mb-5\">Poster une annonce</h1>
                   </center>
                   <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
+                        <div class=\"d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0\">
+                                    <label for=\"titre\">Titre</label>
+                                    <input type=\"text\" name=\"titre\" class=\"form-control\" required>
+                              </div>
                         <div class=\"form-row\">
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
                                     <label for=\"Nom\">Nom</label>
@@ -99,7 +102,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <label for=\"Categorie\">Catégorie</label>
                                     <select class=\"form-control\" name=\"categorie\" required>
                                           ";
-        // line 48
+        // line 51
         echo "                                          <option value=\"animalerie\">Animalerie</option>
                                           <option value=\"emploi\">Emploi</option>
                                           <option value=\"auto/moto\">Auto/Moto</option>
@@ -109,7 +112,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                               </div>
 
                         </div>
-                        <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" action=\"poster\">
+                        <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" name=\"nom_image\" action=\"poster\">
                               <div id=\"icon-delete\" class=\"text-danger d-none\">
                                     <i class=\"material-icons\">clear</i>
                               </div>
@@ -149,7 +152,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 
     public function getDebugInfo()
     {
-        return array (  103 => 48,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  106 => 51,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -160,11 +163,14 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 <div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
-
                   <center>
                         <h1 class=\"mb-5\">Poster une annonce</h1>
                   </center>
                   <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
+                        <div class=\"d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0\">
+                                    <label for=\"titre\">Titre</label>
+                                    <input type=\"text\" name=\"titre\" class=\"form-control\" required>
+                              </div>
                         <div class=\"form-row\">
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
                                     <label for=\"Nom\">Nom</label>
@@ -210,7 +216,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                               </div>
 
                         </div>
-                        <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" action=\"poster\">
+                        <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" name=\"nom_image\" action=\"poster\">
                               <div id=\"icon-delete\" class=\"text-danger d-none\">
                                     <i class=\"material-icons\">clear</i>
                               </div>
