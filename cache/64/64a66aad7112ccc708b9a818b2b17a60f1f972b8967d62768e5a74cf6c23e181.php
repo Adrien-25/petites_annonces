@@ -58,12 +58,23 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
         echo "<div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
+<<<<<<< HEAD
                  
 
+=======
+>>>>>>> front
                   <center>
                         <h3>Formulaire de publication d'annonce</h3>
                   </center>
+<<<<<<< HEAD
                   <form action=\"/poster\" method=\"POST\">
+=======
+                  <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
+                        <div class=\"d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0\">
+                                    <label for=\"titre\">Titre</label>
+                                    <input type=\"text\" name=\"titre\" class=\"form-control\" required>
+                              </div>
+>>>>>>> front
                         <div class=\"form-row\">
                              
                               
@@ -98,6 +109,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <input type=\"text\" name=\"prix\" class=\"form-control\" id=\"example3\">
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+<<<<<<< HEAD
                                     <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
                                     
                                     <select class=\"form-control\"  name=\"categorie\" >
@@ -106,10 +118,33 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                           <option value=\"3\">Emploi</option>
                                           <option value=\"4\">Auto/Moto</option>
                                          <option value=\"1\">Loisirs</option>
+=======
+                                    <label for=\"Categorie\">Catégorie</label>
+                                    <select class=\"form-control\" name=\"categorie\" required>
+                                          ";
+        // line 51
+        echo "                                          <option value=\"animalerie\">Animalerie</option>
+                                          <option value=\"emploi\">Emploi</option>
+                                          <option value=\"auto/moto\">Auto/Moto</option>
+                                          <option value=\"bricolage\">Bricolage</option>
+                                          <option value=\"maison\">Maison</option>
+>>>>>>> front
                                     </select>
                               </div>
 
                         </div>
+<<<<<<< HEAD
+=======
+                        <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" name=\"nom_image\" action=\"poster\">
+                              <div id=\"icon-delete\" class=\"text-danger d-none\">
+                                    <i class=\"material-icons\">clear</i>
+                              </div>
+                              <div class=\"dz-message needsclick\">
+                                    <i class=\"material-icons display-3 text-danger\">cloud_download</i>
+                                    Déposer votre image ou cliquer dans la zone
+                              </div>
+                        </div>
+>>>>>>> front
                         <div class=\"row\">
                               <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
                                     <label for=\"desc\">Veuillez saisir la description de votre annonce</label>
@@ -143,7 +178,11 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
+=======
+        return array (  106 => 51,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
+>>>>>>> front
     }
 
     public function getSourceContext()
@@ -154,12 +193,23 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 <div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
+<<<<<<< HEAD
                  
 
+=======
+>>>>>>> front
                   <center>
                         <h3>Formulaire de publication d'annonce</h3>
                   </center>
+<<<<<<< HEAD
                   <form action=\"/poster\" method=\"POST\">
+=======
+                  <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
+                        <div class=\"d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0\">
+                                    <label for=\"titre\">Titre</label>
+                                    <input type=\"text\" name=\"titre\" class=\"form-control\" required>
+                              </div>
+>>>>>>> front
                         <div class=\"form-row\">
                              
                               
@@ -206,6 +256,18 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                               </div>
 
                         </div>
+<<<<<<< HEAD
+=======
+                        <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" name=\"nom_image\" action=\"poster\">
+                              <div id=\"icon-delete\" class=\"text-danger d-none\">
+                                    <i class=\"material-icons\">clear</i>
+                              </div>
+                              <div class=\"dz-message needsclick\">
+                                    <i class=\"material-icons display-3 text-danger\">cloud_download</i>
+                                    Déposer votre image ou cliquer dans la zone
+                              </div>
+                        </div>
+>>>>>>> front
                         <div class=\"row\">
                               <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
                                     <label for=\"desc\">Veuillez saisir la description de votre annonce</label>

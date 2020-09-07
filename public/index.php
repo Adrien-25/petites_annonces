@@ -1,5 +1,4 @@
 <?php
-
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
 define('BASE_PATH', '');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
@@ -10,33 +9,39 @@ $router = new AltoRouter();
 $router->setBasePath(BASE_PATH);
 
 
+// print_r(dirname(__FILE__));
+// Renseignement des routes
+// on précise la méthode ici 'get' ensuite la route à matché '/' et la cible ça peut être n'importe quoi par exemple une fonction
+// $router->map('GET', '/', function(){
+//     // dans le cas ou on est dans la page d'accueil
+//     echo 'salut';
+// });
 
 $router->map('GET', '/accueil', function(){
     // dans le cas ou on est dans la page de contact
     $value = \App\Lister::appelLister();
     $AnnonceLimit = $value['DataLimit'];
     $nbrAnnonce = sizeof($value['DataAll']);
-
     $chargeTwig = new \App\Twig('pages/index.html.twig');
     $chargeTwig->render(['listes_annonces'=> $AnnonceLimit,'Nbr_annonces'=>$nbrAnnonce]);
 });
 
+
+$router->map('GET', '/annonce/[i:id]', function($id){
+    // dans le cas ou on est dans la page de détail
+    $donnee = \App\Annonce::donneeAnnonce($id);
+    $chargeTwig = new \App\Twig('pages/annonce.html.twig');
+    $chargeTwig->render(['annonce'=>$donnee]);
+});
 $router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
+    // dans le cas ou on est dans la page de d'accueil
     $ajout = \App\Lister::ajouterAnnonces($offset);
     $chargeTwig = new \App\Twig('pages/ajouterAnnonce.html.twig');
     $chargeTwig->render(['listes_annonces'=> $ajout]);
 });
 
-
-<<<<<<< HEAD
 $router->map('GET|POST', '/poster', function(){
-=======
-$router->map('GET', '/poster', function(){
-    // dans le cas ou on est dans la page de contact
-    $posts = \App\Poster::faitlePoste();
->>>>>>> d5fa1441d20953df58eb492393b2e5f828caccc5
-
-    
+   
 $ann_prix = "";
 $ann_description= "";
 $ann_titre = "";
@@ -48,7 +53,6 @@ $categorie_id = "selected";
 $error = false;
 
 if(!empty($_POST)){
-
     $ann_prix = trim($_POST['prix']);
     $ann_titre = trim($_POST['titre']);
     $usr_prenom = trim($_POST['prenom']);
@@ -58,21 +62,16 @@ if(!empty($_POST)){
     $usr_telephone = trim($_POST['telephone']);
     $categorie_id = trim($_POST['categorie']);
 
-
-   
-
     if (strlen($ann_prix === 0)){
-    
-         $error = true;
-        
+        $error = true;   
     }
  
     if (strlen($ann_titre === 0)){
-         $error = true;
+        $error = true;
     }
    
     if(strlen($usr_prenom=== 0)){
-         $error = true;
+        $error = true;
     }
     if(strlen($usr_nom === 0)){
         $error = true;

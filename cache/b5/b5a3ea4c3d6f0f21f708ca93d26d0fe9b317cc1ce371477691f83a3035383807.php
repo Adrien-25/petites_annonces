@@ -50,30 +50,30 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 <body>
     <main>
         <!--Barre de navigation-->
-        <nav class=\"navbar navbar-dark bg-dark justify-content-between mb-5\">
-            <div class=\"container\">
+        <nav class=\"navbar navbar-dark bg-dark mb-5\">
+            <div class=\"row col-12 justify-content-between\">
                 <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
-                <div class=\"d-flex\">
-                    <!-- Formulaire de recherche -->
-                    <form class=\"form-inline mr-4\">
-                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\"
-                            id=\"SearchForm\">
-                            <option selected>Catégories</option>
-                            <option value=\"Immobilier\">Immobilier</option>
-                        </select>
-                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\"
-                            aria-label=\"Search\">
-                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i
-                                class=\"material-icons text-light\">search</i></button>
-                    </form>
-                    <!-- Lien vers page poster -->
-                    <a href=\"poster\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
-                        <span class=\"d-flex mr-2\">
-                            <i class=\"material-icons\">add_circle_outline</i>
-                        </span>
-                        <span class=\"font-weight-bold\">Poster une annonce</span>
-                    </a>
-                </div>
+                
+                <!-- Formulaire de recherche -->
+                <form class=\"search-bar form-inline justify-content-center mr-4\">
+                    <select class=\"custom-select bg-danger text-light border-0 font-weight-bold cursor-pointer\"
+                        id=\"SearchForm\">
+                        <option selected>Catégories</option>
+                        <option value=\"Immobilier\">Immobilier</option>
+                    </select>
+                    <input class=\"form-control rounded-0 border-0 col-lg-8\" type=\"search\" placeholder=\"Une petite envie ?\"
+                        aria-label=\"Search\">
+                    <button class=\"btn d-flex jusify-content-center bg-danger\" type=\"submit\"><i
+                            class=\"material-icons text-light\">search</i></button>
+                </form>
+                <!-- Lien vers page poster -->
+                <a href=\"poster\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
+                    <span class=\"d-flex mr-2\">
+                        <i class=\"material-icons\">add_circle_outline</i>
+                    </span>
+                    <span class=\"font-weight-bold\">Poster une annonce</span>
+                </a>
+                
             </div>
         </nav>
         ";
@@ -115,7 +115,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         // line 19
         echo "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
     <!--Lien dropzone-->
-    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>dropzone-5.7.0\\dist\\dropzone.js
+    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>
     <!--Titre-->
     <title>";
         // line 23
@@ -191,7 +191,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     {# CDN jQuery #}
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
     <!--Lien dropzone-->
-    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>dropzone-5.7.0\\dist\\dropzone.js
+    <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>
     <!--Titre-->
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
@@ -200,30 +200,30 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 <body>
     <main>
         <!--Barre de navigation-->
-        <nav class=\"navbar navbar-dark bg-dark justify-content-between mb-5\">
-            <div class=\"container\">
+        <nav class=\"navbar navbar-dark bg-dark mb-5\">
+            <div class=\"row col-12 justify-content-between\">
                 <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
-                <div class=\"d-flex\">
-                    <!-- Formulaire de recherche -->
-                    <form class=\"form-inline mr-4\">
-                        <select class=\"custom-select rounded-0 bg-danger text-light border-0 font-weight-bold\"
-                            id=\"SearchForm\">
-                            <option selected>Catégories</option>
-                            <option value=\"Immobilier\">Immobilier</option>
-                        </select>
-                        <input class=\"form-control rounded-0 border-0\" type=\"search\" placeholder=\"Une petite envie ?\"
-                            aria-label=\"Search\">
-                        <button class=\"btn rounded-0 rounded-right d-flex bg-danger\" type=\"submit\"><i
-                                class=\"material-icons text-light\">search</i></button>
-                    </form>
-                    <!-- Lien vers page poster -->
-                    <a href=\"poster\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
-                        <span class=\"d-flex mr-2\">
-                            <i class=\"material-icons\">add_circle_outline</i>
-                        </span>
-                        <span class=\"font-weight-bold\">Poster une annonce</span>
-                    </a>
-                </div>
+                
+                <!-- Formulaire de recherche -->
+                <form class=\"search-bar form-inline justify-content-center mr-4\">
+                    <select class=\"custom-select bg-danger text-light border-0 font-weight-bold cursor-pointer\"
+                        id=\"SearchForm\">
+                        <option selected>Catégories</option>
+                        <option value=\"Immobilier\">Immobilier</option>
+                    </select>
+                    <input class=\"form-control rounded-0 border-0 col-lg-8\" type=\"search\" placeholder=\"Une petite envie ?\"
+                        aria-label=\"Search\">
+                    <button class=\"btn d-flex jusify-content-center bg-danger\" type=\"submit\"><i
+                            class=\"material-icons text-light\">search</i></button>
+                </form>
+                <!-- Lien vers page poster -->
+                <a href=\"poster\" class=\"btn btn-danger d-flex p-2\" type=\"button\">
+                    <span class=\"d-flex mr-2\">
+                        <i class=\"material-icons\">add_circle_outline</i>
+                    </span>
+                    <span class=\"font-weight-bold\">Poster une annonce</span>
+                </a>
+                
             </div>
         </nav>
         {% block add %}
