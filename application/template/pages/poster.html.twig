@@ -4,18 +4,18 @@
 <div class="container">
       <div class="row">
             <div class="col-12">
-                  {{ dump(nouvelinsertion) }}
+                 
 
                   <center>
                         <h3>Formulaire de publication d'annonce</h3>
                   </center>
-                  <form action="../../class/Poster.php" method="POST">
+                  <form action="/poster" method="POST">
                         <div class="form-row">
+                             
                               
                               <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                                    <label for="exampleInputEmail1">Email</label>
-                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                                          aria-describedby="emailHelp">
+                                    <label for="titre">Titre</label>
+                                    <input type="text" name="titre" class="form-control" id="titre">
                               </div>
                               <div class="form-group col-sm-12 col-md-6 col-lg-6">
                                     <label for="exampleInputPassword1 ">Prenom</label>
@@ -45,15 +45,14 @@
                               </div>
                               <div class="form-group col-sm-12 col-md-6 col-lg-6">
                                     <label for="example4">Quelle catégorie fait partie votre annonce.</label>
-                                    <input list="categories" id="example4" class="form-control" name="categorie">
-                                    <datalist id="categories"  >
+                                    
+                                    <select class="form-control"  name="categorie" >
                                           <option value="selected">Faites votre choix</option>
-                                          <option value ="animalerie">Animalerie</option>
-                                          <option value="emploi">Emploi</option>
-                                          <option value="auto/moto">Auto/Moto</option>
-                                          <option value="bricolage">Bricolage</option>
-                                          <option value="maison">Maison</option>
-                                    </datalist>
+                                          <option value ="2">Animalerie</option>
+                                          <option value="3">Emploi</option>
+                                          <option value="4">Auto/Moto</option>
+                                         <option value="1">Loisirs</option>
+                                    </select>
                               </div>
 
                         </div>
@@ -63,13 +62,16 @@
                                     <textarea name="description" class="form-control rounded-0" id="desc" cols="30" rows="10"></textarea>
                               </div>
                               <div class="form-group col-sm-12 col-md-12 col-lg-12">
-
-                                    <button type="submit" value="ajouter" class="btn btn-primary btn-lg btn-block">Envoyer</button>
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                          aria-describedby="emailHelp">
+                                    </div>
                               </div>
-                        </div>
+                              <button type="submit" value="ajouter" class="btn btn-primary btn-lg btn-block">Envoyer</button>
                   </form>
             </div>
-
       </div>
+                                    
 </div>
+
 {% endblock add %}

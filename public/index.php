@@ -1,7 +1,7 @@
 <?php
 
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
-define('BASE_PATH', '/petites-annonces/public');
+define('BASE_PATH', '');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
 define('SERVER_URI', $_SERVER['REQUEST_METHOD'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['REMOTE_PORT'].BASE_PATH);
 
@@ -10,13 +10,6 @@ $router = new AltoRouter();
 $router->setBasePath(BASE_PATH);
 
 
-// print_r(dirname(__FILE__));
-// Renseignement des routes
-// on précise la méthode ici 'get' ensuite la route à matché '/' et la cible ça peut être n'importe quoi par exemple une fonction
-// $router->map('GET', '/', function(){
-//     // dans le cas ou on est dans la page d'accueil
-//     echo 'salut';
-// });
 
 $router->map('GET', '/accueil', function(){
     // dans le cas ou on est dans la page de contact
@@ -27,43 +20,98 @@ $router->map('GET', '/accueil', function(){
     $chargeTwig = new \App\Twig('pages/index.html.twig');
     $chargeTwig->render(['listes_annonces'=> $AnnonceLimit,'Nbr_annonces'=>$nbrAnnonce]);
 });
-$router->map('GET', '/getLastArticle/[i:offset]', function($offset){
-    // dans le cas ou on est dans la page de d'accueil
+
+$router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
     $ajout = \App\Lister::ajouterAnnonces($offset);
     $chargeTwig = new \App\Twig('pages/ajouterAnnonce.html.twig');
     $chargeTwig->render(['listes_annonces'=> $ajout]);
 });
 
 
-$router->map('GET', '/poster', function(){
-    // dans le cas ou on est dans la page de contact
-//  $posts = \App\Poster::faitlePoste();
+$router->map('GET|POST', '/poster', function(){
 
-//     $charge1Twig = new \App\Twig('pages/poster.html.twig');
-//     $charge1Twig->render(['nouvelinsertion'=>$posts]);
-//     var_dump($posts);
-  
-  
-});
     
-$match = $router->match();
-    // call closure or throw 404 status
-if( is_array($match) && is_callable( $match['target'] ) ) {
-	call_user_func_array( $match['target'], $match['params'] ); 
-} else {
-	// no route was matched
-	header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
-}
+$ann_prix = "";
+$ann_description= "";
+$ann_titre = "";
+$usr_prenom = "";
+$usr_nom = "";
+$usr_telephone = "";
+$usr_email = "";
+$categorie_id = "selected";
+$error = false;
 
+if(!empty($_POST)){
+
+    $ann_prix = trim($_POST['prix']);
+    $ann_titre = trim($_POST['titre']);
+    $usr_prenom = trim($_POST['prenom']);
+    $usr_nom= trim($_POST['nom']);
+    $usr_email= trim($_POST['email']);
+    $ann_description = trim($_POST['description']);
+    $usr_telephone = trim($_POST['telephone']);
+    $categorie_id = trim($_POST['categorie']);
 
 
    
 
-
-
-
+    if (strlen($ann_prix === 0)){
     
+         $error = true;
+        
+    }
+ 
+    if (strlen($ann_titre === 0)){
+         $error = true;
+    }
+   
+    if(strlen($usr_prenom=== 0)){
+         $error = true;
+    }
+    if(strlen($usr_nom === 0)){
+        $error = true;
+    }
+    if(strlen($usr_telephone === 0)){
+        $error = true;
+    }
+    if(strlen($usr_email === 0)){
+        $error = true;
+    }
+    if(strlen($categorie_id === 0)){
+       $error = true;
+    }
+    if(strlen($ann_description === 0)){
+        $error = true;
     
+    }
+    if($error === false){
+        echo "Je suis la page message d'erreur!";
+        $posts = new\App\Poster();
+        $posts->addPosts($ann_prix, $ann_description, $ann_titre, $categorie_id);
+        $charge1Twig = new \App\Twig('pages/showmsgaddannonce.html.twig');
+        $charge1Twig->render([]);
+        return true;
+    }
+    
+}
+$categorie = new \App\Categorie();
+$categories=$categorie->selectionCategorie();
+
+$charge1Twig = new \App\Twig('pages/poster.html.twig');
+$charge1Twig->render(['categories'=>$categories, 'email' => $usr_email, 'prenom'=>$usr_prenom, 'nom'=>$usr_nom, 'titre'=>$ann_titre, 'telephone'=>$usr_telephone, 'description'=>$ann_description, 'categorie'=>$categorie_id, 'prix'=>$ann_prix ]);
+    
+        
 
 
+});
+   
+$match = $router->match();
+   
+// fermeture d'appel ou lance le status 404
+if( is_array($match) && is_callable( $match['target'] ) ) {
+	call_user_func_array( $match['target'], $match['params'] );
+} else {
+	// Aucune route ne correspond
+	header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+}
 ?>

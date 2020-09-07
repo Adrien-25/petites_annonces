@@ -1,0 +1,42 @@
+.bg-1 {
+  background-color: #084BB8 !important;
+  color: white !important;
+}
+
+.bg-2 {
+  background-color: #b87508 !important;
+  color: white !important;
+}
+
+.border-1 {
+  border-color: #084BB8 !important;
+}
+
+.border-2 {
+  border-color: #b87508 !important;
+}
+
+.mw-500 {
+  max-width: 500px;
+}
+
+.mh-500 {
+  max-height: 500px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.ajax-loader {
+  display: block;
+  text-align: center;
+}
+
+.ajax-loader img {
+  width: 50px;
+  vertical-align: middle;
+}
+
+/* loader ellips in separate pen CSS */
+/*# sourceMappingURL=app.css.map */
