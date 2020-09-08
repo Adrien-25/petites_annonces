@@ -30,6 +30,9 @@ $secondary-color: #b87508;
 .scroller-item{
     transition: all 1s ease-in;
 }
+.overflow-wrap-break{
+    overflow-wrap: break-word;
+}
 
 
 .ajax-loader {
@@ -68,8 +71,8 @@ $secondary-color: #b87508;
     font-size: 35px;
 }
 .img_annonce{
-    max-width: 650px;
-    max-height: 650px;
+    max-width: 100%;
+    // max-height: 650px;
 }
 .search-bar{
     flex-grow: 3;
