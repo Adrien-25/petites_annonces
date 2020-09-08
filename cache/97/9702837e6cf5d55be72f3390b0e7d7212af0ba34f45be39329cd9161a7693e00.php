@@ -62,10 +62,10 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         $context['_seq'] = twig_ensure_traversable(($context["listes_annonces"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["annonce"]) {
             // line 6
-            echo "  <div class=\"scroller-item d-flex justify-content-between text-dark border border-dark bg-light p-2 mb-2 col-lg-5\" id=\"";
+            echo "  <div class=\"scroller-item d-flex justify-content-between text-dark border border-dark flex-xl-row flex-column-reverse bg-light p-2 mb-5 col-lg-5 col-sm-5 col-10\" id=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_id", [], "any", false, false, false, 6), "html", null, true);
             echo "\">
-    <div class=\"d-flex justify-content-between flex-column\">
+    <div class=\"annonce-text d-flex justify-content-between flex-column text-center text-xl-left\">
         <h2>";
             // line 8
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_titre", [], "any", false, false, false, 8), "html", null, true);
@@ -82,7 +82,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
             // line 11
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_date_ecriture", [], "any", false, false, false, 11), "j m Y"), "html", null, true);
             echo "</p>
-        <div class=\"d-flex\">
+        <div class=\"d-flex justify-content-center btn-annonce\">
           <a href=\"annonce/";
             // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_id", [], "any", false, false, false, 13), "html", null, true);
@@ -114,8 +114,8 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
                 echo "      ";
             }
             // line 30
-            echo "      <div class=\"d-flex align-items-center justify-content-xl-end p-0 col-xl-6 col-lg-12\">
-        <img class=\"fit-picture mw-500 mh-500 card-img-top\" src=\"../public/assets/medias/";
+            echo "      <div class=\"d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2\">
+        <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/medias/";
             // line 31
             echo twig_escape_filter($this->env, ($context["image"] ?? null), "html", null, true);
             echo "\"
@@ -133,7 +133,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 38
-        echo "  <div id=\"first-loader\" class=\"ajax-loader text-center m-2\" value=";
+        echo "  <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5 d-none\" value=";
         echo twig_escape_filter($this->env, ($context["Nbr_annonces"] ?? null), "html", null, true);
         echo ">
     <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
@@ -164,13 +164,13 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
 {% block add %}
 <div class=\"px-4 flex-wrap d-flex justify-content-around\" id=\"scroller-layout\">
   {% for annonce in listes_annonces %}
-  <div class=\"scroller-item d-flex justify-content-between text-dark border border-dark bg-light p-2 mb-2 col-lg-5\" id=\"{{annonce.ann_id}}\">
-    <div class=\"d-flex justify-content-between flex-column\">
+  <div class=\"scroller-item d-flex justify-content-between text-dark border border-dark flex-xl-row flex-column-reverse bg-light p-2 mb-5 col-lg-5 col-sm-5 col-10\" id=\"{{annonce.ann_id}}\">
+    <div class=\"annonce-text d-flex justify-content-between flex-column text-center text-xl-left\">
         <h2>{{annonce.ann_titre}}</h2>
         <p class=\"text-danger ml-2 prix\">{{annonce.ann_prix}} €</p>
         <p class=\"ml-2 font-italic\">{{annonce.cat_libelle}}</p>
         <p class=\"ml-2 font-weight-bold\">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
-        <div class=\"d-flex\">
+        <div class=\"d-flex justify-content-center btn-annonce\">
           <a href=\"annonce/{{annonce.ann_id}}\" class=\"btn bg-danger text-light d-flex justify-content-center\">
             <i class=\"material-icons mr-2\">pageview</i>
             <span>Détails</span>
@@ -188,15 +188,15 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
       {% else %}
       {% set image = annonce.cat_libelle %}
       {% endif %}
-      <div class=\"d-flex align-items-center justify-content-xl-end p-0 col-xl-6 col-lg-12\">
-        <img class=\"fit-picture mw-500 mh-500 card-img-top\" src=\"../public/assets/medias/{{image}}\"
+      <div class=\"d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2\">
+        <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/medias/{{image}}\"
           alt=\"{{annonce.ann_image_nom}}\">
       </div>
     
   </div>
 
   {% endfor %}
-  <div id=\"first-loader\" class=\"ajax-loader text-center m-2\" value={{Nbr_annonces}}>
+  <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5 d-none\" value={{Nbr_annonces}}>
     <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
   </div>
 </div>
