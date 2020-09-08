@@ -1,11 +1,11 @@
  {% for annonce in listes_annonces %}
-  <div class="scroller-item d-flex justify-content-between text-dark border border-dark bg-light p-2 mb-2 col-lg-5" id="{{annonce.ann_id}}">
-    <div class="d-flex justify-content-between flex-column">
+  <div class="scroller-item d-flex justify-content-between text-dark border border-dark flex-xl-row flex-column-reverse bg-light p-2 mb-5 col-lg-5 col-sm-5 col-10" id="{{annonce.ann_id}}">
+    <div class="annonce-text d-flex justify-content-between flex-column text-center text-xl-left">
         <h2>{{annonce.ann_titre}}</h2>
         <p class="text-danger ml-2 prix">{{annonce.ann_prix}} €</p>
         <p class="ml-2 font-italic">{{annonce.cat_libelle}}</p>
         <p class="ml-2 font-weight-bold">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
-        <div class="d-flex">
+        <div class="d-flex justify-content-center btn-annonce">
           <a href="annonce/{{annonce.ann_id}}" class="btn bg-danger text-light d-flex justify-content-center">
             <i class="material-icons mr-2">pageview</i>
             <span>Détails</span>
@@ -23,8 +23,8 @@
       {% else %}
       {% set image = annonce.cat_libelle %}
       {% endif %}
-      <div class="d-flex align-items-center justify-content-xl-end p-0 col-xl-6 col-lg-12">
-        <img class="fit-picture mw-500 mh-500 card-img-top" src="../public/assets/medias/{{image}}"
+      <div class="d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2">
+        <img class="fit-picture mw-500 mh-500 img-fluid" src="../public/assets/medias/{{image}}"
           alt="{{annonce.ann_image_nom}}">
       </div>
     
@@ -32,10 +32,10 @@
 
 
  {% endfor %}
- <div class="ajax-loader text-center m-2">
+ <div class="ajax-loader text-center m-2 col-12">
    <img src="https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif">
  </div>
- <div id="fin-annonce" class="ajax-loader text-center d-none m-3">
+ <div id="fin-annonce" class="ajax-loader text-center d-none col-12 m-3">
    Fin des annonces
  </div>
  </div>
