@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+
 class Lister
 {
     public static function appelLister(){

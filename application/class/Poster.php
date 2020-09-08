@@ -43,7 +43,7 @@ class Poster
      $this->dbh->param(':ann_date_ecriture',date('Y-m-d'), PDO::PARAM_STR);
      $this->dbh->param(':ann_image_url', 'http://google.fr', PDO::PARAM_STR);
      $this->dbh->param(':ann_image_nom', 'lol.jpeg', PDO::PARAM_STR);
-
+     
      $this->dbh->execReq();
        
           return true;
