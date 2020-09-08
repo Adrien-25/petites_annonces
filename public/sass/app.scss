@@ -16,14 +16,21 @@ $secondary-color: #b87508;
     border-color: $secondary-color!important;
 }
 .mw-500{
-    max-width: 500px;
+    max-width: 400px;
 }
 .mh-500{
-    max-height: 500px;
+    max-height: 400px;
 }
 .fs-20{
     font-size:20px; 
 }
+.cursor-pointer{
+    cursor: pointer;
+}
+.scroller-item{
+    transition: all 1s ease-in;
+}
+
 
 .ajax-loader {
     display: block;
@@ -38,7 +45,6 @@ $secondary-color: #b87508;
     border-radius: 5px;
     border: 2px dashed rgb(0, 135, 247);
     border-image: none;
-    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -50,5 +56,53 @@ $secondary-color: #b87508;
 #icon-delete i{
     font-size: 3rem;
     cursor: pointer;
+}
+.prix{
+    font-size: 2rem;
+}
+.annonce-info{
+    flex-direction: column;
+    
+}
+.icons_annonce{
+    font-size: 35px;
+}
+.img_annonce{
+    max-width: 650px;
+    max-height: 650px;
+}
+.search-bar{
+    flex-grow: 3;
+}
+.search-bar select{
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+.search-bar button{
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+@media (min-width: 992px) and (max-width: 1200px){
+    .scroller-item {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+@media (min-width: 570px) and (max-width: 720px){
+    .btn-annonce {
+        flex-direction: column;
+    }
+    .btn-annonce a:first-child{
+        margin-bottom:0.5rem !important;
+    }
+    .btn-annonce a:last-child{
+        margin:0 !important;
+    }
+    // .annonce-text > *{
+    //     margin: 0;
+    // }
+}
+@media (max-width: 800px){
+    .search-bar{
+        display: none!important;
+    }
 }
 /* loader ellips in separate pen CSS */

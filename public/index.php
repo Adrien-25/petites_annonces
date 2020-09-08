@@ -1,5 +1,4 @@
 <?php
-
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
 define('BASE_PATH', '');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
@@ -8,19 +7,23 @@ define('SERVER_URI', $_SERVER['REQUEST_METHOD'].'://'.$_SERVER['SERVER_NAME'].':
 // pour initialiser altorouter
 $router = new AltoRouter();
 $router->setBasePath(BASE_PATH);
-
-
-
 $router->map('GET', '/accueil', function(){
     $value = \App\Lister::appelLister();
     $AnnonceLimit = $value['DataLimit'];
     $nbrAnnonce = sizeof($value['DataAll']);
-
     $chargeTwig = new \App\Twig('pages/index.html.twig');
     $chargeTwig->render(['listes_annonces'=> $AnnonceLimit,'Nbr_annonces'=>$nbrAnnonce]);
 });
 
+
+$router->map('GET', '/annonce/[i:id]', function($id){
+    // dans le cas ou on est dans la page de détail
+    $donnee = \App\Annonce::donneeAnnonce($id);
+    $chargeTwig = new \App\Twig('pages/annonce.html.twig');
+    $chargeTwig->render(['annonce'=>$donnee]);
+});
 $router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
+    // dans le cas ou on est dans la page de d'accueil
     $ajout = \App\Lister::ajouterAnnonces($offset);
     $chargeTwig = new \App\Twig('pages/ajouterAnnonce.html.twig');
     $chargeTwig->render(['listes_annonces'=> $ajout]);
@@ -41,7 +44,6 @@ $categorie_id = "selected";
 $error = false;
 
 if(!empty($_POST)){
-
     $ann_prix = trim($_POST['prix']);
     $ann_titre = trim($_POST['titre']);
     $usr_prenom = trim($_POST['prenom']);
@@ -51,21 +53,16 @@ if(!empty($_POST)){
     $usr_telephone = trim($_POST['telephone']);
     $categorie_id = trim($_POST['categorie']);
 
-
-   
-
     if (strlen($ann_prix === 0)){
-    
-         $error = true;
-        
+        $error = true;   
     }
  
     if (strlen($ann_titre === 0)){
-         $error = true;
+        $error = true;
     }
    
     if(strlen($usr_prenom=== 0)){
-         $error = true;
+        $error = true;
     }
     if(strlen($usr_nom === 0)){
         $error = true;

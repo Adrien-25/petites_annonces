@@ -58,18 +58,14 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
         echo "<div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
-                 
-
                   <center>
                         <h1 class=\"mb-5\">Poster une annonce</h1>
                   </center>
-                        <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
-                        <div class=\"form-row\">
-                             
-                              
-                              <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
+                  <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
+                        <div class=\"d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0\">
                                     <label for=\"titre\">Titre</label>
-                                    <input type=\"text\" name=\"titre\" class=\"form-control\" id=\"titre\">
+                                    <input type=\"text\" name=\"titre\" class=\"form-control\" required>
+                              </div>
                         <div class=\"form-row\">
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
                                     <label for=\"Nom\">Nom</label>
@@ -103,19 +99,20 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <input type=\"text\" name=\"prix\" class=\"form-control\" required>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-                                    
-                                    <select class=\"form-control\"  name=\"categorie\" >
-                                          <option value=\"selected\">Faites votre choix</option>
-                                          <option value =\"2\">Animalerie</option>
-                                          <option value=\"3\">Emploi</option>
-                                          <option value=\"4\">Auto/Moto</option>
-                                         <option value=\"1\">Loisirs</option>
+                                    <label for=\"Categorie\">Catégorie</label>
+                                    <select class=\"form-control\" name=\"categorie\" required>
+                                          ";
+        // line 51
+        echo "                                          <option value=\"animalerie\">Animalerie</option>
+                                          <option value=\"emploi\">Emploi</option>
+                                          <option value=\"auto/moto\">Auto/Moto</option>
+                                          <option value=\"bricolage\">Bricolage</option>
+                                          <option value=\"maison\">Maison</option>
                                     </select>
                               </div>
 
                         </div>
-                        <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" action=\"poster\">
+                        <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" name=\"nom_image\" action=\"poster\">
                               <div id=\"icon-delete\" class=\"text-danger d-none\">
                                     <i class=\"material-icons\">clear</i>
                               </div>
@@ -131,12 +128,10 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                           rows=\"3\" required></textarea>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
-                                    <label for=\"exampleInputEmail1\">Email</label>
-                                    <input type=\"email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\"
-                                          aria-describedby=\"emailHelp\">
-                                    </div>
+                                    <button type=\"submit\" value=\"ajouter\"
+                                          class=\"btn bg-danger btn-primary btn-lg btn-block border-0\">Envoyer</button>
                               </div>
-                              <button type=\"submit\" value=\"ajouter\" class=\"btn btn-primary btn-lg btn-block\">Envoyer</button>
+                              
                   </form>
             </div>
       </div>
@@ -158,7 +153,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 
     public function getDebugInfo()
     {
-        return array (  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  106 => 51,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -169,8 +164,6 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 <div class=\"container\">
       <div class=\"row\">
             <div class=\"col-12\">
-                 
-
                   <center>
                         <h1 class=\"mb-5\">Poster une annonce</h1>
                   </center>
@@ -214,19 +207,23 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <input type=\"text\" name=\"prix\" class=\"form-control\" required>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-                                    
-                                    <select class=\"form-control\"  name=\"categorie\" >
-                                          <option value=\"selected\">Faites votre choix</option>
-                                          <option value =\"2\">Animalerie</option>
-                                          <option value=\"3\">Emploi</option>
-                                          <option value=\"4\">Auto/Moto</option>
-                                         <option value=\"1\">Loisirs</option>
+                                    <label for=\"Categorie\">Catégorie</label>
+                                    <select class=\"form-control\" name=\"categorie\" required>
+                                          {# <option value=\"none\">Faites votre choix</option> #}
+                                          <option value=\"animalerie\">Animalerie</option>
+                                          <option value=\"emploi\">Emploi</option>
+                                          <option value=\"auto/moto\">Auto/Moto</option>
+                                          <option value=\"bricolage\">Bricolage</option>
+                                          <option value=\"maison\">Maison</option>
                                     </select>
                               </div>
 
                         </div>
+<<<<<<< HEAD
                         <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" action=\"poster\">
+=======
+                        <div class=\"dropzone needsclick text-center\" id=\"upload-pic\" name=\"nom_image\" action=\"poster\">
+>>>>>>> 5717d9fd5c4c26f9fdcc9792635308c8e8430a91
                               <div id=\"icon-delete\" class=\"text-danger d-none\">
                                     <i class=\"material-icons\">clear</i>
                               </div>
@@ -242,12 +239,10 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                           rows=\"3\" required></textarea>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
-                                    <label for=\"exampleInputEmail1\">Email</label>
-                                    <input type=\"email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\"
-                                          aria-describedby=\"emailHelp\">
-                                    </div>
+                                    <button type=\"submit\" value=\"ajouter\"
+                                          class=\"btn bg-danger btn-primary btn-lg btn-block border-0\">Envoyer</button>
                               </div>
-                              <button type=\"submit\" value=\"ajouter\" class=\"btn btn-primary btn-lg btn-block\">Envoyer</button>
+                              
                   </form>
             </div>
       </div>

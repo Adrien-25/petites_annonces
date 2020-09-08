@@ -8,6 +8,8 @@ function windowOnScroll() {
     $(window).on("scroll", function (e) {
         if ($(window).scrollTop() == $(document).height() - $(window).height()) {
             lastId = $(".scroller-item:last").attr("id");
+            console.log($(".ajax-loader"));
+            $(".ajax-loader")[0].classList.remove('d-none');
             getMoreData(lastId);
         }
     });
@@ -32,7 +34,7 @@ function getMoreData(lastId) {
                     $('.ajax-loader').hide();
                     $("#scroller-layout").append(data);
                     windowOnScroll();
-                }, 1000);
+                }, 2000);
             }
             
         });
