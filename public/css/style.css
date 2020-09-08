@@ -32,6 +32,10 @@
   cursor: pointer;
 }
 
+.scroller-item {
+  transition: all 1s ease-in;
+}
+
 .ajax-loader {
   display: block;
   text-align: center;
@@ -95,6 +99,24 @@
   .scroller-item {
     flex-direction: column-reverse;
     align-items: center;
+  }
+}
+@media (min-width: 570px) and (max-width: 720px) {
+  .btn-annonce {
+    flex-direction: column;
+  }
+
+  .btn-annonce a:first-child {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .btn-annonce a:last-child {
+    margin: 0 !important;
+  }
+}
+@media (max-width: 800px) {
+  .search-bar {
+    display: none !important;
   }
 }
 /* loader ellips in separate pen CSS */
