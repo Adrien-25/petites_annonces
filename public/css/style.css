@@ -36,6 +36,10 @@
   transition: all 1s ease-in;
 }
 
+.overflow-wrap-break {
+  overflow-wrap: break-word;
+}
+
 .ajax-loader {
   display: block;
   text-align: center;
@@ -79,8 +83,7 @@
 }
 
 .img_annonce {
-  max-width: 650px;
-  max-height: 650px;
+  max-width: 100%;
 }
 
 .search-bar {
