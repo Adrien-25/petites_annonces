@@ -50,7 +50,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 <body>
     <main>
         <!--Barre de navigation-->
-        <nav class=\"navbar navbar-dark bg-dark mb-5\">
+        <nav class=\"navbar navbar-dark bg-dark\">
             <div class=\"row col-12 justify-content-between\">
                 <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
                 
@@ -200,7 +200,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 <body>
     <main>
         <!--Barre de navigation-->
-        <nav class=\"navbar navbar-dark bg-dark mb-5\">
+        <nav class=\"navbar navbar-dark bg-dark\">
             <div class=\"row col-12 justify-content-between\">
                 <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
                 
