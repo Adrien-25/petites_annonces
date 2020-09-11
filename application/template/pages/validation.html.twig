@@ -1,0 +1,14 @@
+{% extends "./base.html.twig" %}
+{% block title %}Validation du formulaire{% endblock title %}
+{% block add %}
+{{dump(idunique)}}
+<div class="validation vw-100 d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center flex-column w-50 p-5 bg-dark">
+        <h1 class="text-success mb-5">Votre annonce a été publié avec succès</h1>
+        <div>
+            <a href="./annonce/{{ann_unique_id}}" class="btn text-light bg-danger">Voir votre annonce</a>
+            <a href="./accueil" class="btn text-light text-light bg-danger">Liste des annonces</a>
+        </div>
+    </div>
+</div>
+{% endblock add %}
