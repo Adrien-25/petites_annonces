@@ -2,11 +2,13 @@
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
 define('BASE_PATH', '/petites-annonces/public');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
-define('SERVER_URI', $_SERVER['REQUEST_METHOD'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['REMOTE_PORT'].BASE_PATH);
+define('SERVER_URI', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME']/*.':'.$_SERVER['REMOTE_PORT']*/.BASE_PATH);
 
 // pour initialiser altorouter
 $router = new AltoRouter();
 $router->setBasePath(BASE_PATH);
+
+
 $router->map('GET', '/accueil', function(){
     $value = \App\Lister::appelLister();
     $AnnonceLimit = $value['DataLimit'];
@@ -22,6 +24,8 @@ $router->map('GET', '/annonce/[i:id]', function($id){
     $chargeTwig = new \App\Twig('pages/annonce.html.twig');
     $chargeTwig->render(['annonce'=>$donnee]);
 });
+
+
 $router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
     // dans le cas ou on est dans la page de d'accueil
     $ajout = \App\Lister::ajouterAnnonces($offset);
@@ -80,7 +84,8 @@ if(!empty($_POST)){
     }
     if($error === false){
         echo "Je suis la page message d'erreur!";
-        $posts = new\App\Poster();
+        $posts = new \App\Poster($usr_email, $usr_nom, $usr_prenom, $ann_titre, $ann_prix, $ann_description, $usr_telephone);
+
         $posts->addPosts($ann_prix, $ann_description, $ann_titre, $categorie_id);
         $charge1Twig = new \App\Twig('pages/showmsgaddannonce.html.twig');
         $charge1Twig->render([]);
@@ -93,7 +98,15 @@ $categories=$categorie->selectionCategorie();
 
 $charge1Twig = new \App\Twig('pages/poster.html.twig');
 $charge1Twig->render(['categories'=>$categories, 'email' => $usr_email, 'prenom'=>$usr_prenom, 'nom'=>$usr_nom, 'titre'=>$ann_titre, 'telephone'=>$usr_telephone, 'description'=>$ann_description, 'categorie'=>$categorie_id, 'prix'=>$ann_prix ]);
-    
+});
+
+
+$router->map('GET|POST', '/validation-[*:ann_unique_id]', function($ann_unique_id){
+$validation = new \App\Validation();
+$validation->valider($ann_unique_id);
+$charge2Twig = new \App\Twig('pages/validation.html.twig');
+$charge2Twig->render(['idunique' =>$ann_unique_id]);
+header ('Location: /accueil' );
 });
    
 $match = $router->match();

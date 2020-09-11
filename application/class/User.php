@@ -13,8 +13,7 @@ class User
         $this->db->prepareSql($this->sql);
         $this->db->execReq();
         return $this->db->getOne();
-        var_dump($this->db);
-    }
+        
 }
 
 
