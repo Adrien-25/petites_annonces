@@ -1,7 +1,7 @@
 {% extends "./base.html.twig" %}
 {% block title %}listes des annonces{% endblock title %}
 {% block add %}
-<div class="px-4 flex-wrap d-flex justify-content-around" id="scroller-layout">
+<div class="mt-5 px-4 flex-wrap d-flex justify-content-around" id="scroller-layout">
   {% for annonce in listes_annonces %}
   <div class="scroller-item d-flex justify-content-between text-dark border border-dark flex-xl-row flex-column-reverse bg-light p-2 mb-5 col-lg-5 col-sm-5 col-10" id="{{annonce.ann_id}}">
     <div class="annonce-text d-flex justify-content-between flex-column text-center text-xl-left">
@@ -35,7 +35,7 @@
   </div>
 
   {% endfor %}
-  <div id="first-loader" class="ajax-loader text-center col-12 mb-5 d-none" value={{Nbr_annonces}}>
+  <div id="first-loader" class="ajax-loader text-center col-12 mb-5" value={{Nbr_annonces}}>
     <img src="https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif">
   </div>
 </div>

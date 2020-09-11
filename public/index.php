@@ -1,6 +1,6 @@
 <?php
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
-define('BASE_PATH', '');
+define('BASE_PATH', '/petites-annonces/public');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
 define('SERVER_URI', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME']/*.':'.$_SERVER['REMOTE_PORT']*/.BASE_PATH);
 
@@ -35,7 +35,10 @@ $router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
 
 
 $router->map('GET|POST', '/poster', function(){
+<<<<<<< HEAD
 
+=======
+>>>>>>> front
 $ann_prix = "";
 $ann_description= "";
 $ann_titre = "";
@@ -99,6 +102,7 @@ $categories=$categorie->selectionCategorie();
 
 $charge1Twig = new \App\Twig('pages/poster.html.twig');
 $charge1Twig->render(['categories'=>$categories, 'email' => $usr_email, 'prenom'=>$usr_prenom, 'nom'=>$usr_nom, 'titre'=>$ann_titre, 'telephone'=>$usr_telephone, 'description'=>$ann_description, 'categorie'=>$categorie_id, 'prix'=>$ann_prix ]);
+<<<<<<< HEAD
 });
 
 
@@ -108,6 +112,9 @@ $validation->valider($ann_unique_id);
 $charge2Twig = new \App\Twig('pages/validation.html.twig');
 $charge2Twig->render(['idunique' =>$ann_unique_id]);
 header ('Location: /accueil' );
+=======
+    
+>>>>>>> front
 });
    
 $match = $router->match();

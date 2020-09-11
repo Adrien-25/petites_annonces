@@ -1,15 +1,19 @@
 //INIT INFINITE SCROLL
 
 $(document).ready(function () {
+
     windowOnScroll();
 });
 
 function windowOnScroll() {
     $(window).on("scroll", function (e) {
-        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+        console.log($(window).scrollTop());
+        console.log($(window).height());
+        console.log($(document).height());
+        // if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+        if (($(window).scrollTop() + $(window).height() +5) >= $(document).height()  )  {
+            console.log('BAS PAGE');
             lastId = $(".scroller-item:last").attr("id");
-            console.log($(".ajax-loader"));
-            $(".ajax-loader")[0].classList.remove('d-none');
             getMoreData(lastId);
         }
     });
@@ -34,12 +38,14 @@ function getMoreData(lastId) {
                     $('.ajax-loader').hide();
                     $("#scroller-layout").append(data);
                     windowOnScroll();
-                }, 2000);
+                }, 1000);
             }
-            
+
         });
+        console.log('ANNONCE A CHARGER')
     } else {
         var lastLoader = document.getElementsByClassName('ajax-loader')[1];
+        console.log(lastLoader);
         lastLoader.classList.add('d-none');
         var noMoreLoad = document.getElementById('fin-annonce');
         noMoreLoad.classList.remove('d-none');
