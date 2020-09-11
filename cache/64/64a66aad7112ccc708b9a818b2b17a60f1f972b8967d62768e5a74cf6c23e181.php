@@ -59,13 +59,13 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
       <div class=\"row\">
             <div class=\"col-12\">
                   <center>
-                        <h1 class=\"mb-5\">Poster une annonce</h1>
+                        <h1 class=\"my-3\">Poster une annonce</h1>
                   </center>
                   <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
                         <div class=\"d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0\">
-                                    <label for=\"titre\">Titre</label>
-                                    <input type=\"text\" name=\"titre\" class=\"form-control\" required>
-                              </div>
+                              <label for=\"titre\">Titre</label>
+                              <input type=\"text\" name=\"titre\" class=\"form-control\" required>
+                        </div>
                         <div class=\"form-row\">
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
                                     <label for=\"Nom\">Nom</label>
@@ -100,13 +100,13 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
                                     <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-                                    
-                                    <select class=\"form-control\"  name=\"categorie\" >
+
+                                    <select class=\"form-control\" name=\"categorie\">
                                           <option value=\"selected\">Faites votre choix</option>
-                                          <option value =\"2\">Animalerie</option>
+                                          <option value=\"2\">Animalerie</option>
                                           <option value=\"3\">Emploi</option>
                                           <option value=\"4\">Auto/Moto</option>
-                                         <option value=\"1\">Loisirs</option>
+                                          <option value=\"1\">Loisirs</option>
                                     </select>
                               </div>
 
@@ -126,15 +126,17 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <textarea name=\"description\" class=\"form-control rounded-0\" id=\"desc\" cols=\"30\"
                                           rows=\"3\" required></textarea>
                               </div>
+                              <div id=\"reCaptcha\" class=\"form-group col-sm-12 col-md-12 col-lg-12 mt-3 d-flex justify-content-center g-recaptcha\" data-sitekey=\"6Lem2coZAAAAANrcW6L41VKF1skSH7XmNiSdwgT-\"></div>
+                              <br />
                               <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
                                     <button type=\"submit\" value=\"ajouter\"
                                           class=\"btn bg-danger btn-primary btn-lg btn-block border-0\">Envoyer</button>
                               </div>
-                              
+                        </div>
                   </form>
             </div>
       </div>
-                                    
+
 </div>
 
 ";
@@ -164,13 +166,13 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
       <div class=\"row\">
             <div class=\"col-12\">
                   <center>
-                        <h1 class=\"mb-5\">Poster une annonce</h1>
+                        <h1 class=\"my-3\">Poster une annonce</h1>
                   </center>
                   <form action=\"poster\" method=\"POST\" class=\"needs-validation\" enctype=\"multipart/form-data\" novalidate>
                         <div class=\"d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0\">
-                                    <label for=\"titre\">Titre</label>
-                                    <input type=\"text\" name=\"titre\" class=\"form-control\" required>
-                              </div>
+                              <label for=\"titre\">Titre</label>
+                              <input type=\"text\" name=\"titre\" class=\"form-control\" required>
+                        </div>
                         <div class=\"form-row\">
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6 \">
                                     <label for=\"Nom\">Nom</label>
@@ -205,13 +207,13 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
                                     <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-                                    
-                                    <select class=\"form-control\"  name=\"categorie\" >
+
+                                    <select class=\"form-control\" name=\"categorie\">
                                           <option value=\"selected\">Faites votre choix</option>
-                                          <option value =\"2\">Animalerie</option>
+                                          <option value=\"2\">Animalerie</option>
                                           <option value=\"3\">Emploi</option>
                                           <option value=\"4\">Auto/Moto</option>
-                                         <option value=\"1\">Loisirs</option>
+                                          <option value=\"1\">Loisirs</option>
                                     </select>
                               </div>
 
@@ -231,15 +233,17 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <textarea name=\"description\" class=\"form-control rounded-0\" id=\"desc\" cols=\"30\"
                                           rows=\"3\" required></textarea>
                               </div>
+                              <div id=\"reCaptcha\" class=\"form-group col-sm-12 col-md-12 col-lg-12 mt-3 d-flex justify-content-center g-recaptcha\" data-sitekey=\"6Lem2coZAAAAANrcW6L41VKF1skSH7XmNiSdwgT-\"></div>
+                              <br />
                               <div class=\"form-group col-sm-12 col-md-12 col-lg-12\">
                                     <button type=\"submit\" value=\"ajouter\"
                                           class=\"btn bg-danger btn-primary btn-lg btn-block border-0\">Envoyer</button>
                               </div>
-                              
+                        </div>
                   </form>
             </div>
       </div>
-                                    
+
 </div>
 
 {% endblock add %}", "pages/poster.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\pages\\poster.html.twig");
