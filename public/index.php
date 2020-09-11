@@ -35,10 +35,6 @@ $router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
 
 
 $router->map('GET|POST', '/poster', function(){
-<<<<<<< HEAD
-
-=======
->>>>>>> front
 $ann_prix = "";
 $ann_description= "";
 $ann_titre = "";
