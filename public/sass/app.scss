@@ -77,6 +77,12 @@ $secondary-color: #b87508;
 .search-bar{
     flex-grow: 3;
 }
+.validation{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    min-height: 600px;
+}
 .search-bar select{
     border-radius: 0.25rem 0 0 0.25rem;
 }
