@@ -11,7 +11,7 @@ function windowOnScroll() {
         console.log($(window).height());
         console.log($(document).height());
         // if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-        if (($(window).scrollTop() + $(window).height() +5) >= $(document).height()  )  {
+        if (($(window).scrollTop() + $(window).height() +5) >= $(document).height())  {
             console.log('BAS PAGE');
             lastId = $(".scroller-item:last").attr("id");
             getMoreData(lastId);
