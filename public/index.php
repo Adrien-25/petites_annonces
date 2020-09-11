@@ -98,7 +98,6 @@ $categories=$categorie->selectionCategorie();
 
 $charge1Twig = new \App\Twig('pages/poster.html.twig');
 $charge1Twig->render(['categories'=>$categories, 'email' => $usr_email, 'prenom'=>$usr_prenom, 'nom'=>$usr_nom, 'titre'=>$ann_titre, 'telephone'=>$usr_telephone, 'description'=>$ann_description, 'categorie'=>$categorie_id, 'prix'=>$ann_prix ]);
-<<<<<<< HEAD
 });
 
 
@@ -108,9 +107,6 @@ $validation->valider($ann_unique_id);
 $charge2Twig = new \App\Twig('pages/validation.html.twig');
 $charge2Twig->render(['idunique' =>$ann_unique_id]);
 header ('Location: /accueil' );
-=======
-    
->>>>>>> front
 });
    
 $match = $router->match();
