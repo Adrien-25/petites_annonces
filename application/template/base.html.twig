@@ -19,6 +19,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--Lien dropzone-->
     <script src="dropzone-5.7.0\dist\dropzone.js"></script>
+    <!-- Re Captcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!--Titre-->
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
@@ -64,6 +66,10 @@
     <script src="../public/js/infiniteScroll.js"></script>
     <script src="../public/js/dragAndDrop.js"></script>
     <script src="../public/js/formValidation.js"></script>
+    <script src="../public/js/reCaptcha.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
