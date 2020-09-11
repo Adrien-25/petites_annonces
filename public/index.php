@@ -106,7 +106,7 @@ $validation = new \App\Validation();
 $validation->valider($ann_unique_id);
 $charge2Twig = new \App\Twig('pages/validation.html.twig');
 $charge2Twig->render(['idunique' =>$ann_unique_id]);
-header ('Location: /accueil' );
+// header('Location: accueil' );
 });
    
 $match = $router->match();
