@@ -21,7 +21,7 @@ $mail = new PHPMailer(true);
 try {
     //Server settings;
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-     $mail->SMTPDebug = 2;                      //    Activer la sortie de débogage détaillée
+     $mail->SMTPDebug = 0;                      //    Activer la sortie de débogage détaillée
      $mail->CharSet =  "utf-8";
     // $mail->SMTPDebug = 2;
     $mail->isSMTP();                                            // Envoyer via SMTP//Send using SMTP

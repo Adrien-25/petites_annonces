@@ -40,10 +40,6 @@ class Poster
 
     {
 
-
-
-
-
      $this->sql = "INSERT INTO `annonce` ( `utilisateur_id`, `categorie_id`, `ann_description`, `ann_titre`, `ann_prix`, `ann_date_ecriture`, `ann_image_url`, `ann_image_nom`, `ann_unique_id`, `ann_est_valider`) VALUES (:utilisateur_id, :categorie_id, :ann_description, :ann_titre, :ann_prix, :ann_date_ecriture,:ann_image_url, :ann_image_nom, :ann_unique_id, :ann_est_valider);";
      $this->dbh = new \App\Database();
      $this->dbh->prepareSql($this->sql);
@@ -60,6 +56,7 @@ class Poster
      $this->dbh->param(':ann_image_nom', 'lol.jpeg', PDO::PARAM_STR);
      $this->dbh->param(':ann_unique_id', $ann_unique_id, PDO::PARAM_STR);
      $this->dbh->param(':ann_est_valider', 0, PDO::PARAM_INT);
+     // $this->dbh->param(':ann_date_validation', 0, PDO::PARAM_STR);
 
 
      $this->dbh->execReq();
