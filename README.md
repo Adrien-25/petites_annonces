@@ -1,4 +1,4 @@
-# Projet de site web, publication de petites annonces
+# Projet de site web d’annonces commerciales
 <br/>
 
 ## Équipe
