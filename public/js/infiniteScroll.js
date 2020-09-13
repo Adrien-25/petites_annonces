@@ -1,17 +1,16 @@
 //INIT INFINITE SCROLL
 
 $(document).ready(function () {
-
     windowOnScroll();
 });
 
 function windowOnScroll() {
     $(window).on("scroll", function (e) {
-        console.log($(window).scrollTop());
-        console.log($(window).height());
-        console.log($(document).height());
+        // console.log($(window).scrollTop());
+        // console.log($(window).height());
+        // console.log($(document).height());
         // if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-        if (($(window).scrollTop() + $(window).height() +5) >= $(document).height())  {
+        if (($(window).scrollTop() + $(window).height() + 5) >= $(document).height()) {
             console.log('BAS PAGE');
             lastId = $(".scroller-item:last").attr("id");
             getMoreData(lastId);
@@ -20,14 +19,20 @@ function windowOnScroll() {
 }
 
 function getMoreData(lastId) {
+    console.log('NO SCROLL');
     $(window).off("scroll");
     var nbrAnnonceBDD = document.getElementById('first-loader').getAttribute('value');
     var nbrAnnonceHTML = document.getElementsByClassName('scroller-item').length;
+    console.log('NBR annonce BDD = ' + nbrAnnonceBDD);
+    console.log('NBR annnonce HTML = ' + nbrAnnonceHTML);
+    console.log('Last id =' + lastId);
+    if (typeof i == 'undefined') {
+        var i = 1;
+    }
     if (nbrAnnonceBDD > nbrAnnonceHTML) {
-        console.log(lastId);
         $('.ajax-loader').show();
         $.ajax({
-            url: 'getLastArticle/' + lastId,
+            url: 'getLastArticle/' + nbrAnnonceHTML,
             type: "get",
             beforeSend: function () {
                 $('.ajax-loader').show();
@@ -41,14 +46,29 @@ function getMoreData(lastId) {
                 }, 1000);
             }
 
-        });
-        console.log('ANNONCE A CHARGER')
-    } else {
-        var lastLoader = document.getElementsByClassName('ajax-loader')[1];
-        console.log(lastLoader);
-        lastLoader.classList.add('d-none');
-        var noMoreLoad = document.getElementById('fin-annonce');
-        noMoreLoad.classList.remove('d-none');
-    }
 
+        });
+
+    } else {
+        console.log('TEST');
+        // SI PLUS DE VARIABLE ON CACHE LE LOADER
+        var Nbrloader = $('.ajax-loader').length;
+        var lastLoader = $('.ajax-loader')[Nbrloader - 1];
+        lastLoader.classList.add('d-none');
+        // SI PLUS DE VARIABLE ON AFFICHE LE MESSAGE DE FIN D'ANNONCE
+        var NbrFinAnnonce = $('.fin-annnonce').length;
+        var noMoreLoad = $('.fin-annnonce')[NbrFinAnnonce - 1];
+        noMoreLoad.classList.remove('d-none');
+        // BOUTON REMONTER HAUT DE LA PAGE
+        var scrollupLongueur = $('.scrollup').length;
+        var scrollup = $('.scrollup')[[scrollupLongueur - 1]];
+        console.log(scrollup);
+        $('.scrollup').click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 500);
+            console.log('CLIQUER')
+            return false;
+        });
+    }
 }
