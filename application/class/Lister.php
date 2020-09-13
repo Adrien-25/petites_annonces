@@ -25,7 +25,7 @@ class Lister
         }
         $db = new \App\Database();
         $data = $db->query("SELECT * FROM annonce LIMIT 10 OFFSET ".$offset."");
-        $offset+=10;
+        // $offset+=10;
         return $data;
     }
 }
