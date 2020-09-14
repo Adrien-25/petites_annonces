@@ -50,6 +50,7 @@ $categorie_id = "selected";
 $error = false;
 
 if(!empty($_POST)){
+  
     $ann_prix = trim($_POST['prix']);
     $ann_titre = trim($_POST['titre']);
     $usr_prenom = trim($_POST['prenom']);
@@ -86,9 +87,12 @@ if(!empty($_POST)){
         $error = true;
     
     }
+
     if($error === false){
+
         echo "Je suis la page message d'erreur!";
         $posts = new \App\Poster($usr_email, $usr_nom, $usr_prenom, $ann_titre, $ann_prix, $ann_description, $usr_telephone);
+       
 
         $posts->addPosts($ann_prix, $ann_description, $ann_titre, $categorie_id);
         // $charge1Twig = new \App\Twig('pages/showmsgaddannonce.html.twig');
@@ -100,6 +104,7 @@ if(!empty($_POST)){
 $categorie = new \App\Categorie();
 $categories=$categorie->selectionCategorie();
 
+
 $charge1Twig = new \App\Twig('pages/poster.html.twig');
 $charge1Twig->render(['categories'=>$categories, 'email' => $usr_email, 'prenom'=>$usr_prenom, 'nom'=>$usr_nom, 'titre'=>$ann_titre, 'telephone'=>$usr_telephone, 'description'=>$ann_description, 'categorie'=>$categorie_id, 'prix'=>$ann_prix ]);
 });
@@ -108,10 +113,28 @@ $charge1Twig->render(['categories'=>$categories, 'email' => $usr_email, 'prenom'
 $router->map('GET|POST', '/validation-[*:ann_unique_id]', function($ann_unique_id){
 $validation = new \App\Validation();
 $validation->valider($ann_unique_id);
-$charge2Twig = new \App\Twig('pages/validation.html.twig');
-$charge2Twig->render(['idunique' =>$ann_unique_id]);
-// header('Location: accueil' );
+// $charge2Twig = new \App\Twig('pages/validation.html.twig');
+// $charge2Twig->render(['idunique' =>$ann_unique_id]);
+ header ('Location: /accueil' );
+ 
 });
+
+$router->map('GET|POST', '/supprimer-[*:ann_unique_id]', function($ann_unique_id){
+$suppression = new \App\Supprimer();
+$suppression->supprimer($ann_unique_id);
+
+
+});
+
+$router->map('GET', '/telecharger/[i:id]', function($id){
+    // dans le cas ou on est dans la page de détail
+    $donnee = \App\Annonce::donneeAnnonce($id);
+    $pdf = \App\PDF::annoncePdf($donnee);
+
+    // $chargeTwig = new \App\Twig('pages/annonce.html.twig');
+    // $chargeTwig->render([]);
+});
+
    
 $match = $router->match();
    
