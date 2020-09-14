@@ -7,9 +7,9 @@ define('SECURITY','ssl/tsl');
 
 //Parametre perso de connexion au mail
 define('MAIL','monmail');
-define('MAIL_USER_NAME','Username');
+define('MAIL_USER_NAME','monmail');
 define('MAIL_PASSWORD','Password');
 
 //Nom de l'expéditeur
-define('NAME_COMPANY','FirstName');
+define('NAME_COMPANY','nameCompany');
 ?>

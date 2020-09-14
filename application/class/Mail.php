@@ -21,25 +21,25 @@ public function __construct($type, $email, $nom, $prenom,$titre, $description, $
         try {
                 //Server settings
                 //    Activer la sortie de débogage détaillée
-                // $mail->SMTPDebug = SMTP::DEBUG_SERVER
-                $mail->SMTPDebug = 0;                      
+                 $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+                // $mail->SMTPDebug = 3;                      
                 $mail->CharSet =  "utf-8";
                 // Envoyer via SMTP
                 $mail->isSMTP(); 
                 // Configurez le serveur SMTP pour envoyer                                           
-                $mail->Host = 'smtp.exemple';
+                $mail->Host = SMTP;
                 // Activer l'authentification SMTP 
                 $mail->SMTPAuth   = true; 
                 // Nom d'utilisateur SMTP 
-                $mail->Username   = 'monmail';  
+                $mail->Username   = MAIL_USER_NAME;  
                 //Mot de passe SMTP                   
-                $mail->Password   = 'Password'; 
+                $mail->Password   = MAIL_PASSWORD; 
                 // Activer le cryptage TLS                                  
-                $mail->SMTPSecure =  'ssl/tsl'; 
+                $mail->SMTPSecure =  SECURITY; 
                 // Port TCP auquel se connecter        
-                $mail->Port       =  'port';                                
+                $mail->Port       =  PORT;                                
                 //Recipients
-                $mail->setFrom('monmail', 'nameCompany');
+                $mail->setFrom(MAIL, NAME_COMPANY);
                 //Ajouter un destinataire
                 $mail->addAddress($email,$prenom . ' ' . $nom);   
                 // $mail->addAddress('ellen@example.com');     //  Le nom est facultatif///Name is optional

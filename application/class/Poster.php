@@ -7,6 +7,7 @@ use App\Mail;
 
 class Poster
 {
+
     public  $ann_description;
     public $ann_titre;
     public $ann_prix;
@@ -24,6 +25,7 @@ class Poster
     public $sth;
     public $dbh;
     public $envoiMail;
+    
 
     public function __construct($usr_email, $usr_nom, $usr_prenom, $ann_titre, $ann_prix, $ann_description, $usr_telephone)
     
