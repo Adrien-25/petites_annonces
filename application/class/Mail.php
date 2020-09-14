@@ -27,19 +27,19 @@ public function __construct($type, $email, $nom, $prenom,$titre, $description, $
                 // Envoyer via SMTP
                 $mail->isSMTP(); 
                 // Configurez le serveur SMTP pour envoyer                                           
-                $mail->Host = "smtp.office365.com";
+                $mail->Host = 'smtp.exemple';
                 // Activer l'authentification SMTP 
                 $mail->SMTPAuth   = true; 
                 // Nom d'utilisateur SMTP 
-                $mail->Username   = 'fouad.lyousfi@hotmail.com';  
+                $mail->Username   = 'monmail';  
                 //Mot de passe SMTP                   
-                $mail->Password   = 'u!rb9ekXDqQy"e)'; 
+                $mail->Password   = 'Password'; 
                 // Activer le cryptage TLS                                  
-                $mail->SMTPSecure =  "tls"; 
+                $mail->SMTPSecure =  'ssl/tsl'; 
                 // Port TCP auquel se connecter        
-                $mail->Port       =  587;                                
+                $mail->Port       =  'port';                                
                 //Recipients
-                $mail->setFrom('fouad.lyousfi@hotmail.com', 'LamaShop^Company');
+                $mail->setFrom('monmail', 'nameCompany');
                 //Ajouter un destinataire
                 $mail->addAddress($email,$prenom . ' ' . $nom);   
                 // $mail->addAddress('ellen@example.com');     //  Le nom est facultatif///Name is optional
