@@ -44,13 +44,13 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 25
+        // line 27
         echo "</head>
 
 <body>
     <main>
         <!--Barre de navigation-->
-        <nav class=\"navbar navbar-dark bg-dark mb-5\">
+        <nav class=\"navbar navbar-dark bg-dark\">
             <div class=\"row col-12 justify-content-between\">
                 <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
                 
@@ -77,16 +77,16 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
             </div>
         </nav>
         ";
-        // line 56
+        // line 58
         $this->displayBlock('add', $context, $blocks);
-        // line 59
+        // line 61
         echo "    </main>
     <footer>
     </footer>
     ";
-        // line 62
+        // line 64
         $this->displayBlock('javascript', $context, $blocks);
-        // line 76
+        // line 82
         echo "
 </body>
 
@@ -116,9 +116,11 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         echo "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
     <!--Lien dropzone-->
     <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>
+    <!-- Re Captcha -->
+    <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
     <!--Titre-->
     <title>";
-        // line 23
+        // line 25
         $this->displayBlock('title', $context, $blocks);
         echo " </title>
     ";
@@ -130,24 +132,28 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         echo "Base Twig";
     }
 
-    // line 56
+    // line 58
     public function block_add($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 57
+        // line 59
         echo "
         ";
     }
 
-    // line 62
+    // line 64
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 63
+        // line 65
         echo "    <!--Js-->
     <script src=\"../public/js/infiniteScroll.js\"></script>
     <script src=\"../public/js/dragAndDrop.js\"></script>
     <script src=\"../public/js/formValidation.js\"></script>
+    <script src=\"../public/js/reCaptcha.js\"></script>
+    <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\"
+        async defer>
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"
         integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\">
@@ -166,7 +172,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
     public function getDebugInfo()
     {
-        return array (  147 => 63,  143 => 62,  138 => 57,  134 => 56,  122 => 23,  116 => 19,  101 => 5,  97 => 4,  90 => 76,  88 => 62,  83 => 59,  81 => 56,  48 => 25,  46 => 4,  41 => 1,);
+        return array (  149 => 65,  145 => 64,  140 => 59,  136 => 58,  124 => 25,  116 => 19,  101 => 5,  97 => 4,  90 => 82,  88 => 64,  83 => 61,  81 => 58,  48 => 27,  46 => 4,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -192,6 +198,8 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
     <!--Lien dropzone-->
     <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>
+    <!-- Re Captcha -->
+    <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
     <!--Titre-->
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
@@ -200,7 +208,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 <body>
     <main>
         <!--Barre de navigation-->
-        <nav class=\"navbar navbar-dark bg-dark mb-5\">
+        <nav class=\"navbar navbar-dark bg-dark\">
             <div class=\"row col-12 justify-content-between\">
                 <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
                 
@@ -237,6 +245,10 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <script src=\"../public/js/infiniteScroll.js\"></script>
     <script src=\"../public/js/dragAndDrop.js\"></script>
     <script src=\"../public/js/formValidation.js\"></script>
+    <script src=\"../public/js/reCaptcha.js\"></script>
+    <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\"
+        async defer>
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"
         integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\">

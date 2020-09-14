@@ -55,7 +55,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     {
         $macros = $this->macros;
         // line 4
-        echo "<div class=\"px-4 flex-wrap d-flex justify-content-around\" id=\"scroller-layout\">
+        echo "<div class=\"mt-5 px-4 flex-wrap d-flex justify-content-around\" id=\"scroller-layout\">
   ";
         // line 5
         $context['_parent'] = $context;
@@ -133,7 +133,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 38
-        echo "  <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5 d-none\" value=";
+        echo "  <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5\" value=";
         echo twig_escape_filter($this->env, ($context["Nbr_annonces"] ?? null), "html", null, true);
         echo ">
     <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
@@ -162,7 +162,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         return new Source("{% extends \"./base.html.twig\" %}
 {% block title %}listes des annonces{% endblock title %}
 {% block add %}
-<div class=\"px-4 flex-wrap d-flex justify-content-around\" id=\"scroller-layout\">
+<div class=\"mt-5 px-4 flex-wrap d-flex justify-content-around\" id=\"scroller-layout\">
   {% for annonce in listes_annonces %}
   <div class=\"scroller-item d-flex justify-content-between text-dark border border-dark flex-xl-row flex-column-reverse bg-light p-2 mb-5 col-lg-5 col-sm-5 col-10\" id=\"{{annonce.ann_id}}\">
     <div class=\"annonce-text d-flex justify-content-between flex-column text-center text-xl-left\">
@@ -196,7 +196,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
   </div>
 
   {% endfor %}
-  <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5 d-none\" value={{Nbr_annonces}}>
+  <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5\" value={{Nbr_annonces}}>
     <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
   </div>
 </div>

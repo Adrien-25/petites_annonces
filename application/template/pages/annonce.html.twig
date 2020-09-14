@@ -23,15 +23,15 @@
 {% set ann_contenu = annonce[0] %}
 <h1 class="mb-4 col-12 text-center text-uppercase">{{ann_contenu.ann_titre}}</h1>
 <div class="container-fluid d-flex flex-column align-items-center flex-md-row justify">
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <div>
             <img class="img_annonce" src="../assets/medias/{{ann_contenu.ann_image_url}}"
                 alt="{{ann_contenu.ann_image_nom}}">
         </div>
 
     </div>
-    <div class="col-6">
-        <div class="d-flex h-100 flex-column justify-content-between">
+    <div class="col-10 col-md-6">
+        <div class="d-flex h-100 flex-column justify-content-center justify-content-md-between">
             <p class="text-danger display-4 font-weight-bold">{{ann_contenu.ann_prix}} €</p>
             <hr align="left" class="w-25 bg-danger">
             <p class="overflow-wrap-break">{{ann_contenu.ann_description}}</p>
