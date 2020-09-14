@@ -99,7 +99,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         <a href=\"telecharger/";
             // line 21
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_id", [], "any", false, false, false, 21), "html", null, true);
-            echo "\" class=\"btn bg-danger text-light d-flex justify-content-center ml-3\">
+            echo "\" target=\"_blank\" class=\"btn bg-danger text-light d-flex justify-content-center ml-3\">
           <i class=\"material-icons mr-2\">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
@@ -217,7 +217,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
           <i class=\"material-icons mr-2\">pageview</i>
           <span>Détails</span>
         </a>
-        <a href=\"telecharger/{{annonce.ann_id}}\" class=\"btn bg-danger text-light d-flex justify-content-center ml-3\">
+        <a href=\"telecharger/{{annonce.ann_id}}\" target=\"_blank\" class=\"btn bg-danger text-light d-flex justify-content-center ml-3\">
           <i class=\"material-icons mr-2\">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>

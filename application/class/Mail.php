@@ -43,6 +43,34 @@ try {
     // Attachments (piéces jointes)
     // $mail->addAttachment('/var/tmp/file.tar.gz');       // Ajouter des pièces jointes // Add attachments
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');  // Optional name
+    // Instantiation and passing `true` enables exceptions
+    // $mail = new PHPMailer(true);
+
+    //     try {
+    //             //Server settings
+    //             //    Activer la sortie de débogage détaillée
+    //             // $mail->SMTPDebug = SMTP::DEBUG_SERVER
+    //             $mail->SMTPDebug = 0;                      
+    //             $mail->CharSet =  "utf-8";
+    //             // Envoyer via SMTP
+    //             $mail->isSMTP(); 
+    //             // Configurez le serveur SMTP pour envoyer                                           
+    //             $mail->Host = 'smtp.exemple';
+    //             // Activer l'authentification SMTP 
+    //             $mail->SMTPAuth   = true; 
+    //             // Nom d'utilisateur SMTP 
+    //             $mail->Username   = 'monmail';  
+    //             //Mot de passe SMTP                   
+    //             $mail->Password   = 'Password'; 
+    //             // Activer le cryptage TLS                                  
+    //             $mail->SMTPSecure =  'ssl/tsl'; 
+    //             // Port TCP auquel se connecter        
+    //             $mail->Port       =  'port';                                
+    //             //Recipients
+    //             $mail->setFrom('monmail', 'nameCompany');
+    //             //Ajouter un destinataire
+    //             $mail->addAddress($email,$prenom . ' ' . $nom);   
+    //             // $mail->addAddress('ellen@example.com');     //  Le nom est facultatif///Name is optional
 
     // Content
     $mail->isHTML(true);
@@ -62,8 +90,9 @@ try {
     }elseif($type === 'supprimer')
     {
         $link = SERVER_URI . '/supprimer-' . $ann_unique_id;
-        $mail->Subject = 'Confirmation de votre annonce';
-        $mail->Body    = '<h1><a href="'.$link.'"><img src="public/assets/medias/velo.jpg" alt="">Mon velo</a></h1><br><br><p>Bonjour '.$prenom.' !</p><br><a href="'.$link .'">Veuillez Cliquer sur ce lien pour supprimer votre annonce.</a>';
+        $mail->AddEmbeddedImage('../public/assets/medias/logo3.png','cro','../public/assets/medias/logo3.png');
+        $mail->Subject = 'Suppression de votre annonce';
+        $mail->Body    = '<h1><a href="'.SERVER_URI.'"><img src="cid:cro" alt="velo">Adrien && Fouad </a></h1><br><br><p>Bonjour '.$prenom.' !</p><br><a href="'.$link .'">Veuillez Cliquer sur ce lien pour supprimer votre annonce.</a>';
 
     }else{
         echo 'les paramétres de types sont incorrects';
