@@ -9,14 +9,16 @@
     <div class="annonce-text d-flex justify-content-between flex-column text-center text-xl-left">
       <h2>{{annonce.ann_titre}}</h2>
       <p class="text-danger ml-2 prix">{{annonce.ann_prix}} €</p>
-      <p class="ml-2 font-italic">{{annonce.cat_libelle}}</p>
-      <p class="ml-2 font-weight-bold">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
+      <div>
+        <p class="ml-2 mb-0 font-italic">{{annonce.cat_libelle}}</p>
+        <p class="ml-2 font-weight-bold">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
+      </div>
       <div class="d-flex justify-content-center btn-annonce">
         <a href="annonce/{{annonce.ann_id}}" class="btn bg-danger text-light d-flex justify-content-center">
           <i class="material-icons mr-2">pageview</i>
           <span>Détails</span>
         </a>
-        <a href="" class="btn bg-danger text-light d-flex justify-content-center ml-3">
+        <a href="telecharger/{{annonce.ann_id}}" class="btn bg-danger text-light d-flex justify-content-center ml-3">
           <i class="material-icons mr-2">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
@@ -27,11 +29,11 @@
     {% if annonce.ann_image_url %}
     {% set image = annonce.ann_image_url %}
     {% else %}
-    {% set image = annonce.cat_libelle %}
+    {% set image = annonce.cat_libelle ~ '.jpg'  %}
     {% endif %}
     <div
       class="d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2">
-      <img class="fit-picture mw-500 mh-500 img-fluid" src="../public/assets/medias/{{image}}"
+      <img class="fit-picture mw-500 mh-500 img-fluid" src="../public/assets/media/{{image}}"
         alt="{{annonce.ann_image_nom}}">
     </div>
 
@@ -41,11 +43,14 @@
   <div id="first-loader" class="ajax-loader text-center col-12 mb-5" value={{Nbr_annonces}}>
     <img src="https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif">
   </div>
+  <div id="fin-annonce" class="fin-annnonce text-center d-none col-12 m-3 display-4 font-weight-bold">
+    Fin des annonces
+  </div>
 </div>
 <a class="scrollup btn bg-danger"><i class="material-icons text-light display-5 ">arrow_upward</i></a>
 {% endblock add %}
 {% block footer %}
-    
+
 <div class="bg-dark p-4 text-light d-flex justify-content-between">
   <div>
     &copy;
@@ -61,4 +66,4 @@
   </div>
 
 </div>
-  {% endblock footer %}
+{% endblock footer %}

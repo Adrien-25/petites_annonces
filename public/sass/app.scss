@@ -32,15 +32,15 @@ $secondary-color: #b87508;
 .cursor-pointer{
     cursor: pointer;
 }
-#scroller-layout{
-    min-height: Calc(100vh - 183.5px);
-}
 .scroller-item{
     transition: all 1s ease-in;
     
 }
 .overflow-wrap-break{
     overflow-wrap: break-word;
+}
+.minw-100{
+    min-width: 100%;
 }
 
 

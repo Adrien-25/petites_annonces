@@ -78,55 +78,60 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
             // line 11
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_prix", [], "any", false, false, false, 11), "html", null, true);
             echo " €</p>
-      <p class=\"ml-2 font-italic\">";
-            // line 12
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 12), "html", null, true);
-            echo "</p>
-      <p class=\"ml-2 font-weight-bold\">Le ";
+      <div>
+        <p class=\"ml-2 mb-0 font-italic\">";
             // line 13
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_date_ecriture", [], "any", false, false, false, 13), "j m Y"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 13), "html", null, true);
             echo "</p>
+        <p class=\"ml-2 font-weight-bold\">Le ";
+            // line 14
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_date_ecriture", [], "any", false, false, false, 14), "j m Y"), "html", null, true);
+            echo "</p>
+      </div>
       <div class=\"d-flex justify-content-center btn-annonce\">
         <a href=\"annonce/";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_id", [], "any", false, false, false, 15), "html", null, true);
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_id", [], "any", false, false, false, 17), "html", null, true);
             echo "\" class=\"btn bg-danger text-light d-flex justify-content-center\">
           <i class=\"material-icons mr-2\">pageview</i>
           <span>Détails</span>
         </a>
-        <a href=\"\" class=\"btn bg-danger text-light d-flex justify-content-center ml-3\">
+        <a href=\"telecharger/";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_id", [], "any", false, false, false, 21), "html", null, true);
+            echo "\" class=\"btn bg-danger text-light d-flex justify-content-center ml-3\">
           <i class=\"material-icons mr-2\">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
         ";
-            // line 25
+            // line 27
             echo "      </div>
     </div>
     ";
-            // line 27
-            if (twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 27)) {
-                // line 28
-                echo "    ";
-                $context["image"] = twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 28);
-                // line 29
-                echo "    ";
-            } else {
+            // line 29
+            if (twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 29)) {
                 // line 30
                 echo "    ";
-                $context["image"] = twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 30);
+                $context["image"] = twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 30);
                 // line 31
                 echo "    ";
+            } else {
+                // line 32
+                echo "    ";
+                $context["image"] = (twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 32) . ".jpg");
+                // line 33
+                echo "    ";
             }
-            // line 32
+            // line 34
             echo "    <div
       class=\"d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2\">
-      <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/medias/";
-            // line 34
+      <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/media/";
+            // line 36
             echo twig_escape_filter($this->env, ($context["image"] ?? null), "html", null, true);
             echo "\"
         alt=\"";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 35), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 37), "html", null, true);
             echo "\">
     </div>
 
@@ -137,23 +142,26 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 43
         echo "  <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5\" value=";
         echo twig_escape_filter($this->env, ($context["Nbr_annonces"] ?? null), "html", null, true);
         echo ">
     <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
+  </div>
+  <div id=\"fin-annonce\" class=\"fin-annnonce text-center d-none col-12 m-3 display-4 font-weight-bold\">
+    Fin des annonces
   </div>
 </div>
 <a class=\"scrollup btn bg-danger\"><i class=\"material-icons text-light display-5 \">arrow_upward</i></a>
 ";
     }
 
-    // line 47
+    // line 52
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 48
-        echo "    
+        // line 53
+        echo "
 <div class=\"bg-dark p-4 text-light d-flex justify-content-between\">
   <div>
     &copy;
@@ -169,7 +177,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
   </div>
 
 </div>
-  ";
+";
     }
 
     public function getTemplateName()
@@ -184,7 +192,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
 
     public function getDebugInfo()
     {
-        return array (  156 => 48,  152 => 47,  141 => 41,  129 => 35,  125 => 34,  121 => 32,  118 => 31,  115 => 30,  112 => 29,  109 => 28,  107 => 27,  103 => 25,  92 => 15,  87 => 13,  83 => 12,  79 => 11,  75 => 10,  70 => 8,  66 => 6,  62 => 5,  59 => 4,  55 => 3,  48 => 2,  37 => 1,);
+        return array (  164 => 53,  160 => 52,  146 => 43,  134 => 37,  130 => 36,  126 => 34,  123 => 33,  120 => 32,  117 => 31,  114 => 30,  112 => 29,  108 => 27,  101 => 21,  94 => 17,  88 => 14,  84 => 13,  79 => 11,  75 => 10,  70 => 8,  66 => 6,  62 => 5,  59 => 4,  55 => 3,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -200,14 +208,16 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     <div class=\"annonce-text d-flex justify-content-between flex-column text-center text-xl-left\">
       <h2>{{annonce.ann_titre}}</h2>
       <p class=\"text-danger ml-2 prix\">{{annonce.ann_prix}} €</p>
-      <p class=\"ml-2 font-italic\">{{annonce.cat_libelle}}</p>
-      <p class=\"ml-2 font-weight-bold\">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
+      <div>
+        <p class=\"ml-2 mb-0 font-italic\">{{annonce.cat_libelle}}</p>
+        <p class=\"ml-2 font-weight-bold\">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
+      </div>
       <div class=\"d-flex justify-content-center btn-annonce\">
         <a href=\"annonce/{{annonce.ann_id}}\" class=\"btn bg-danger text-light d-flex justify-content-center\">
           <i class=\"material-icons mr-2\">pageview</i>
           <span>Détails</span>
         </a>
-        <a href=\"\" class=\"btn bg-danger text-light d-flex justify-content-center ml-3\">
+        <a href=\"telecharger/{{annonce.ann_id}}\" class=\"btn bg-danger text-light d-flex justify-content-center ml-3\">
           <i class=\"material-icons mr-2\">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
@@ -218,11 +228,11 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     {% if annonce.ann_image_url %}
     {% set image = annonce.ann_image_url %}
     {% else %}
-    {% set image = annonce.cat_libelle %}
+    {% set image = annonce.cat_libelle ~ '.jpg'  %}
     {% endif %}
     <div
       class=\"d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2\">
-      <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/medias/{{image}}\"
+      <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/media/{{image}}\"
         alt=\"{{annonce.ann_image_nom}}\">
     </div>
 
@@ -232,11 +242,14 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
   <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5\" value={{Nbr_annonces}}>
     <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
   </div>
+  <div id=\"fin-annonce\" class=\"fin-annnonce text-center d-none col-12 m-3 display-4 font-weight-bold\">
+    Fin des annonces
+  </div>
 </div>
 <a class=\"scrollup btn bg-danger\"><i class=\"material-icons text-light display-5 \">arrow_upward</i></a>
 {% endblock add %}
 {% block footer %}
-    
+
 <div class=\"bg-dark p-4 text-light d-flex justify-content-between\">
   <div>
     &copy;
@@ -252,6 +265,6 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
   </div>
 
 </div>
-  {% endblock footer %}", "pages/index.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\pages\\index.html.twig");
+{% endblock footer %}", "pages/index.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\pages\\index.html.twig");
     }
 }

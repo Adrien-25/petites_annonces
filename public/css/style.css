@@ -38,16 +38,16 @@
   cursor: pointer;
 }
 
-#scroller-layout {
-  min-height: calc(100vh - 183.5px);
-}
-
 .scroller-item {
   transition: all 1s ease-in;
 }
 
 .overflow-wrap-break {
   overflow-wrap: break-word;
+}
+
+.minw-100 {
+  min-width: 100%;
 }
 
 .ajax-loader {

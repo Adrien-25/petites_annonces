@@ -1,4 +1,9 @@
 //INIT INFINITE SCROLL
+var nbrAnnonceBDD = document.getElementById('first-loader').getAttribute('value');
+if (nbrAnnonceBDD<11){
+    var loader = document.getElementById('first-loader');
+    loader.classList.add('d-none');
+}
 
 $(document).ready(function () {
     windowOnScroll();

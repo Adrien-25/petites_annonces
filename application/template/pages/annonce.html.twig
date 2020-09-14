@@ -21,11 +21,16 @@
 {% block title %}Détail de l'annonce{% endblock title %}
 {% block add %}
 {% set ann_contenu = annonce[0] %}
-<h1 class="mb-4 col-12 text-center text-uppercase">{{ann_contenu.ann_titre}}</h1>
+<h1 class="mt-5 mb-4 col-12 text-center text-uppercase">{{ann_contenu.ann_titre}}</h1>
 <div class="container-fluid d-flex flex-column align-items-center flex-md-row justify">
     <div class="col-12 col-md-6">
         <div>
-            <img class="img_annonce" src="../assets/medias/{{ann_contenu.ann_image_url}}"
+            {% if ann_contenu.ann_image_url %}
+            {% set image = ann_contenu.ann_image_url %}
+            {% else %}
+            {% set image = ann_contenu.cat_libelle ~ '.jpg' %}
+            {% endif %}
+            <img class="img_annonce minw-100" src="../assets/media/{{image}}"
                 alt="{{ann_contenu.ann_image_nom}}">
         </div>
 

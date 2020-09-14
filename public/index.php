@@ -112,6 +112,16 @@ $charge2Twig = new \App\Twig('pages/validation.html.twig');
 $charge2Twig->render(['idunique' =>$ann_unique_id]);
 // header('Location: accueil' );
 });
+
+$router->map('GET', '/telecharger/[i:id]', function($id){
+    // dans le cas ou on est dans la page de détail
+    $donnee = \App\Annonce::donneeAnnonce($id);
+    $pdf = \App\PDF::annoncePdf($donnee);
+
+    // $chargeTwig = new \App\Twig('pages/annonce.html.twig');
+    // $chargeTwig->render([]);
+});
+
    
 $match = $router->match();
    

@@ -52,8 +52,8 @@ class Poster
      $this->dbh->param(':ann_titre', $ann_titre, PDO::PARAM_STR);
      $this->dbh->param(':ann_prix', $ann_prix, PDO::PARAM_STR);
      $this->dbh->param(':ann_date_ecriture',date('Y-m-d'), PDO::PARAM_STR);
-     $this->dbh->param(':ann_image_url', 'http://google.fr', PDO::PARAM_STR);
-     $this->dbh->param(':ann_image_nom', 'lol.jpeg', PDO::PARAM_STR);
+     $this->dbh->param(':ann_image_url', '', PDO::PARAM_STR);
+     $this->dbh->param(':ann_image_nom', '', PDO::PARAM_STR);
      $this->dbh->param(':ann_unique_id', $ann_unique_id, PDO::PARAM_STR);
      $this->dbh->param(':ann_est_valider', 0, PDO::PARAM_INT);
      // $this->dbh->param(':ann_date_validation', 0, PDO::PARAM_STR);
