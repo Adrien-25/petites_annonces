@@ -23,6 +23,8 @@ class Poster
     public $sql;
     public $sth;
     public $dbh;
+    public $envoiMail;
+
     public function __construct($usr_email, $usr_nom, $usr_prenom, $ann_titre, $ann_prix, $ann_description, $usr_telephone)
     
     {
@@ -39,14 +41,12 @@ class Poster
     public  function addPosts($ann_prix, $ann_description, $ann_titre, $categorie_id)
 
     {
-
-
-
-
-
-     $this->sql = "INSERT INTO `annonce` ( `utilisateur_id`, `categorie_id`, `ann_description`, `ann_titre`, `ann_prix`, `ann_date_ecriture`, `ann_image_url`, `ann_image_nom`, `ann_unique_id`, `ann_est_valider`) VALUES (:utilisateur_id, :categorie_id, :ann_description, :ann_titre, :ann_prix, :ann_date_ecriture,:ann_image_url, :ann_image_nom, :ann_unique_id, :ann_est_valider);";
+        
+     $this->sql = "INSERT INTO `annonce` ( `utilisateur_id`, `categorie_id`, `ann_description`, `ann_titre`, `ann_prix`, `ann_date_ecriture`, `ann_image_url`, `ann_image_nom`, `ann_unique_id`, `ann_est_valider`)
+      VALUES (:utilisateur_id, :categorie_id, :ann_description, :ann_titre, :ann_prix, :ann_date_ecriture,:ann_image_url, :ann_image_nom, :ann_unique_id, :ann_est_valider);";
      $this->dbh = new \App\Database();
      $this->dbh->prepareSql($this->sql);
+     
 
      $ann_unique_id = uniqid('ann_');
 
@@ -59,15 +59,17 @@ class Poster
      $this->dbh->param(':ann_image_url', 'http://google.fr', PDO::PARAM_STR);
      $this->dbh->param(':ann_image_nom', 'lol.jpeg', PDO::PARAM_STR);
      $this->dbh->param(':ann_unique_id', $ann_unique_id, PDO::PARAM_STR);
-     $this->dbh->param(':ann_est_valider', 0, PDO::PARAM_INT);
+     $this->dbh->param(':ann_est_valider', 0 , PDO::PARAM_INT);
+    
+  
 
 
      $this->dbh->execReq();
-
-
-     $envoiMail = new Mail('validation', $this->usr_email, $this->usr_nom, $this->usr_prenom,$this->ann_titre, $this->ann_description, $this->ann_prix, $this->usr_telephone, $ann_unique_id);
-          return true;
+     
+     $this->envoiMail = new Mail('validation', $this->usr_email, $this->usr_nom, $this->usr_prenom,$this->ann_titre, $this->ann_description, $this->ann_prix, $this->usr_telephone, $ann_unique_id);
           
+     return true;
+ 
      } 
 }
 

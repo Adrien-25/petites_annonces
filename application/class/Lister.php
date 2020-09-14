@@ -4,7 +4,9 @@ namespace App;
 
 class Lister
 {
-    public static function appelLister(){
+    public static function appelLister()
+    {
+
         $db = new \App\Database();
         $dataSize = $db->query("SELECT * FROM annonce");
         // changer la variable pour l'objet connection en fonction des pages
