@@ -14,7 +14,11 @@ $router->map('GET', '/accueil', function(){
     $AnnonceLimit = $value['DataLimit'];
     $nbrAnnonce = sizeof($value['DataAll']);
     $chargeTwig = new \App\Twig('pages/index.html.twig');
-    $chargeTwig->render(['listes_annonces'=> $AnnonceLimit,'Nbr_annonces'=>$nbrAnnonce]);
+
+    $categorie = new \App\Categorie();
+    $categories=$categorie->selectionCategorie();
+
+    $chargeTwig->render(['categories'=>$categories,'listes_annonces'=> $AnnonceLimit,'Nbr_annonces'=>$nbrAnnonce]);
 });
 
 
@@ -33,7 +37,7 @@ $router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
     $chargeTwig->render(['listes_annonces'=> $ajout]);
 });
 
-
+// var_dump($_POST);
 $router->map('GET|POST', '/poster', function(){
 $ann_prix = "";
 $ann_description= "";
@@ -91,8 +95,8 @@ if(!empty($_POST)){
        
 
         $posts->addPosts($ann_prix, $ann_description, $ann_titre, $categorie_id);
-        $charge1Twig = new \App\Twig('pages/showmsgaddannonce.html.twig');
-        $charge1Twig->render([]);
+        // $charge1Twig = new \App\Twig('pages/showmsgaddannonce.html.twig');
+        // $charge1Twig->render([]);
         return true;
     }
     
@@ -128,6 +132,18 @@ $router->map('GET|POST', '/supprimer-[*:ann_unique_id]', function($ann_unique_id
   
 
 
+});
+
+$router->map('GET', '/telecharger/[i:id]', function($id){
+    // dans le cas ou on est dans la page de détail
+    $donnee = \App\Annonce::donneeAnnonce($id);
+    $pdf = \App\PDF::annoncePdf($donnee);
+
+    // $chargeTwig = new \App\Twig('pages/annonce.html.twig');
+    // $chargeTwig->render([]);
+});
+
+   
 $match = $router->match();
    
 // fermeture d'appel ou lance le status 404

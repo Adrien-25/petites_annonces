@@ -28,8 +28,11 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
         $this->blocks = [
             'head' => [$this, 'block_head'],
+            'reCaptcha' => [$this, 'block_reCaptcha'],
             'title' => [$this, 'block_title'],
+            'boutonPoster' => [$this, 'block_boutonPoster'],
             'add' => [$this, 'block_add'],
+            'footer' => [$this, 'block_footer'],
             'javascript' => [$this, 'block_javascript'],
         ];
     }
@@ -40,11 +43,12 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         // line 1
         echo "<!DOCTYPE html>
 <html lang=\"fr\">
+
 <head>
     ";
-        // line 4
+        // line 5
         $this->displayBlock('head', $context, $blocks);
-        // line 27
+        // line 29
         echo "</head>
 
 <body>
@@ -53,16 +57,33 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         <nav class=\"navbar navbar-dark bg-dark\">
             <div class=\"row col-12 justify-content-between\">
                 <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
-                
+
                 <!-- Formulaire de recherche -->
                 <form class=\"search-bar form-inline justify-content-center mr-4\">
                     <select class=\"custom-select bg-danger text-light border-0 font-weight-bold cursor-pointer\"
                         id=\"SearchForm\">
                         <option selected>Catégories</option>
-                        <option value=\"Immobilier\">Immobilier</option>
+                            ";
+        // line 43
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["catégorie"]) {
+            // line 44
+            echo "                            <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["catégorie"], "id", [], "any", false, false, false, 44), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["catégorie"], "cat_libelle", [], "any", false, false, false, 44), "html", null, true);
+            echo "</option>
+                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['catégorie'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 46
+        echo "                        </select>
                     </select>
-                    <input class=\"form-control rounded-0 border-0 col-lg-8\" type=\"search\" placeholder=\"Une petite envie ?\"
-                        aria-label=\"Search\">
+                    <input class=\"form-control rounded-0 border-0 col-lg-8\" type=\"search\"
+                        placeholder=\"Une petite envie ?\" aria-label=\"Search\">
                     <button class=\"btn d-flex jusify-content-center bg-danger\" type=\"submit\"><i
                             class=\"material-icons text-light\">search</i></button>
                 </form>
@@ -71,33 +92,37 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                     <span class=\"d-flex mr-2\">
                         <i class=\"material-icons\">add_circle_outline</i>
                     </span>
-                    <span class=\"font-weight-bold\">Poster une annonce</span>
-                </a>
-                
+                    ";
+        // line 58
+        $this->displayBlock('boutonPoster', $context, $blocks);
+        // line 61
+        echo "                </a>
+
             </div>
         </nav>
         ";
-        // line 58
+        // line 65
         $this->displayBlock('add', $context, $blocks);
-        // line 61
+        // line 68
         echo "    </main>
-    <footer>
-    </footer>
     ";
-        // line 64
+        // line 69
+        $this->displayBlock('footer', $context, $blocks);
+        // line 72
+        echo "    ";
         $this->displayBlock('javascript', $context, $blocks);
-        // line 82
+        // line 89
         echo "
 </body>
 
 </html>";
     }
 
-    // line 4
+    // line 5
     public function block_head($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 5
+        // line 6
         echo "    <meta charset=\"UTF-8\">
     <!--Faire savoir au navigateur que le site Web est optimisé pour les mobiles-->
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
@@ -107,25 +132,36 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <link href=\"css/style.css\" rel=\"stylesheet\">
     <link href=\"dropzone-5.7.0\\dist\\basic.css\" rel=\"stylesheet\">
     <link href=\"dropzone-5.7.0\\dist\\dropzone.css\" rel=\"stylesheet\">
-    
+
     <!--Lien CDN CSS Bootstrap-->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\"
         integrity=\"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS\" crossorigin=\"anonymous\">
     ";
-        // line 19
+        // line 20
         echo "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
     <!--Lien dropzone-->
     <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>
     <!-- Re Captcha -->
-    <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
+    ";
+        // line 24
+        $this->displayBlock('reCaptcha', $context, $blocks);
+        // line 25
+        echo "
     <!--Titre-->
     <title>";
-        // line 25
+        // line 27
         $this->displayBlock('title', $context, $blocks);
         echo " </title>
     ";
     }
 
+    // line 24
+    public function block_reCaptcha($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+    }
+
+    // line 27
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -133,26 +169,43 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     }
 
     // line 58
-    public function block_add($context, array $blocks = [])
+    public function block_boutonPoster($context, array $blocks = [])
     {
         $macros = $this->macros;
         // line 59
+        echo "                    <span class=\"font-weight-bold\">Poster une annonce</span>
+                    ";
+    }
+
+    // line 65
+    public function block_add($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 66
         echo "
         ";
     }
 
-    // line 64
+    // line 69
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 70
+        echo "    
+    ";
+    }
+
+    // line 72
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 65
+        // line 73
         echo "    <!--Js-->
     <script src=\"../public/js/infiniteScroll.js\"></script>
     <script src=\"../public/js/dragAndDrop.js\"></script>
     <script src=\"../public/js/formValidation.js\"></script>
     <script src=\"../public/js/reCaptcha.js\"></script>
-    <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\"
-        async defer>
+    <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer>
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"
@@ -170,15 +223,21 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         return "./base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  149 => 65,  145 => 64,  140 => 59,  136 => 58,  124 => 25,  116 => 19,  101 => 5,  97 => 4,  90 => 82,  88 => 64,  83 => 61,  81 => 58,  48 => 27,  46 => 4,  41 => 1,);
+        return array (  203 => 73,  199 => 72,  194 => 70,  190 => 69,  185 => 66,  181 => 65,  176 => 59,  172 => 58,  165 => 27,  159 => 24,  153 => 27,  149 => 25,  147 => 24,  141 => 20,  126 => 6,  122 => 5,  115 => 89,  112 => 72,  110 => 69,  107 => 68,  105 => 65,  99 => 61,  97 => 58,  83 => 46,  72 => 44,  68 => 43,  52 => 29,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
 <html lang=\"fr\">
+
 <head>
     {% block head %}
     <meta charset=\"UTF-8\">
@@ -190,7 +249,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <link href=\"css/style.css\" rel=\"stylesheet\">
     <link href=\"dropzone-5.7.0\\dist\\basic.css\" rel=\"stylesheet\">
     <link href=\"dropzone-5.7.0\\dist\\dropzone.css\" rel=\"stylesheet\">
-    
+
     <!--Lien CDN CSS Bootstrap-->
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\"
         integrity=\"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS\" crossorigin=\"anonymous\">
@@ -199,7 +258,8 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
     <!--Lien dropzone-->
     <script src=\"dropzone-5.7.0\\dist\\dropzone.js\"></script>
     <!-- Re Captcha -->
-    <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
+    {% block reCaptcha %}{% endblock reCaptcha %}
+
     <!--Titre-->
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
@@ -211,16 +271,19 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         <nav class=\"navbar navbar-dark bg-dark\">
             <div class=\"row col-12 justify-content-between\">
                 <a class=\"navbar-brand\" href=\"accueil\">LamaShop</a>
-                
+
                 <!-- Formulaire de recherche -->
                 <form class=\"search-bar form-inline justify-content-center mr-4\">
                     <select class=\"custom-select bg-danger text-light border-0 font-weight-bold cursor-pointer\"
                         id=\"SearchForm\">
                         <option selected>Catégories</option>
-                        <option value=\"Immobilier\">Immobilier</option>
+                            {% for catégorie in categories %}
+                            <option value=\"{{catégorie.id}}\">{{catégorie.cat_libelle}}</option>
+                            {% endfor %}
+                        </select>
                     </select>
-                    <input class=\"form-control rounded-0 border-0 col-lg-8\" type=\"search\" placeholder=\"Une petite envie ?\"
-                        aria-label=\"Search\">
+                    <input class=\"form-control rounded-0 border-0 col-lg-8\" type=\"search\"
+                        placeholder=\"Une petite envie ?\" aria-label=\"Search\">
                     <button class=\"btn d-flex jusify-content-center bg-danger\" type=\"submit\"><i
                             class=\"material-icons text-light\">search</i></button>
                 </form>
@@ -229,25 +292,27 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                     <span class=\"d-flex mr-2\">
                         <i class=\"material-icons\">add_circle_outline</i>
                     </span>
+                    {% block boutonPoster %}
                     <span class=\"font-weight-bold\">Poster une annonce</span>
+                    {% endblock boutonPoster %}
                 </a>
-                
+
             </div>
         </nav>
         {% block add %}
 
         {% endblock add %}
     </main>
-    <footer>
-    </footer>
+    {% block footer %}
+    
+    {% endblock footer %}
     {% block javascript %}
     <!--Js-->
     <script src=\"../public/js/infiniteScroll.js\"></script>
     <script src=\"../public/js/dragAndDrop.js\"></script>
     <script src=\"../public/js/formValidation.js\"></script>
     <script src=\"../public/js/reCaptcha.js\"></script>
-    <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\"
-        async defer>
+    <script src=\"https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit\" async defer>
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\"

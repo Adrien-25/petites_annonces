@@ -45,14 +45,12 @@
                                     <input type="text" name="prix" class="form-control" required>
                               </div>
                               <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                                    <label for="example4">Quelle catégorie fait partie votre annonce.</label>
-
+                                    <label for="categorie">Quelle catégorie fait partie votre annonce.</label>
                                     <select class="form-control" name="categorie">
                                           <option value="selected">Faites votre choix</option>
-                                          <option value="2">Animalerie</option>
-                                          <option value="3">Emploi</option>
-                                          <option value="4">Auto/Moto</option>
-                                          <option value="1">Loisirs</option>
+                                          {% for catégorie in categories %}
+                                          <option value="{{catégorie.id}}">{{catégorie.cat_libelle}}</option>
+                                          {% endfor %}
                                     </select>
                               </div>
 
@@ -78,11 +76,10 @@
                                     <button type="submit" value="ajouter"
                                           class="btn bg-danger btn-primary btn-lg btn-block border-0">Envoyer</button>
                               </div>
-
+                        </div>
                   </form>
             </div>
       </div>
 
-</div>
-
+</div>    
 {% endblock add %}

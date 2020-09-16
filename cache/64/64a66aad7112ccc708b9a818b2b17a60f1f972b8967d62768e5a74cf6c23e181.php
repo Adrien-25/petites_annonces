@@ -139,6 +139,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 
 </div>
 
+</div>    
 ";
     }
 
@@ -154,7 +155,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 
     public function getDebugInfo()
     {
-        return array (  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
+        return array (  122 => 54,  111 => 52,  107 => 51,  58 => 4,  54 => 3,  47 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -246,6 +247,7 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
 
 </div>
 
+</div>    
 {% endblock add %}", "pages/poster.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\pages\\poster.html.twig");
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     {% block head %}
     <meta charset="UTF-8">
@@ -11,7 +12,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="dropzone-5.7.0\dist\basic.css" rel="stylesheet">
     <link href="dropzone-5.7.0\dist\dropzone.css" rel="stylesheet">
-    
+
     <!--Lien CDN CSS Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -20,7 +21,8 @@
     <!--Lien dropzone-->
     <script src="dropzone-5.7.0\dist\dropzone.js"></script>
     <!-- Re Captcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    {% block reCaptcha %}{% endblock reCaptcha %}
+
     <!--Titre-->
     <title>{% block title %}Base Twig{% endblock title %} </title>
     {% endblock head %}
@@ -32,16 +34,19 @@
         <nav class="navbar navbar-dark bg-dark">
             <div class="row col-12 justify-content-between">
                 <a class="navbar-brand" href="accueil">LamaShop</a>
-                
+
                 <!-- Formulaire de recherche -->
                 <form class="search-bar form-inline justify-content-center mr-4">
                     <select class="custom-select bg-danger text-light border-0 font-weight-bold cursor-pointer"
                         id="SearchForm">
                         <option selected>Catégories</option>
-                        <option value="Immobilier">Immobilier</option>
+                            {% for catégorie in categories %}
+                            <option value="{{catégorie.id}}">{{catégorie.cat_libelle}}</option>
+                            {% endfor %}
+                        </select>
                     </select>
-                    <input class="form-control rounded-0 border-0 col-lg-8" type="search" placeholder="Une petite envie ?"
-                        aria-label="Search">
+                    <input class="form-control rounded-0 border-0 col-lg-8" type="search"
+                        placeholder="Une petite envie ?" aria-label="Search">
                     <button class="btn d-flex jusify-content-center bg-danger" type="submit"><i
                             class="material-icons text-light">search</i></button>
                 </form>
@@ -50,25 +55,27 @@
                     <span class="d-flex mr-2">
                         <i class="material-icons">add_circle_outline</i>
                     </span>
+                    {% block boutonPoster %}
                     <span class="font-weight-bold">Poster une annonce</span>
+                    {% endblock boutonPoster %}
                 </a>
-                
+
             </div>
         </nav>
         {% block add %}
 
         {% endblock add %}
     </main>
-    <footer>
-    </footer>
+    {% block footer %}
+    
+    {% endblock footer %}
     {% block javascript %}
     <!--Js-->
     <script src="../public/js/infiniteScroll.js"></script>
     <script src="../public/js/dragAndDrop.js"></script>
     <script src="../public/js/formValidation.js"></script>
     <script src="../public/js/reCaptcha.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
