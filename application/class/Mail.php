@@ -79,7 +79,7 @@ try {
     if ($type === 'validation')
     {
         $link = SERVER_URI . '/validation-'.$ann_unique_id;
-        $mail->AddEmbeddedImage('../public/assets/medias/logo3.png','cro','../public/assets/medias/logo3.png');
+        $mail->AddEmbeddedImage('../public/assets/media/logo3.png','cro','../public/assets/media/logo3.png');
         $mail->Subject = 'Confirmation de votre annonce';
         $mail->Body    = '<div style=" background-color: #fff; padding:4rem; width : 100%; box-sizing : border-box;"><h3><a href="'.SERVER_URI.'/accueil"><img src="cid:cro" alt="velo">Adrien && Fouad </a></h3><br><br><br><br><p>Bonjour '.$prenom.' '.$nom.'
         <br></p><div style="background-color:rgba(236, 240, 241,.7); padding: 2rem; width:100%; box-sizing : border-box;"><p>Voici un récapitulatif de votre annonce:<br> Le titre de votre annonce est : '.$titre.'<br>La descriprtion de votre annonce est : '.$description.'<br>Le prix de votre annonce est : '.$prix.'€.<br>
@@ -90,7 +90,7 @@ try {
     }elseif($type === 'supprimer')
     {
         $link = SERVER_URI . '/supprimer-' . $ann_unique_id;
-        $mail->AddEmbeddedImage('../public/assets/medias/logo3.png','cro','../public/assets/medias/logo3.png');
+        $mail->AddEmbeddedImage('../public/assets/media/logo3.png','cro','../public/assets/media/logo3.png');
         $mail->Subject = 'Suppression de votre annonce';
         $mail->Body    = '<h1><a href="'.SERVER_URI.'"><img src="cid:cro" alt="velo">Adrien && Fouad </a></h1><br><br><p>Bonjour '.$prenom.' !</p><br><a href="'.$link .'">Veuillez Cliquer sur ce lien pour supprimer votre annonce.</a>';
 
