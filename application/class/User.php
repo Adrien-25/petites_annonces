@@ -2,12 +2,14 @@
 namespace App;
 
 use \App\Database;
-class User
+
+class utilisateur
 {
     private $sql;
 
     public function selectEmail()
     {
+
         $this->sql = 'SELECT *  FROM utilisateur WHERE email =?';
         $this->db = new \App\Database();
         $this->db->prepareSql($this->sql);

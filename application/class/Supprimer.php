@@ -9,11 +9,12 @@
         public $sql;
         public function supprimer($ann_unique_id)
         {
-            $this->sql = "DELETE FROM annonce WHERE annonce.ann_unique_id = '$ann_unique_id';";
             $this->dbr = new \App\Database();
+
+
+            $this->sql = "DELETE FROM annonce WHERE annonce.ann_unique_id = '$ann_unique_id';";
             $this->dbr->prepareSql($this->sql);
             $this->dbr->execReq();
-            
             return true;
         }
     }
