@@ -30,6 +30,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
             'head' => [$this, 'block_head'],
             'reCaptcha' => [$this, 'block_reCaptcha'],
             'title' => [$this, 'block_title'],
+            'boutonPoster' => [$this, 'block_boutonPoster'],
             'add' => [$this, 'block_add'],
             'footer' => [$this, 'block_footer'],
             'javascript' => [$this, 'block_javascript'],
@@ -91,23 +92,26 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                     <span class=\"d-flex mr-2\">
                         <i class=\"material-icons\">add_circle_outline</i>
                     </span>
-                    <span class=\"font-weight-bold\">Poster une annonce</span>
-                </a>
+                    ";
+        // line 58
+        $this->displayBlock('boutonPoster', $context, $blocks);
+        // line 61
+        echo "                </a>
 
             </div>
         </nav>
         ";
-        // line 63
+        // line 65
         $this->displayBlock('add', $context, $blocks);
-        // line 66
+        // line 68
         echo "    </main>
     ";
-        // line 67
+        // line 69
         $this->displayBlock('footer', $context, $blocks);
-        // line 70
+        // line 72
         echo "    ";
         $this->displayBlock('javascript', $context, $blocks);
-        // line 87
+        // line 89
         echo "
 </body>
 
@@ -164,29 +168,38 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
         echo "Base Twig";
     }
 
-    // line 63
+    // line 58
+    public function block_boutonPoster($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 59
+        echo "                    <span class=\"font-weight-bold\">Poster une annonce</span>
+                    ";
+    }
+
+    // line 65
     public function block_add($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 64
+        // line 66
         echo "
         ";
     }
 
-    // line 67
+    // line 69
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 68
+        // line 70
         echo "    
     ";
     }
 
-    // line 70
+    // line 72
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 71
+        // line 73
         echo "    <!--Js-->
     <script src=\"../public/js/infiniteScroll.js\"></script>
     <script src=\"../public/js/dragAndDrop.js\"></script>
@@ -217,7 +230,7 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
 
     public function getDebugInfo()
     {
-        return array (  190 => 71,  186 => 70,  181 => 68,  177 => 67,  172 => 64,  168 => 63,  161 => 27,  155 => 24,  149 => 27,  145 => 25,  143 => 24,  137 => 20,  122 => 6,  118 => 5,  111 => 87,  108 => 70,  106 => 67,  103 => 66,  101 => 63,  82 => 46,  71 => 44,  67 => 43,  51 => 29,  49 => 5,  43 => 1,);
+        return array (  203 => 73,  199 => 72,  194 => 70,  190 => 69,  185 => 66,  181 => 65,  176 => 59,  172 => 58,  165 => 27,  159 => 24,  153 => 27,  149 => 25,  147 => 24,  141 => 20,  126 => 6,  122 => 5,  115 => 89,  112 => 72,  110 => 69,  107 => 68,  105 => 65,  99 => 61,  97 => 58,  83 => 46,  72 => 44,  68 => 43,  52 => 29,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -279,7 +292,9 @@ class __TwigTemplate_9b5c2da669e66b2b8f1c27c0b08d4f6f2e81edcf918ef5eb6c4d4e5f52c
                     <span class=\"d-flex mr-2\">
                         <i class=\"material-icons\">add_circle_outline</i>
                     </span>
+                    {% block boutonPoster %}
                     <span class=\"font-weight-bold\">Poster une annonce</span>
+                    {% endblock boutonPoster %}
                 </a>
 
             </div>
