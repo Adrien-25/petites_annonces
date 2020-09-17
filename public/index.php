@@ -39,72 +39,72 @@ $router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
 
 // var_dump($_POST);
 $router->map('GET|POST', '/poster', function(){
-$ann_prix = "";
-$ann_description= "";
-$ann_titre = "";
-$usr_prenom = "";
-$usr_nom = "";
-$usr_telephone = "";
-$usr_email = "";
-$categorie_id = "selected";
-$error = false;
+    $recaptcha = \App\Captcha::testCaptcha();
+    var_dump($recaptcha);
 
-if(!empty($_POST)){
-  
-    $ann_prix = trim($_POST['prix']);
-    $ann_titre = trim($_POST['titre']);
-    $usr_prenom = trim($_POST['prenom']);
-    $usr_nom= trim($_POST['nom']);
-    $usr_email= trim($_POST['email']);
-    $ann_description = trim($_POST['description']);
-    $usr_telephone = trim($_POST['telephone']);
-    $categorie_id = trim($_POST['categorie']);
+    $ann_prix = "";
+    $ann_description= "";
+    $ann_titre = "";
+    $usr_prenom = "";
+    $usr_nom = "";
+    $usr_telephone = "";
+    $usr_email = "";
+    $categorie_id = "selected";
+    $error = false;
 
-    if (strlen($ann_prix === 0)){
-        $error = true;   
-    }
- 
-    if (strlen($ann_titre === 0)){
-        $error = true;
-    }
-   
-    if(strlen($usr_prenom=== 0)){
-        $error = true;
-    }
-    if(strlen($usr_nom === 0)){
-        $error = true;
-    }
-    if(strlen($usr_telephone === 0)){
-        $error = true;
-    }
-    if(strlen($usr_email === 0)){
-        $error = true;
-    }
-    if(strlen($categorie_id === 0)){
-       $error = true;
-    }
-    if(strlen($ann_description === 0)){
-        $error = true;
+    if(!empty($_POST)){
+        $ann_prix = trim($_POST['prix']);
+        $ann_titre = trim($_POST['titre']);
+        $usr_prenom = trim($_POST['prenom']);
+        $usr_nom= trim($_POST['nom']);
+        $usr_email= trim($_POST['email']);
+        $ann_description = trim($_POST['description']);
+        $usr_telephone = trim($_POST['telephone']);
+        $categorie_id = trim($_POST['categorie']);
+
+        if (strlen($ann_prix === 0)){
+            $error = true;   
+        }
     
-    }
-
-    if($error === false){
-
-        echo "Je suis la page message d'erreur!";
-        $posts = new \App\Poster($usr_email, $usr_nom, $usr_prenom, $ann_titre, $ann_prix, $ann_description, $usr_telephone);
-       
-
-        $posts->addPosts($ann_prix, $ann_description, $ann_titre, $categorie_id);
-        // $charge1Twig = new \App\Twig('pages/showmsgaddannonce.html.twig');
-        // $charge1Twig->render([]);
-        return true;
-    }
+        if (strlen($ann_titre === 0)){
+            $error = true;
+        }
     
-}
-$categorie = new \App\Categorie();
-$categories=$categorie->selectionCategorie();
-$charge1Twig = new \App\Twig('pages/poster.html.twig');
-$charge1Twig->render(['categories'=>$categories, 'email' => $usr_email, 'prenom'=>$usr_prenom, 'nom'=>$usr_nom, 'titre'=>$ann_titre, 'telephone'=>$usr_telephone, 'description'=>$ann_description, 'categorie'=>$categorie_id, 'prix'=>$ann_prix ]);
+        if(strlen($usr_prenom=== 0)){
+            $error = true;
+        }
+        if(strlen($usr_nom === 0)){
+            $error = true;
+        }
+        if(strlen($usr_telephone === 0)){
+            $error = true;
+        }
+        if(strlen($usr_email === 0)){
+            $error = true;
+        }
+        if(strlen($categorie_id === 0)){
+        $error = true;
+        }
+        if(strlen($ann_description === 0)){
+            $error = true;
+        }
+        
+
+        if($error === false){
+
+            echo "Pas d'eurreur!";
+            $posts = new \App\Poster($usr_email, $usr_nom, $usr_prenom, $ann_titre, $ann_prix, $ann_description, $usr_telephone);
+            $posts->addPosts($ann_prix, $ann_description, $ann_titre, $categorie_id);
+            // $charge1Twig = new \App\Twig('pages/showmsgaddannonce.html.twig');
+            // $charge1Twig->render([]);
+            return true;
+        }
+        
+    }
+    $categorie = new \App\Categorie();
+    $categories = $categorie->selectionCategorie();
+    $charge1Twig = new \App\Twig('pages/poster.html.twig');
+    $charge1Twig->render(['categories'=>$categories, 'email' => $usr_email, 'prenom'=>$usr_prenom, 'nom'=>$usr_nom, 'titre'=>$ann_titre, 'telephone'=>$usr_telephone, 'description'=>$ann_description, 'categorie'=>$categorie_id, 'prix'=>$ann_prix ]);
 
 });
 
