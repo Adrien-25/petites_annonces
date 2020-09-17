@@ -22,8 +22,8 @@
 {% block add %}
 {% set ann_contenu = annonce[0] %}
 <h1 class="mt-5 mb-4 col-12 text-center text-uppercase">{{ann_contenu.ann_titre}}</h1>
-<div class="container-fluid d-flex flex-column align-items-center flex-md-row justify">
-    <div class="col-12 col-md-6">
+<div class="container-fluid d-flex flex-column align-items-center flex-xl-row justify-content-center">
+    <div class="mb-3 col-12 col-md-8 col-xl-6">
         <div>
             {% if ann_contenu.ann_image_url %}
             {% set image = ann_contenu.ann_image_url %}
@@ -33,26 +33,33 @@
             <img class="img_annonce minw-100" src="../assets/media/{{image}}"
                 alt="{{ann_contenu.ann_image_nom}}">
         </div>
-
     </div>
-    <div class="col-10 col-md-6">
-        <div class="d-flex h-100 flex-column justify-content-center justify-content-md-between">
-            <p class="text-danger display-4 font-weight-bold">{{ann_contenu.ann_prix}} €</p>
+    <div class="col-12 col-md-8 col-xl-6 d-flex flex-column flex-sm-row">
+        <div class="d-flex h-100 flex-column justify-content-center justify-content-md-between col-lg-6">
+            <h2 class="text-center  mb-4 txt-underline">Description</h2>
+            <p class="text-danger fs-30 font-weight-bold my-2">{{ann_contenu.ann_prix}} €</p>
             <hr align="left" class="w-25 bg-danger">
-            <p class="overflow-wrap-break">{{ann_contenu.ann_description}}</p>
+            <p class="overflow-wrap-break my-2">{{ann_contenu.ann_description}}</p>
             <hr align="left" class="w-25 bg-danger">
-            <div>
+            <div class="my-2">
                 <p>Catégorie : {{ann_contenu.cat_libelle}}</p>
-                <p>Poster par <span class="font-weight-bold text-danger">{{ann_contenu.usr_nom}}
-                        {{ann_contenu.usr_prenom}}</span></p>
+                
                 <p class="font-italic">Le {{ann_contenu.ann_date_ecriture}}</p>
             </div>
         </div>
-        <div>
+        <div class="lv mx-2">
         </div>
-
-
-
+        <div class="d-flex h-100 flex-column justify-content-center justify-content-md-between col-lg-6">
+            <h2 class="text-center mb-4 txt-underline ">Contact</h2>
+            <p class="my-2">Poster par <span class="font-weight-bold text-danger">{{ann_contenu.usr_nom}}
+                        {{ann_contenu.usr_prenom}}</span></p>
+            <hr align="left" class="w-25 bg-danger">
+            <p class="d-flex my-2"><i class="material-icons mr-2">phone</i>0{{ann_contenu.usr_telephone}}</p>
+            <hr align="left" class="w-25 bg-danger">
+            <p class="d-flex my-2"><i class="material-icons mr-2">email</i>{{ann_contenu.email}}</p>
+            <hr align="left" class="w-25 bg-danger">
+            <p class="d-flex my-2"><i class="material-icons mr-2">room</i>{{ann_contenu.usr_adresse}}, {{ann_contenu.usr_code_postale}} {{ann_contenu.usr_ville}}</p>
+        </div>
         {% endblock add %}
         {% block javascript %}
         <!--Js-->

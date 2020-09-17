@@ -65,15 +65,15 @@ function getMoreData(lastId) {
         var noMoreLoad = $('.fin-annnonce')[NbrFinAnnonce - 1];
         noMoreLoad.classList.remove('d-none');
         // BOUTON REMONTER HAUT DE LA PAGE
-        var scrollupLongueur = $('.scrollup').length;
-        var scrollup = $('.scrollup')[[scrollupLongueur - 1]];
-        console.log(scrollup);
-        $('.scrollup').click(function () {
-            $("html, body").animate({
-                scrollTop: 0
-            }, 500);
-            console.log('CLIQUER')
-            return false;
-        });
+        // var scrollupLongueur = $('.scrollup').length;
+        // var scrollup = $('.scrollup')[[scrollupLongueur - 1]];
+        // console.log(scrollup);
+        // $('.scrollup').click(function () {
+        //     $("html, body").animate({
+        //         scrollTop: 0
+        //     }, 500);
+        //     console.log('CLIQUER')
+        //     return false;
+        // });
     }
 }

@@ -103,35 +103,33 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
           <i class=\"material-icons mr-2\">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
-        ";
-            // line 27
-            echo "      </div>
+      </div>
     </div>
     ";
-            // line 29
-            if (twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 29)) {
-                // line 30
+            // line 27
+            if (twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 27)) {
+                // line 28
                 echo "    ";
-                $context["image"] = twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 30);
-                // line 31
+                $context["image"] = twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 28);
+                // line 29
                 echo "    ";
             } else {
-                // line 32
+                // line 30
                 echo "    ";
-                $context["image"] = (twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 32) . ".jpg");
-                // line 33
+                $context["image"] = (twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 30) . ".jpg");
+                // line 31
                 echo "    ";
             }
             echo " 
     <div
       class=\"d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2\">
       <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/media/";
-            // line 36
+            // line 34
             echo twig_escape_filter($this->env, ($context["image"] ?? null), "html", null, true);
             echo "\"
         alt=\"";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 37), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 35), "html", null, true);
             echo "\">
     </div>
 
@@ -142,7 +140,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 41
         echo "  <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5\" value=";
         echo twig_escape_filter($this->env, ($context["Nbr_annonces"] ?? null), "html", null, true);
         echo ">
@@ -152,15 +150,15 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     Fin des annonces
   </div>
 </div>
-<a class=\"scrollup btn bg-danger\"><i class=\"material-icons text-light display-5 \">arrow_upward</i></a>
+<a class=\"scrollup btn bg-danger d-none\" id=\"backToTop\"><i class=\"material-icons text-light display-5 \">arrow_upward</i></a>
 ";
     }
 
-    // line 52
+    // line 50
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 53
+        // line 51
         echo "
 <div class=\"bg-dark p-4 text-light d-flex justify-content-between\">
   <div>
@@ -192,7 +190,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
 
     public function getDebugInfo()
     {
-        return array (  164 => 53,  160 => 52,  146 => 43,  134 => 37,  130 => 36,  123 => 33,  120 => 32,  117 => 31,  114 => 30,  112 => 29,  108 => 27,  101 => 21,  94 => 17,  88 => 14,  84 => 13,  79 => 11,  75 => 10,  70 => 8,  66 => 6,  62 => 5,  59 => 4,  55 => 3,  48 => 2,  37 => 1,);
+        return array (  162 => 51,  158 => 50,  144 => 41,  132 => 35,  128 => 34,  121 => 31,  118 => 30,  115 => 29,  112 => 28,  110 => 27,  101 => 21,  94 => 17,  88 => 14,  84 => 13,  79 => 11,  75 => 10,  70 => 8,  66 => 6,  62 => 5,  59 => 4,  55 => 3,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -221,8 +219,6 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
           <i class=\"material-icons mr-2\">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
-        {# <a href=\"modifier.php?{{annonce.ann_id}}\" class=\"btn bg-danger\">Modifier</a>
-          <a href=\"supprimer.php?{{annonce.ann_id}}\" class=\"btn bg-danger\">Supprimer</a> #}
       </div>
     </div>
     {% if annonce.ann_image_url %}
@@ -246,7 +242,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     Fin des annonces
   </div>
 </div>
-<a class=\"scrollup btn bg-danger\"><i class=\"material-icons text-light display-5 \">arrow_upward</i></a>
+<a class=\"scrollup btn bg-danger d-none\" id=\"backToTop\"><i class=\"material-icons text-light display-5 \">arrow_upward</i></a>
 {% endblock add %}
 {% block footer %}
 
