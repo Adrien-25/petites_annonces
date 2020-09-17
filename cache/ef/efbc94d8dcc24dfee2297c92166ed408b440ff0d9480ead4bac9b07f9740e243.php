@@ -79,42 +79,33 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
           <i class=\"material-icons mr-2\">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
-        ";
-            // line 23
-            echo "      </div>
+      </div>
     </div>
     ";
-            // line 25
-            echo twig_var_dump($this->env, $context, ...[0 => $context["annonce"]]);
-            echo "
-    ";
-            // line 26
-            if (twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 26)) {
-                // line 27
+            // line 23
+            if (twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 23)) {
+                // line 24
                 echo "    ";
-                $context["image"] = twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 27);
-                // line 28
+                $context["image"] = twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 24);
+                // line 25
                 echo "    ";
             } else {
-                // line 29
+                // line 26
                 echo "    ";
-                $context["image"] = (twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 29) . ".jpg");
-                // line 30
+                $context["image"] = (twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 26) . ".jpg");
+                // line 27
                 echo "    ";
             }
-            // line 31
-            echo "    ";
-            echo twig_var_dump($this->env, $context, ...[0 => ($context["image"] ?? null)]);
-            echo "
-    <div
+            // line 28
+            echo "    <div
       class=\"d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2\">
       <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/media/";
-            // line 34
+            // line 30
             echo twig_escape_filter($this->env, ($context["image"] ?? null), "html", null, true);
             echo "\"
         alt=\"";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 35), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 31), "html", null, true);
             echo "\">
     </div>
 
@@ -125,7 +116,7 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 37
         echo " <div class=\"ajax-loader text-center m-2 col-12\">
    <img src=\"https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif\">
  </div>
@@ -147,7 +138,7 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
 
     public function getDebugInfo()
     {
-        return array (  129 => 41,  117 => 35,  113 => 34,  106 => 31,  103 => 30,  100 => 29,  97 => 28,  94 => 27,  92 => 26,  88 => 25,  84 => 23,  77 => 17,  70 => 13,  64 => 10,  60 => 9,  55 => 7,  51 => 6,  46 => 4,  42 => 2,  37 => 1,);
+        return array (  120 => 37,  108 => 31,  104 => 30,  100 => 28,  97 => 27,  94 => 26,  91 => 25,  88 => 24,  86 => 23,  77 => 17,  70 => 13,  64 => 10,  60 => 9,  55 => 7,  51 => 6,  46 => 4,  42 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -172,17 +163,13 @@ class __TwigTemplate_9ed79cc481fba5c74523cb1ea3d827408418917349f49aa99a56950369b
           <i class=\"material-icons mr-2\">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
-        {# <a href=\"modifier.php?{{annonce.ann_id}}\" class=\"btn bg-danger\">Modifier</a>
-          <a href=\"supprimer.php?{{annonce.ann_id}}\" class=\"btn bg-danger\">Supprimer</a> #}
       </div>
     </div>
-    {{dump(annonce)}}
     {% if annonce.ann_image_url %}
     {% set image = annonce.ann_image_url %}
     {% else %}
     {% set image = annonce.cat_libelle ~ '.jpg'  %}
     {% endif %}
-    {{dump(image)}}
     <div
       class=\"d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2\">
       <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/media/{{image}}\"
