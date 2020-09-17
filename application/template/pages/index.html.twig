@@ -22,15 +22,13 @@
           <i class="material-icons mr-2">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
-        {# <a href="modifier.php?{{annonce.ann_id}}" class="btn bg-danger">Modifier</a>
-          <a href="supprimer.php?{{annonce.ann_id}}" class="btn bg-danger">Supprimer</a> #}
       </div>
     </div>
     {% if annonce.ann_image_url %}
     {% set image = annonce.ann_image_url %}
     {% else %}
     {% set image = annonce.cat_libelle ~ '.jpg'  %}
-    {% endif %}
+    {% endif %} 
     <div
       class="d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2">
       <img class="fit-picture mw-500 mh-500 img-fluid" src="../public/assets/media/{{image}}"
