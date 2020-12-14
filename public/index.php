@@ -1,6 +1,6 @@
 <?php
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
-define('BASE_PATH', '');
+define('BASE_PATH', '/petites-annonces/public');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
 define('SERVER_URI', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['REMOTE_PORT'].BASE_PATH);
 
