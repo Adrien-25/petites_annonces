@@ -105,11 +105,12 @@ try {
 } catch (Exception $e) {
     echo "Votre message n'a pas été envoyé. Il y a une erreur de l'expéditeur: {$mail->ErrorInfo}";
 
-}
+         }
 
-}
+        }
 
     
+   
 }
 
 ?>

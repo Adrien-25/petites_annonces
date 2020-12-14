@@ -10,7 +10,7 @@ class Database{
     private $db_host;
     private $pdo;
     private $statement;
-    public function __construct($db_name='annonces', $db_user='root',$db_pass='', $db_host = 'localhost')
+    public function __construct($db_name= 'fouadl_annonce', $db_user= 'fouadl',$db_pass= '51n68L9j13Hplw==', $db_host = 'localhost')
     {
         $this->db_name = $db_name;
         $this->db_user = $db_user;
@@ -24,9 +24,9 @@ class Database{
     public function getPDO(){
         if($this->pdo === null){
 
-            $pdo = new PDO('mysql:host='.$this->db_host.';dbname='.$this->db_name,$this->db_user, $this->db_pass); 
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->pdo = $pdo;
+            $this->pdo = new PDO('mysql:host='.$this->db_host.';dbname='.$this->db_name,$this->db_user, $this->db_pass); 
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+           
         }
         return $this->pdo;
     }

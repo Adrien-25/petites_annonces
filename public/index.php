@@ -2,7 +2,7 @@
 require_once  dirname(dirname(__FILE__)).'/vendor/autoload.php';
 define('BASE_PATH', '');
 // pour passer à twig pour avoir les bonnes adresses à (mettre dans le render)
-define('SERVER_URI', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME']/*.':'.$_SERVER['REMOTE_PORT']*/.BASE_PATH);
+define('SERVER_URI', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['REMOTE_PORT'].BASE_PATH);
 
 // pour initialiser altorouter
 $router = new AltoRouter();
@@ -37,7 +37,7 @@ $router->map('GET|POST', '/getLastArticle/[i:offset]', function($offset){
     $chargeTwig->render(['listes_annonces'=> $ajout]);
 });
 
-// var_dump($_POST);
+
 $router->map('GET|POST', '/poster', function(){
 $ann_prix = "";
 $ann_description= "";
@@ -132,7 +132,6 @@ $router->map('GET|POST', '/supprimer-[*:ann_unique_id]', function($ann_unique_id
   
 
 
-});
 
 $router->map('GET', '/telecharger/[i:id]', function($id){
     // dans le cas ou on est dans la page de détail

@@ -109,33 +109,29 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     </div>
     ";
             // line 29
-            echo twig_var_dump($this->env, $context, ...[0 => $context["annonce"]]);
-            echo "
-    ";
-            // line 30
-            if (twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 30)) {
+            if (twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 29)) {
+                // line 30
+                echo "    ";
+                $context["image"] = twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 30);
                 // line 31
                 echo "    ";
-                $context["image"] = twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_url", [], "any", false, false, false, 31);
+            } else {
                 // line 32
                 echo "    ";
-            } else {
+                $context["image"] = (twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 32) . ".jpg");
                 // line 33
                 echo "    ";
-                $context["image"] = (twig_get_attribute($this->env, $this->source, $context["annonce"], "cat_libelle", [], "any", false, false, false, 33) . ".jpg");
-                // line 34
-                echo "    ";
             }
-            // line 35
+            // line 34
             echo "    <div
       class=\"d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2\">
       <img class=\"fit-picture mw-500 mh-500 img-fluid\" src=\"../public/assets/media/";
-            // line 37
+            // line 36
             echo twig_escape_filter($this->env, ($context["image"] ?? null), "html", null, true);
             echo "\"
         alt=\"";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 38), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["annonce"], "ann_image_nom", [], "any", false, false, false, 37), "html", null, true);
             echo "\">
     </div>
 
@@ -146,7 +142,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['annonce'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 43
         echo "  <div id=\"first-loader\" class=\"ajax-loader text-center col-12 mb-5\" value=";
         echo twig_escape_filter($this->env, ($context["Nbr_annonces"] ?? null), "html", null, true);
         echo ">
@@ -160,11 +156,11 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
 ";
     }
 
-    // line 53
+    // line 52
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 54
+        // line 53
         echo "
 <div class=\"bg-dark p-4 text-light d-flex justify-content-between\">
   <div>
@@ -175,7 +171,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     <span>Lama Shop</span>
   </div>
   <div class=\"\">
-    <a href=\"https://github.com/fouad-git\" class=\"text-danger\" target=\"_blank\">Fouad Lyafousi</a>
+    <a href=\"https://github.com/fouad-git\" class=\"text-danger\" target=\"_blank\">Fouad LYOUSFI</a>
     <span class=\"fs-20\"> • </span>
     <a href=\"https://github.com/fouad-git\" class=\"text-danger\" target=\"_blank\">Adrien Schmidt</a>
   </div>
@@ -196,7 +192,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
 
     public function getDebugInfo()
     {
-        return array (  168 => 54,  164 => 53,  150 => 44,  138 => 38,  134 => 37,  130 => 35,  127 => 34,  124 => 33,  121 => 32,  118 => 31,  116 => 30,  112 => 29,  108 => 27,  101 => 21,  94 => 17,  88 => 14,  84 => 13,  79 => 11,  75 => 10,  70 => 8,  66 => 6,  62 => 5,  59 => 4,  55 => 3,  48 => 2,  37 => 1,);
+        return array (  164 => 53,  160 => 52,  146 => 43,  134 => 37,  130 => 36,  126 => 34,  123 => 33,  120 => 32,  117 => 31,  114 => 30,  112 => 29,  108 => 27,  101 => 21,  94 => 17,  88 => 14,  84 => 13,  79 => 11,  75 => 10,  70 => 8,  66 => 6,  62 => 5,  59 => 4,  55 => 3,  48 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -229,7 +225,6 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
           <a href=\"supprimer.php?{{annonce.ann_id}}\" class=\"btn bg-danger\">Supprimer</a> #}
       </div>
     </div>
-    {{dump(annonce)}}
     {% if annonce.ann_image_url %}
     {% set image = annonce.ann_image_url %}
     {% else %}
@@ -264,7 +259,7 @@ class __TwigTemplate_e672e720880aa46cda09dac894d4a8ff6dc6957d1ccf1599d33ad2e7716
     <span>Lama Shop</span>
   </div>
   <div class=\"\">
-    <a href=\"https://github.com/fouad-git\" class=\"text-danger\" target=\"_blank\">Fouad Lyafousi</a>
+    <a href=\"https://github.com/fouad-git\" class=\"text-danger\" target=\"_blank\">Fouad LYOUSFI</a>
     <span class=\"fs-20\"> • </span>
     <a href=\"https://github.com/fouad-git\" class=\"text-danger\" target=\"_blank\">Adrien Schmidt</a>
   </div>

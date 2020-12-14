@@ -99,15 +99,27 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <input type=\"text\" name=\"prix\" class=\"form-control\" required>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-
+                                    <label for=\"categorie\">Quelle catégorie fait partie votre annonce.</label>
                                     <select class=\"form-control\" name=\"categorie\">
                                           <option value=\"selected\">Faites votre choix</option>
-                                          <option value=\"2\">Animalerie</option>
-                                          <option value=\"3\">Emploi</option>
-                                          <option value=\"4\">Auto/Moto</option>
-                                          <option value=\"1\">Loisirs</option>
-                                    </select>
+                                          ";
+        // line 51
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["catégorie"]) {
+            // line 52
+            echo "                                          <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["catégorie"], "id", [], "any", false, false, false, 52), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["catégorie"], "cat_libelle", [], "any", false, false, false, 52), "html", null, true);
+            echo "</option>
+                                          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['catégorie'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 54
+        echo "                                    </select>
                               </div>
 
                         </div>
@@ -132,12 +144,10 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <button type=\"submit\" value=\"ajouter\"
                                           class=\"btn bg-danger btn-primary btn-lg btn-block border-0\">Envoyer</button>
                               </div>
-
+                        </div>
                   </form>
             </div>
       </div>
-
-</div>
 
 </div>    
 ";
@@ -207,14 +217,12 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <input type=\"text\" name=\"prix\" class=\"form-control\" required>
                               </div>
                               <div class=\"form-group col-sm-12 col-md-6 col-lg-6\">
-                                    <label for=\"example4\">Quelle catégorie fait partie votre annonce.</label>
-
+                                    <label for=\"categorie\">Quelle catégorie fait partie votre annonce.</label>
                                     <select class=\"form-control\" name=\"categorie\">
                                           <option value=\"selected\">Faites votre choix</option>
-                                          <option value=\"2\">Animalerie</option>
-                                          <option value=\"3\">Emploi</option>
-                                          <option value=\"4\">Auto/Moto</option>
-                                          <option value=\"1\">Loisirs</option>
+                                          {% for catégorie in categories %}
+                                          <option value=\"{{catégorie.id}}\">{{catégorie.cat_libelle}}</option>
+                                          {% endfor %}
                                     </select>
                               </div>
 
@@ -240,12 +248,10 @@ class __TwigTemplate_186d8ebccf4b5811422ec7497cd9badff9ff0404313d0ff337454296790
                                     <button type=\"submit\" value=\"ajouter\"
                                           class=\"btn bg-danger btn-primary btn-lg btn-block border-0\">Envoyer</button>
                               </div>
-
+                        </div>
                   </form>
             </div>
       </div>
-
-</div>
 
 </div>    
 {% endblock add %}", "pages/poster.html.twig", "C:\\wamp64\\www\\petites-annonces\\application\\template\\pages\\poster.html.twig");
