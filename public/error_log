@@ -1,0 +1,18 @@
+[17-Dec-2020 15:57:43 Europe/Paris] PHP Fatal error:  Uncaught PDOException: could not find driver in /home/adridwzd/public_html/petites-annonces/application/class/Database.php:27
+Stack trace:
+#0 /home/adridwzd/public_html/petites-annonces/application/class/Database.php(27): PDO->__construct('mysql:host=loca...', 'adridwzd_ampoul...', 'iRytbQpQMIWNqwn...')
+#1 /home/adridwzd/public_html/petites-annonces/application/class/Database.php(20): App\Database->getPDO()
+#2 /home/adridwzd/public_html/petites-annonces/application/class/Lister.php(10): App\Database->__construct()
+#3 /home/adridwzd/public_html/petites-annonces/public/index.php(14): App\Lister::appelLister()
+#4 /home/adridwzd/public_html/petites-annonces/public/index.php(143): {closure}()
+#5 {main}
+  thrown in /home/adridwzd/public_html/petites-annonces/application/class/Database.php on line 27
+[17-Dec-2020 15:59:11 Europe/Paris] PHP Fatal error:  Uncaught PDOException: could not find driver in /home/adridwzd/public_html/petites-annonces/application/class/Database.php:27
+Stack trace:
+#0 /home/adridwzd/public_html/petites-annonces/application/class/Database.php(27): PDO->__construct('mysql:host=loca...', 'adridwzd_ampoul...', 'iRytbQpQMIWNqwn...')
+#1 /home/adridwzd/public_html/petites-annonces/application/class/Database.php(20): App\Database->getPDO()
+#2 /home/adridwzd/public_html/petites-annonces/application/class/Lister.php(10): App\Database->__construct()
+#3 /home/adridwzd/public_html/petites-annonces/public/index.php(14): App\Lister::appelLister()
+#4 /home/adridwzd/public_html/petites-annonces/public/index.php(143): {closure}()
+#5 {main}
+  thrown in /home/adridwzd/public_html/petites-annonces/application/class/Database.php on line 27
