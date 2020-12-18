@@ -1,11 +1,13 @@
 <?php
-
 /***********************************
-  Téléchragement Fichier PDF
+  Téléchargement Fichier PDF
 ************************************/
+
 namespace App;
-require "fpdf.php";
-class PDF extends FPDF{
+
+use Fpdf\Fpdf;
+
+class Pdf extends Fpdf{
     public static function annoncePdf($donnee){
         // var_dump($donnee);
         $titre = $donnee[0]->ann_titre;
@@ -25,7 +27,7 @@ class PDF extends FPDF{
         $ville = $donnee[0]->usr_ville;
         $code_postale = $donnee[0]->usr_code_postale;
         // var_dump($image);
-        $pdf = new PDF();
+        $pdf = new Pdf();
         $pdf->AliasNbPages();
         $pdf->AddPage('P','A4',0);
         $pdf->SetTextColor(255,0,0);
@@ -97,6 +99,7 @@ class PDF extends FPDF{
         $pdf->MultiCell(95,15,$code_postale.' '.$ville,0,'C',false);
 
         $pdf->Output();
+        
     }
 }
 
