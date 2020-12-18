@@ -3,3 +3,5 @@ composer.lock
 /cache
 package-lock.json
 parameter.php
+Mail.php
+Database.php
