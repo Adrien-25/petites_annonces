@@ -1,20 +1,20 @@
  {% for annonce in listes_annonces %}
   <div
-    class="scroller-item d-flex justify-content-between text-dark border border-dark flex-xl-row flex-column-reverse bg-light p-2 mb-5 col-lg-5 col-sm-5 col-10"
+    class="scroller-item d-flex justify-content-between text-dark border border-dark flex-column-reverse bg-light p-2 col-lg-4 col-sm-6 col-12 border-size-5"
     id="{{annonce.ann_id}}">
     <div class="annonce-text d-flex justify-content-between flex-column text-center text-xl-left">
-      <h2>{{annonce.ann_titre}}</h2>
+      <h2 class="text-center">{{annonce.ann_titre}}</h2>
       <p class="text-danger ml-2 prix">{{annonce.ann_prix}} €</p>
       <div>
         <p class="ml-2 mb-0 font-italic">{{annonce.cat_libelle}}</p>
         <p class="ml-2 font-weight-bold">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
       </div>
-      <div class="d-flex justify-content-center btn-annonce">
-        <a href="annonce/{{annonce.ann_id}}" class="btn bg-danger text-light d-flex justify-content-center">
+      <div class="d-flex justify-content-center btn-annonce flex-sm-column flex-md-row">
+        <a href="annonce/{{annonce.ann_id}}" class="btn bg-danger text-light d-flex justify-content-center mb-sm-2 mb-md-0 mr-2 mr-sm-0">
           <i class="material-icons mr-2">pageview</i>
           <span>Détails</span>
         </a>
-        <a href="telecharger/{{annonce.ann_id}}" target="_blank" class="btn bg-danger text-light d-flex justify-content-center ml-3">
+        <a href="telecharger/{{annonce.ann_id}}" target="_blank" class="btn bg-danger text-light d-flex justify-content-center ml-md-3">
           <i class="material-icons mr-2">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
@@ -24,20 +24,23 @@
     {% set image = annonce.ann_image_url %}
     {% else %}
     {% set image = annonce.cat_libelle ~ '.jpg'  %}
-    {% endif %}
+    {% endif %} 
     <div
-      class="d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2">
-      <img class="fit-picture mw-500 mh-500 img-fluid" src="../public/assets/media/{{image}}"
+      class="d-flex align-items-center justify-content-xl-center justify-content-lg-center justify-content-md-end justify-content-center p-0 ">
+      <img class="w-100 fit-picture mw-500 mh-500 img-fluid" src="../public/assets/media/{{image}}"
         alt="{{annonce.ann_image_nom}}">
     </div>
 
   </div>
 
  {% endfor %}
- <div class="ajax-loader text-center m-2 col-12">
-   <img src="https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif">
+ <div class="ajax-loader text-center m-2 col-12 m-3 d-none">
+   {# <img src="../public/assets/media/loader.gif"> #}
+    <div class="spinner-grow text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
  </div>
- <div id="fin-annonce" class="fin-annnonce text-center d-none col-12 m-3 display-4 font-weight-bold">
+ <div id="fin-annonce" class="fin-annnonce text-center bg-light d-none col-12 display-4 font-weight-bold py-5 mt-5">
    Fin des annonces
  </div>
  </div>

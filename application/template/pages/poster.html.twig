@@ -3,10 +3,14 @@
 {% block add %}
 <div class="container">
       <div class="row">
-            <div class="col-12">
-                  <center>
-                        <h1 class="my-3">Poster une annonce</h1>
-                  </center>
+            <div class="col-12 text-white font-weight-bold mt-3">
+                  <div class="text-center d-flex align-items-center flex-column flex-md-row m-0 p-0">
+                        <a href="../" class="btn btn-light text-danger d-flex justify-content-center align-items-center col-4 col-md-2 h-100 mr-2"> 
+                              <i class="material-icons text-danger p-1">arrow_back</i>
+                              <p class="m-0 p-1 font-weight-bold">Accueil</p>
+                        </a>
+                        <h1 class="py-2 text-light rounded col-10">Poster une annonce</h1>
+                  </div>
                   <form action="poster" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
                         <div class="d-flex mx-auto flex-column col-sm-12 col-md-12 col-lg-12 mb-3 p-0">
                               <label for="titre">Titre</label>
@@ -55,9 +59,10 @@
                               </div>
 
                         </div>
-                        <div class="dropzone needsclick text-center" id="upload-pic" name="nom_image" action="poster">
+                        <div class="dropzone needsclick text-center text-danger" id="upload-pic" name="nom_image"
+                              action="poster">
                               <div id="icon-delete" class="text-danger d-none">
-                                    <i class="material-icons">clear</i>
+                                    <i class="material-icons text-light">clear</i>
                               </div>
                               <div class="dz-message needsclick">
                                     <i class="material-icons display-3 text-danger">cloud_download</i>
@@ -70,7 +75,9 @@
                                     <textarea name="description" class="form-control rounded-0" id="desc" cols="30"
                                           rows="3" required></textarea>
                               </div>
-                              <div id="reCaptcha" class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 d-flex justify-content-center g-recaptcha" data-sitekey="6Lem2coZAAAAANrcW6L41VKF1skSH7XmNiSdwgT-"></div>
+                              <div id="reCaptcha"
+                                    class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 d-flex justify-content-center g-recaptcha"
+                                    data-sitekey="6Lem2coZAAAAANrcW6L41VKF1skSH7XmNiSdwgT-"></div>
                               <br />
                               <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                     <button type="submit" value="ajouter"
@@ -81,5 +88,5 @@
             </div>
       </div>
 
-</div>    
+</div>
 {% endblock add %}
