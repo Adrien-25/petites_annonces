@@ -10,7 +10,7 @@ class Database{
     private $db_host;
     private $pdo;
     private $statement;
-    public function __construct($db_name= 'fouadl_annonce', $db_user= 'fouadl',$db_pass= '51n68L9j13Hplw==', $db_host = 'localhost')
+    public function __construct($db_name= 'adridwzd_annonces', $db_user= 'adridwzd_ampoule',$db_pass= 'iRytbQpQMIWNqwn4ZGWO', $db_host = 'localhost')
     {
         $this->db_name = $db_name;
         $this->db_user = $db_user;
