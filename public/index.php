@@ -10,21 +10,22 @@ define('SERVER_URI', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].BA
 $router = new AltoRouter();
 $router->setBasePath(BASE_PATH);
 
-$router->map('GET', '/accueil', function(){
+$router->map('GET', '/', function(){
+    header('Location: accueil');
+});
+
+$router->map('GET|POST', '/accueil', function(){
     $value = \App\Lister::appelLister();
     $AnnonceLimit = $value['DataLimit'];
     $nbrAnnonce = sizeof($value['DataAll']);
     $chargeTwig = new \App\Twig('pages/index.html.twig');
-
     $categorie = new \App\Categorie();
     $categories=$categorie->selectionCategorie();
-
     $chargeTwig->render(['categories'=>$categories,'listes_annonces'=> $AnnonceLimit,'Nbr_annonces'=>$nbrAnnonce]);
 });
 $router->map('GET', '/', function(){
     header('Location: accueil');
 });
-
 
 $router->map('GET', '/annonce/[i:id]', function($id){
     // dans le cas ou on est dans la page de détail
@@ -87,7 +88,17 @@ $router->map('GET|POST', '/poster', function(){
         if(strlen($ann_description === 0)){
             $error = true;
         }
-
+        $secretKey = "6Lem2coZAAAAAFoDhmP82FlBcU9QsNMM2QajFISO";
+        $ip = $_SERVER['REMOTE_ADDR'];
+        // post request to server
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
+        $response = file_get_contents($url);
+        $responseKeys = json_decode($response,true);
+        if($responseKeys["success"]) {
+            $captcha = 'valide';
+        } else {
+            $error = true;
+        }
         if($error === false){
             // foreach($_POST as $item){
             //     echo $item;

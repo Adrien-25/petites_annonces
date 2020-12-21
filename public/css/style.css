@@ -1,3 +1,6 @@
+/*===============================================================================
+ GENERAL
+===============================================================================*/
 .bg-1 {
   background-color: #084BB8 !important;
   color: white !important;
@@ -28,6 +31,14 @@
   font-size: 20px;
 }
 
+.fs-30 {
+  font-size: 30px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
 .display-5 {
   font-size: 2.5rem;
   font-weight: 300;
@@ -50,6 +61,12 @@
   min-width: 100%;
 }
 
+/*===============================================================================
+ COMPONENTS
+===============================================================================*/
+/*------------------------- 
+Accueil 
+---------------------------*/
 .ajax-loader {
   display: block;
   text-align: center;
@@ -58,15 +75,6 @@
 .ajax-loader img {
   width: 50px;
   vertical-align: middle;
-}
-
-.dropzone {
-  background: #f2f2f2;
-  border-radius: 5px;
-  border: 2px dashed #0087f7;
-  border-image: none;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #icon-delete {
@@ -80,12 +88,117 @@
   cursor: pointer;
 }
 
-.prix {
-  font-size: 2rem;
+.scrollup {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  /* left: 0; */
+  z-index: 1030;
 }
 
-.annonce-info {
-  flex-direction: column;
+.validation {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  min-height: 600px;
+}
+
+/* CheckBox categories */
+.ks-cboxtags {
+  list-style: none;
+  padding: 20px 20px 0px 20px;
+}
+.ks-cboxtags li {
+  display: inline;
+}
+.ks-cboxtags input.input-checkbox {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+.ks-cboxtags div.button-checkbox {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #bd2130;
+  color: #777777;
+  border-radius: 25px;
+  white-space: nowrap;
+  margin: 3px 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s;
+  padding: 5px 5px;
+  cursor: pointer;
+  position: relative;
+}
+.ks-cboxtags div.button-checkbox:hover {
+  transform: scale(1.2);
+}
+.ks-cboxtags .button-checkbox .add {
+  position: absolute;
+  left: 5px;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+.ks-cboxtags .button-checkbox .done {
+  color: #00FF00;
+  position: absolute;
+  left: 5px;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+}
+.ks-cboxtags input.input-checkbox:checked + .button-checkbox {
+  background-color: #dc3545;
+  border: 2px solid #00FF00;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.ks-cboxtags input.input-checkbox:checked + .button-checkbox .add {
+  display: inline-block;
+  opacity: 0;
+  transform: rotate(-360deg);
+  transition: all 0.3s ease-in-out;
+}
+.ks-cboxtags input.input-checkbox:checked + .button-checkbox .done {
+  display: inline-block;
+  opacity: 1;
+  transform: rotate(-360deg);
+  transition: all 0.3s ease-in-out;
+}
+
+/*
+ul.ks-cboxtags li input[type="checkbox"]:checked+label {
+    border: 2px solid #1bdbf8;
+    background-color: #12bbd4;
+    color: #fff;
+    transition: all .2s;
+}
+*/
+ul.ks-cboxtags li input[type=checkbox]:focus + label {
+  border: 2px solid #e9a1ff;
+}
+
+/* ---------------------------------
+Poster 
+*/
+.dropzone {
+  background: #f2f2f2;
+  border-radius: 5px;
+  border: 2px dashed #0087f7;
+  border-image: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*----------------------------------------
+ Annonce */
+.prix {
+  font-size: 2rem;
 }
 
 .icons_annonce {
@@ -100,29 +213,9 @@
   flex-grow: 3;
 }
 
-.validation {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  min-height: 600px;
-}
-
-.search-bar select {
-  border-radius: 0.25rem 0 0 0.25rem;
-}
-
-.search-bar button {
-  border-radius: 0 0.25rem 0.25rem 0;
-}
-
-.scrollup {
-  position: fixed;
-  right: 20px;
-  bottom: 80px;
-  /* left: 0; */
-  z-index: 1030;
-}
-
+/*===============================================================================
+ RESPONSIVE
+===============================================================================*/
 @media (min-width: 992px) and (max-width: 1200px) {
   .scroller-item {
     flex-direction: column-reverse;

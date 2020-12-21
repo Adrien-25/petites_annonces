@@ -1,9 +1,7 @@
 <?php
 namespace App;
 use App\Mail;
-
-
- use \PDO;
+use \PDO;
 
 class Poster
 {

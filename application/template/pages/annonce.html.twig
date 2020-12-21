@@ -27,39 +27,42 @@
 {% set ann_contenu = annonce[0] %}
 {# <h1 class="mt-5 mb-4 col-12 text-center text-uppercase">{{ann_contenu.ann_titre}}</h1> #}
 <div id="annonce-layout">
-    <div class="container text-center d-flex align-items-center flex-column flex-md-row pt-2 p-md-0">
-        <a href="../"
-            class="btn btn-light text-danger d-flex justify-content-center align-items-center col-4 col-md-2 h-100 mr-2">
-            <i class="material-icons text-danger p-1">arrow_back</i>
-            <p class="m-0 p-1 font-weight-bold">Accueil</p>
-        </a>
-        <h1 class="py-3 text-light rounded col-10">{{ann_contenu.ann_titre}}</h1>
-    </div>
-    <div class="container d-flex flex-column align-items-center flex-md-row mt-5">
-        <div class="col-12 col-md-6">
-            <div>
-                {% if ann_contenu.ann_image_url %}
-                {% set image = ann_contenu.ann_image_url %}
-                {% else %}
-                {% set image = ann_contenu.cat_libelle ~ '.jpg' %}
-                {% endif %}
-                <img class="img_annonce minw-100" src="../assets/media/{{image}}" alt="{{ann_contenu.ann_image_nom}}">
-            </div>
-
+    <div class="container bg-dark mt-2 mt-xl-5">
+        <div class="text-center d-flex align-items-center flex-column flex-md-row pt-2 p-md-0">
+            <a href="../"
+                class="btn btn-danger text-light d-flex justify-content-center align-items-center col-4 col-md-2 h-100 mx-2">
+                <i class="material-icons text-light p-1">arrow_back</i>
+                <p class="m-0 p-1 font-weight-bold">Accueil</p>
+            </a>
+            <h1 class="py-3 text-light rounded col-10">{{ann_contenu.ann_titre}}</h1>
         </div>
-        <div class="col-10 col-md-6">
-            <div class="d-flex h-100 flex-column justify-content-center justify-content-md-between text-light">
-                <p class="text-light display-4 font-weight-bold">{{ann_contenu.ann_prix}} €</p>
-                <hr align="left" class="w-25 bg-light">
-                <p class="overflow-wrap-break">{{ann_contenu.ann_description}}</p>
-                <hr align="left" class="w-25 bg-light">
+        <div class="d-flex flex-column align-items-center flex-md-row">
+            <div class="col-12 col-md-6">
                 <div>
-                    <p>Catégorie : {{ann_contenu.cat_libelle}}</p>
-                    <p>Poster par <span class="font-weight-bold text-light">{{ann_contenu.usr_nom}}
-                            {{ann_contenu.usr_prenom}}</span></p>
-                    <p class="font-italic">Le {{ann_contenu.ann_date_ecriture}}</p>
+                    {% if ann_contenu.ann_image_url %}
+                    {% set image = ann_contenu.ann_image_url %}
+                    {% else %}
+                    {% set image = ann_contenu.cat_libelle ~ '.jpg' %}
+                    {% endif %}
+                    <img class="img_annonce minw-100" src="../assets/media/{{image}}" alt="{{ann_contenu.ann_image_nom}}">
+                </div>
+
+            </div>
+            <div class="col-10 col-md-6">
+                <div class="d-flex h-100 flex-column justify-content-center justify-content-md-between text-light">
+                    <p class="text-light display-4 font-weight-bold">{{ann_contenu.ann_prix}} €</p>
+                    <hr align="left" class="w-25 bg-light">
+                    <p class="overflow-wrap-break">{{ann_contenu.ann_description}}</p>
+                    <hr align="left" class="w-25 bg-light">
+                    <div>
+                        <p>Catégorie : {{ann_contenu.cat_libelle}}</p>
+                        <p>Poster par <span class="font-weight-bold text-light">{{ann_contenu.usr_nom}}
+                                {{ann_contenu.usr_prenom}}</span></p>
+                        <p class="font-italic">Le {{ann_contenu.ann_date_ecriture}}</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -84,18 +87,18 @@
 {% block footer %}
 
 <div class="bg-dark p-4 text-light d-flex flex-column flex-sm-row justify-content-between text-center">
-  <div>
-    &copy;
-    <script>
-      document.write(new Date().getFullYear());
-    </script>
-    <span>Lama Shop</span>
-  </div>
-  <div class="">
-    <a href="https://github.com/fouad-git" class="text-danger" target="_blank">Fouad LYOUSFI</a>
-    <span class="fs-20"> • </span>
-    <a href="https://github.com/fouad-git" class="text-danger" target="_blank">Adrien Schmidt</a>
-  </div>
+    <div>
+        &copy;
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+        <span>Lama Shop</span>
+    </div>
+    <div class="">
+        <a href="https://github.com/fouad-git" class="text-danger" target="_blank">Fouad LYOUSFI</a>
+        <span class="fs-20"> • </span>
+        <a href="https://github.com/fouad-git" class="text-danger" target="_blank">Adrien Schmidt</a>
+    </div>
 
 </div>
 {% endblock footer %}

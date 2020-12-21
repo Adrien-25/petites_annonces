@@ -1,57 +1,209 @@
 $primary-color : #084BB8;
 $secondary-color: #b87508;
 
-.bg-1{
-    background-color: $primary-color!important;
-    color: white!important;
+/*===============================================================================
+ GENERAL
+===============================================================================*/
+.bg-1 {
+    background-color: $primary-color !important;
+    color: white !important;
 }
-.bg-2{
-    background-color: $secondary-color!important;
-    color: white!important;
+
+.bg-2 {
+    background-color: $secondary-color !important;
+    color: white !important;
 }
-.border-1{
-    border-color: $primary-color!important;
+
+.border-1 {
+    border-color: $primary-color !important;
 }
-.border-2{
-    border-color: $secondary-color!important;
+
+.border-2 {
+    border-color: $secondary-color !important;
 }
-.mw-500{
+
+.mw-500 {
     max-width: 400px;
 }
-.mh-500{
+
+.mh-500 {
     max-height: 400px;
 }
-.fs-20{
-    font-size:20px; 
+
+.fs-20 {
+    font-size: 20px;
 }
-.display-5{
+
+.fs-30 {
+    font-size: 30px;
+}
+
+.fs-40 {
+    font-size: 40px;
+}
+
+.display-5 {
     font-size: 2.5rem;
     font-weight: 300;
     line-height: 1.2;
 }
-.cursor-pointer{
+
+.cursor-pointer {
     cursor: pointer;
 }
-.scroller-item{
+
+.scroller-item {
     transition: all 1s ease-in;
-    
+
 }
-.overflow-wrap-break{
+
+.overflow-wrap-break {
     overflow-wrap: break-word;
 }
-.minw-100{
+
+.minw-100 {
     min-width: 100%;
 }
 
 
+/*===============================================================================
+ COMPONENTS
+===============================================================================*/
+
+/*------------------------- 
+Accueil 
+---------------------------*/
 .ajax-loader {
     display: block;
     text-align: center;
 }
+
 .ajax-loader img {
     width: 50px;
     vertical-align: middle;
 }
+
+#icon-delete {
+    width: min-content;
+    display: flex;
+    margin: 0 auto;
+}
+
+#icon-delete i {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.scrollup {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    /* left: 0; */
+    z-index: 1030;
+}
+
+.validation {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    min-height: 600px;
+}
+
+/* CheckBox categories */
+.ks-cboxtags {
+    list-style: none;
+    padding: 20px 20px 0px 20px;
+    li {
+        display: inline;
+    }
+    // Checkbox input
+    input.input-checkbox{
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    }
+    // Checkbox div
+    div.button-checkbox {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid#bd2130;
+    color: #777777;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+    padding: 5px 5px;
+    cursor: pointer;
+    position: relative;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+    // Icon Valider
+    .button-checkbox .add {    
+        position: absolute;
+        left: 5px;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    // Icon Valider
+    .button-checkbox .done {    
+        color: #00FF00;
+        position: absolute;
+        left: 5px;
+        opacity: 0;
+        transform: rotate(0deg);
+        transition: all .3s ease-in-out;
+
+    }
+    input.input-checkbox:checked + .button-checkbox{
+        background-color: #dc3545;
+        border: 2px solid #00FF00;
+        color: #fff;
+        transition: all .3s ease-in-out;
+    }
+    input.input-checkbox:checked + .button-checkbox .add{
+        display: inline-block;
+        opacity: 0;
+        transform: rotate(-360deg);
+        transition: all .3s ease-in-out;
+    }
+    input.input-checkbox:checked + .button-checkbox .done{
+        display: inline-block;
+        opacity: 1;
+        transform: rotate(-360deg);
+        transition: all .3s ease-in-out;
+    }
+   
+    
+}
+/*
+ul.ks-cboxtags li input[type="checkbox"]:checked+label {
+    border: 2px solid #1bdbf8;
+    background-color: #12bbd4;
+    color: #fff;
+    transition: all .2s;
+}
+*/
+
+
+
+
+
+
+ul.ks-cboxtags li input[type="checkbox"]:focus+label {
+    border: 2px solid #e9a1ff;
+}
+
+/* ---------------------------------
+Poster 
+*/
 .dropzone {
     background: #f2f2f2;
     border-radius: 5px;
@@ -60,74 +212,54 @@ $secondary-color: #b87508;
     margin-left: auto;
     margin-right: auto;
 }
-#icon-delete{
-    width: min-content;
-    display: flex;
-    margin:0 auto;
-}
-#icon-delete i{
-    font-size: 3rem;
-    cursor: pointer;
-}
-.prix{
+
+/*----------------------------------------
+ Annonce */
+.prix {
     font-size: 2rem;
 }
-.annonce-info{
-    flex-direction: column;
-    
-}
-.icons_annonce{
+
+.icons_annonce {
     font-size: 35px;
 }
-.img_annonce{
+
+.img_annonce {
     max-width: 100%;
     // max-height: 650px;
 }
-.search-bar{
+
+.search-bar {
     flex-grow: 3;
 }
-.validation{
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    min-height: 600px;
-}
-.search-bar select{
-    border-radius: 0.25rem 0 0 0.25rem;
-}
-.search-bar button{
-    border-radius: 0 0.25rem 0.25rem 0;
-}
-.scrollup{
-    position: fixed;
-    right: 20px;
-    bottom: 80px;
-    /* left: 0; */
-    z-index: 1030;
-}
-@media (min-width: 992px) and (max-width: 1200px){
+
+/*===============================================================================
+ RESPONSIVE
+===============================================================================*/
+@media (min-width: 992px) and (max-width: 1200px) {
     .scroller-item {
         flex-direction: column-reverse;
         align-items: center;
     }
 }
-@media (min-width: 570px) and (max-width: 720px){
+
+@media (min-width: 570px) and (max-width: 720px) {
     .btn-annonce {
         flex-direction: column;
     }
-    .btn-annonce a:first-child{
-        margin-bottom:0.5rem !important;
+
+    .btn-annonce a:first-child {
+        margin-bottom: 0.5rem !important;
     }
-    .btn-annonce a:last-child{
-        margin:0 !important;
-    }
-    // .annonce-text > *{
-    //     margin: 0;
-    // }
-}
-@media (max-width: 800px){
-    .search-bar{
-        display: none!important;
+
+    .btn-annonce a:last-child {
+        margin: 0 !important;
     }
 }
+
+@media (max-width: 800px) {
+    .search-bar {
+        display: none !important;
+    }
+}
+
 /* loader ellips in separate pen CSS */
