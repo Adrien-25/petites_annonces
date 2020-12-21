@@ -1,6 +1,6 @@
 //INIT INFINITE SCROLL
 var nbrAnnonceBDD = document.getElementById('first-loader').getAttribute('value');
-if (nbrAnnonceBDD<11){
+if (nbrAnnonceBDD < 11) {
     var loader = document.getElementById('first-loader');
     loader.classList.add('d-none');
 }
@@ -11,16 +11,29 @@ $(document).ready(function () {
 
 function windowOnScroll() {
     $(window).on("scroll", function (e) {
-        // console.log($(window).scrollTop());
-        // console.log($(window).height());
-        // console.log($(document).height());
+        buttonScroll($(window).scrollTop());
+        // console.log($(".scrollup"));
+
+        console.log($(window).scrollTop());
+        console.log($(window).height());
+        console.log($(document).height());
         // if ($(window).scrollTop() == $(document).height() - $(window).height()) {
         if (($(window).scrollTop() + $(window).height() + 5) >= $(document).height()) {
             console.log('BAS PAGE');
+            $(".ajax-loader").removeClass("d-none");
             lastId = $(".scroller-item:last").attr("id");
             getMoreData(lastId);
         }
     });
+}
+
+function buttonScroll(hauteur) {
+    if (hauteur > 0) {
+        $(".scrollup").removeClass("d-none");
+    }
+    if (hauteur <= 0) {
+        $(".scrollup").addClass("d-none");
+    }
 }
 
 function getMoreData(lastId) {
@@ -50,8 +63,6 @@ function getMoreData(lastId) {
                     windowOnScroll();
                 }, 1000);
             }
-
-
         });
 
     } else {
@@ -65,15 +76,16 @@ function getMoreData(lastId) {
         var noMoreLoad = $('.fin-annnonce')[NbrFinAnnonce - 1];
         noMoreLoad.classList.remove('d-none');
         // BOUTON REMONTER HAUT DE LA PAGE
-        // var scrollupLongueur = $('.scrollup').length;
-        // var scrollup = $('.scrollup')[[scrollupLongueur - 1]];
-        // console.log(scrollup);
-        // $('.scrollup').click(function () {
-        //     $("html, body").animate({
-        //         scrollTop: 0
-        //     }, 500);
-        //     console.log('CLIQUER')
-        //     return false;
-        // });
+        var scrollupLongueur = $('.scrollup').length;
+        var scrollup = $('.scrollup')[[scrollupLongueur - 1]];
+        console.log(scrollup);
+        
     }
 }
+$('.scrollup').click(function () {
+    $("html, body").animate({
+        scrollTop: 0
+    }, 500);
+    console.log('CLIQUER')
+    return false;
+});
