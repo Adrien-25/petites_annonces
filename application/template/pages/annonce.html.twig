@@ -10,68 +10,94 @@
 <link href="../dropzone-5.7.0\dist\basic.css" rel="stylesheet">
 <link href="../dropzone-5.7.0\dist\dropzone.css" rel="stylesheet">
 
+<link href="../css/bootstrap_css/bootstrap.css" rel="stylesheet">
+<link href="../css/bootstrap_css/bootstrap-grid.css" rel="stylesheet">
+<link href="../css/bootstrap_css/bootstrap-reboot.css" rel="stylesheet">
 <!--Lien CDN CSS Bootstrap-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
 {# CDN jQuery #}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!--Lien dropzone-->
 <script src="../dropzone-5.7.0\dist\dropzone.js"></script>
+
 {% endblock head %}
 {% block title %}Détail de l'annonce{% endblock title %}
-{% block add %}
+{% block lienPoster %}../poster{% endblock lienPoster %}{% block add %}
 {% set ann_contenu = annonce[0] %}
-<h1 class="mt-5 mb-4 col-12 text-center text-uppercase">{{ann_contenu.ann_titre}}</h1>
-<div class="container-fluid d-flex flex-column align-items-center flex-xl-row justify-content-center">
-    <div class="mb-3 col-12 col-md-8 col-xl-6">
-        <div>
-            {% if ann_contenu.ann_image_url %}
-            {% set image = ann_contenu.ann_image_url %}
-            {% else %}
-            {% set image = ann_contenu.cat_libelle ~ '.jpg' %}
-            {% endif %}
-            <img class="img_annonce minw-100" src="../assets/media/{{image}}"
-                alt="{{ann_contenu.ann_image_nom}}">
+{# <h1 class="mt-5 mb-4 col-12 text-center text-uppercase">{{ann_contenu.ann_titre}}</h1> #}
+<div id="annonce-layout">
+    <div class="container bg-dark mt-2 mt-xl-5">
+        <div class="text-center d-flex align-items-center flex-column flex-md-row pt-2 p-md-0">
+            <a href="../"
+                class="btn btn-danger text-light d-flex justify-content-center align-items-center col-4 col-md-2 h-100 mx-2">
+                <i class="material-icons text-light p-1">arrow_back</i>
+                <p class="m-0 p-1 font-weight-bold">Accueil</p>
+            </a>
+            <h1 class="py-3 text-light rounded col-10">{{ann_contenu.ann_titre}}</h1>
         </div>
-    </div>
-    <div class="col-12 col-md-8 col-xl-6 d-flex flex-column flex-sm-row">
-        <div class="d-flex h-100 flex-column justify-content-center justify-content-md-between col-lg-6">
-            <h2 class="text-center  mb-4 txt-underline">Description</h2>
-            <p class="text-danger fs-30 font-weight-bold my-2">{{ann_contenu.ann_prix}} €</p>
-            <hr align="left" class="w-25 bg-danger">
-            <p class="overflow-wrap-break my-2">{{ann_contenu.ann_description}}</p>
-            <hr align="left" class="w-25 bg-danger">
-            <div class="my-2">
-                <p>Catégorie : {{ann_contenu.cat_libelle}}</p>
-                
-                <p class="font-italic">Le {{ann_contenu.ann_date_ecriture}}</p>
+        <div class="d-flex flex-column align-items-center flex-md-row">
+            <div class="col-12 col-md-6">
+                <div>
+                    {% if ann_contenu.ann_image_url %}
+                    {% set image = ann_contenu.ann_image_url %}
+                    {% else %}
+                    {% set image = ann_contenu.cat_libelle ~ '.jpg' %}
+                    {% endif %}
+                    <img class="img_annonce minw-100" src="../assets/media/{{image}}" alt="{{ann_contenu.ann_image_nom}}">
+                </div>
+
+            </div>
+            <div class="col-10 col-md-6">
+                <div class="d-flex h-100 flex-column justify-content-center justify-content-md-between text-light">
+                    <p class="text-light display-4 font-weight-bold">{{ann_contenu.ann_prix}} €</p>
+                    <hr align="left" class="w-25 bg-light">
+                    <p class="overflow-wrap-break">{{ann_contenu.ann_description}}</p>
+                    <hr align="left" class="w-25 bg-light">
+                    <div>
+                        <p>Catégorie : {{ann_contenu.cat_libelle}}</p>
+                        <p>Poster par <span class="font-weight-bold text-light">{{ann_contenu.usr_nom}}
+                                {{ann_contenu.usr_prenom}}</span></p>
+                        <p class="font-italic">Le {{ann_contenu.ann_date_ecriture}}</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="lv mx-2">
-        </div>
-        <div class="d-flex h-100 flex-column justify-content-center justify-content-md-between col-lg-6">
-            <h2 class="text-center mb-4 txt-underline ">Contact</h2>
-            <p class="my-2">Poster par <span class="font-weight-bold text-danger">{{ann_contenu.usr_nom}}
-                        {{ann_contenu.usr_prenom}}</span></p>
-            <hr align="left" class="w-25 bg-danger">
-            <p class="d-flex my-2"><i class="material-icons mr-2">phone</i>0{{ann_contenu.usr_telephone}}</p>
-            <hr align="left" class="w-25 bg-danger">
-            <p class="d-flex my-2"><i class="material-icons mr-2">email</i>{{ann_contenu.email}}</p>
-            <hr align="left" class="w-25 bg-danger">
-            <p class="d-flex my-2"><i class="material-icons mr-2">room</i>{{ann_contenu.usr_adresse}}, {{ann_contenu.usr_code_postale}} {{ann_contenu.usr_ville}}</p>
-        </div>
-        {% endblock add %}
-        {% block javascript %}
-        <!--Js-->
-        <script src="../js/infiniteScroll.js"></script>
-        <script src="../js/dragAndDrop.js"></script>
-        <script src="../js/formValidation.js"></script>
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-        </script>
+    </div>
+</div>
+{% endblock add %}
+{% block javascript %}
+<!--Js-->
+<!--
+<script src="../js/infiniteScroll.js"></script>
+<script src="../js/dragAndDrop.js"></script>
+<script src="../js/formValidation.js"></script>
+-->
+<script src="../js/script.js"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+</script>
 
-        {% endblock javascript %}
+{% endblock javascript %}
+{% block footer %}
+
+<div class="bg-dark p-4 text-light d-flex flex-column flex-sm-row justify-content-between text-center">
+    <div>
+        &copy;
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+        <span>Lama Shop</span>
+    </div>
+    <div class="">
+        <a href="https://github.com/fouad-git" class="text-danger" target="_blank">Fouad LYOUSFI</a>
+        <span class="fs-20"> • </span>
+        <a href="https://github.com/fouad-git" class="text-danger" target="_blank">Adrien Schmidt</a>
+    </div>
+
+</div>
+{% endblock footer %}

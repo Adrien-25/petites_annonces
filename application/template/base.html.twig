@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     {% block head %}
@@ -13,10 +13,16 @@
     <link href="dropzone-5.7.0\dist\basic.css" rel="stylesheet">
     <link href="dropzone-5.7.0\dist\dropzone.css" rel="stylesheet">
 
+    <link rel="shortcut icon" type="image/png" href="./assets/media/favicon.png"/>
     <!--Lien CDN CSS Bootstrap-->
+    <!--
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    {# CDN jQuery #}
+    -->
+    <link href="css/bootstrap_css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap_css/bootstrap-grid.css" rel="stylesheet">
+    <link href="css/bootstrap_css/bootstrap-reboot.css" rel="stylesheet">
+    <!-- CDN jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--Lien dropzone-->
     <script src="dropzone-5.7.0\dist\dropzone.js"></script>
@@ -29,14 +35,14 @@
 </head>
 
 <body>
-    <main>
+    <main class="bg-general pb-4">
         <!--Barre de navigation-->
         <nav class="navbar navbar-dark bg-dark">
             <div class="row col-12 justify-content-between">
-                <a class="navbar-brand" href="accueil">LamaShop</a>
+                <a class="navbar-brand" href="/petites-annonces">LamaShop</a>
 
                 <!-- Formulaire de recherche -->
-                <form class="search-bar form-inline justify-content-center mr-4">
+                <!-- <form action="" method="get" class="search-bar form-inline justify-content-center mr-4">
                     <select class="custom-select bg-danger text-light border-0 font-weight-bold cursor-pointer"
                         id="SearchForm">
                         <option selected>Catégories</option>
@@ -49,9 +55,9 @@
                         placeholder="Une petite envie ?" aria-label="Search">
                     <button class="btn d-flex jusify-content-center bg-danger" type="submit"><i
                             class="material-icons text-light">search</i></button>
-                </form>
+                </form> -->
                 <!-- Lien vers page poster -->
-                <a href="poster" class="btn btn-danger d-flex p-2" type="button">
+                <a href="{% block lienPoster %}poster{% endblock lienPoster %}" class="btn btn-danger d-flex p-2" type="button">
                     <span class="d-flex mr-2">
                         <i class="material-icons">add_circle_outline</i>
                     </span>
@@ -75,7 +81,6 @@
     <script src="../public/js/dragAndDrop.js"></script>
     <script src="../public/js/formValidation.js"></script>
     <script src="../public/js/reCaptcha.js"></script>
-    <script src="../public/js/BackToTop.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

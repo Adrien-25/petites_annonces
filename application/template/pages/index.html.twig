@@ -1,24 +1,61 @@
 {% extends "./base.html.twig" %}
-{% block title %}listes des annonces{% endblock title %}
+{% block title %}Accueil{% endblock title %}
 {% block add %}
-<div class="mt-5 px-4 flex-wrap d-flex justify-content-around" id="scroller-layout">
+
+<div class="container bg-dark mt-3 py-3 text-white">
+  <form action="" method="" class="text-left">
+    <label class="input-search m-0 fs-20 font-weight-bold text-left mb-2">Nom du produit :</label>
+    <input type="text" name="titre" class="form-control mb-4" required>
+    <label class="categorie-select m-0 fs-20 font-weight-bold text-left">Choississez une catégorie :</label>
+    <div class="pt-2 d-flex justify-content-center flex-wrap">
+      {# <div class="check-item">
+        <input class="" type="checkbox" id="Check0" value="{{categorie.id}}" checked="true">
+        <label class="" for="">
+          Toutes
+        </label>
+      </div> #}
+      <ul class="ks-cboxtags mb-0">
+        {% for categorie in categories %}
+        <li class="mx-2">
+          <label class="label-checkbox">
+            <input class="input-checkbox" type="checkbox" id="Check{{categorie.id}}" value="{{categorie.id}}">
+            <div class="button-checkbox d-flex align-items-center">
+              <i class="material-icons align-middle add">add</i>
+              <i class="material-icons align-middle done">done</i>
+              <span class="ml-4 mr-2">{{categorie.cat_libelle}}</span>
+            </div>
+          </label>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <button type="submit" class="btn btn-danger font-weight-bold mt-4"><i
+        class="material-icons mr-2 align-middle">search</i>Chercher</button>
+  </form>
+</div>
+
+<div
+  class="container w-auto ml-3 mr-3 ml-sm-auto mr-sm-auto ml-sm-0 mt-3 px-0 flex-wrap d-flex justify-content-center border border-dark border-size-5 bg-dark"
+  id="scroller-layout">
   {% for annonce in listes_annonces %}
   <div
-    class="scroller-item d-flex justify-content-between text-dark border border-dark flex-xl-row flex-column-reverse bg-light p-2 mb-5 col-lg-5 col-sm-5 col-10"
+    class="scroller-item d-flex justify-content-between text-dark border border-dark flex-column-reverse bg-light p-2 col-lg-4 col-sm-6 col-12 border-size-5"
     id="{{annonce.ann_id}}">
     <div class="annonce-text d-flex justify-content-between flex-column text-center text-xl-left">
-      <h2>{{annonce.ann_titre}}</h2>
+      <h2 class="text-center">{{annonce.ann_titre}}</h2>
       <p class="text-danger ml-2 prix">{{annonce.ann_prix}} €</p>
       <div>
         <p class="ml-2 mb-0 font-italic">{{annonce.cat_libelle}}</p>
         <p class="ml-2 font-weight-bold">Le {{annonce.ann_date_ecriture|date('j m Y')}}</p>
       </div>
-      <div class="d-flex justify-content-center btn-annonce">
-        <a href="annonce/{{annonce.ann_id}}" class="btn bg-danger text-light d-flex justify-content-center">
+      <div class="d-flex justify-content-center btn-annonce flex-sm-column flex-md-row">
+        <a href="annonce/{{annonce.ann_id}}"
+          class="btn bg-danger text-light d-flex justify-content-center mb-sm-2 mb-md-0 mr-2 mr-sm-0">
           <i class="material-icons mr-2">pageview</i>
           <span>Détails</span>
         </a>
-        <a href="telecharger/{{annonce.ann_id}}" target="_blank" class="btn bg-danger text-light d-flex justify-content-center ml-3">
+        <a href="telecharger/{{annonce.ann_id}}" target="_blank"
+          class="btn bg-danger text-light d-flex justify-content-center ml-md-3">
           <i class="material-icons mr-2">picture_as_pdf</i>
           <span>Télécharger</span>
         </a>
@@ -28,28 +65,31 @@
     {% set image = annonce.ann_image_url %}
     {% else %}
     {% set image = annonce.cat_libelle ~ '.jpg'  %}
-    {% endif %} 
+    {% endif %}
     <div
-      class="d-flex align-items-center justify-content-xl-end justify-content-lg-center justify-content-md-end justify-content-center p-0 ml-2">
-      <img class="fit-picture mw-500 mh-500 img-fluid" src="../public/assets/media/{{image}}"
+      class="d-flex align-items-center justify-content-xl-center justify-content-lg-center justify-content-md-end justify-content-center p-0 ">
+      <img class="w-100 fit-picture mw-500 mh-500 img-fluid" src="../public/assets/media/{{image}}"
         alt="{{annonce.ann_image_nom}}">
     </div>
 
   </div>
 
   {% endfor %}
-  <div id="first-loader" class="ajax-loader text-center col-12 mb-5" value={{Nbr_annonces}}>
-    <img src="https://media2.giphy.com/media/sSgvbe1m3n93G/giphy.gif">
+  <div id="first-loader" class="ajax-loader text-center col-12 m-3 d-none" value={{Nbr_annonces}}>
+    {# <img src="../public/assets/media/loader.gif"> #}
+    <div class="spinner-border text-light" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
   </div>
-  <div id="fin-annonce" class="fin-annnonce text-center d-none col-12 m-3 display-4 font-weight-bold">
+  <div id="fin-annonce" class="fin-annnonce text-center bg-light d-none col-12 display-4 font-weight-bold py-5 mt-5">
     Fin des annonces
   </div>
 </div>
-<a class="scrollup btn bg-danger d-none" id="backToTop"><i class="material-icons text-light display-5 ">arrow_upward</i></a>
+<a href="" class="d-none scrollup btn bg-danger"><i class="material-icons text-light display-5 ">arrow_upward</i></a>
 {% endblock add %}
 {% block footer %}
 
-<div class="bg-dark p-4 text-light d-flex justify-content-between">
+<div class="bg-dark p-4 text-light d-flex flex-column flex-sm-row justify-content-between text-center">
   <div>
     &copy;
     <script>
@@ -58,7 +98,7 @@
     <span>Lama Shop</span>
   </div>
   <div class="">
-    <a href="https://github.com/fouad-git" class="text-danger" target="_blank">Fouad Lyafousi</a>
+    <a href="https://github.com/fouad-git" class="text-danger" target="_blank">Fouad LYOUSFI</a>
     <span class="fs-20"> • </span>
     <a href="https://github.com/fouad-git" class="text-danger" target="_blank">Adrien Schmidt</a>
   </div>
