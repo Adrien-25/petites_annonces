@@ -1,9 +1,7 @@
 <?php
 namespace App;
 use App\Mail;
-
-
- use \PDO;
+use \PDO;
 
 class Poster
 {
@@ -39,21 +37,17 @@ class Poster
       $this->usr_telephone = $usr_telephone;  
     }
 
-
     public  function addPosts($ann_prix, $ann_description, $ann_titre, $categorie_id)
-
     {
-      
-        
      $this->sql = "INSERT INTO `annonce` ( `utilisateur_id`, `categorie_id`, `ann_description`, `ann_titre`, `ann_prix`, `ann_date_ecriture`, `ann_image_url`, `ann_image_nom`, `ann_unique_id`, `ann_est_valider`)
       VALUES (:utilisateur_id, :categorie_id, :ann_description, :ann_titre, :ann_prix, :ann_date_ecriture,:ann_image_url, :ann_image_nom, :ann_unique_id, :ann_est_valider);";
      $this->dbh = new \App\Database();
      $this->dbh->prepareSql($this->sql);
-     
+
 
      $ann_unique_id = uniqid('ann_');
 
-     $this->dbh->param(':utilisateur_id', 5, PDO::PARAM_INT);
+     $this->dbh->param(':utilisateur_id', 3, PDO::PARAM_INT);
      $this->dbh->param(':categorie_id', $categorie_id, PDO::PARAM_INT);
      $this->dbh->param(':ann_description', $ann_description, PDO::PARAM_STR);
      $this->dbh->param(':ann_titre', $ann_titre, PDO::PARAM_STR);
@@ -63,14 +57,11 @@ class Poster
      $this->dbh->param(':ann_image_nom', '', PDO::PARAM_STR);
      $this->dbh->param(':ann_unique_id', $ann_unique_id, PDO::PARAM_STR);
      $this->dbh->param(':ann_est_valider', 0 , PDO::PARAM_INT);
-    
-  
-
 
      $this->dbh->execReq();
      
      $this->envoiMail = new Mail('validation', $this->usr_email, $this->usr_nom, $this->usr_prenom,$this->ann_titre, $this->ann_description, $this->ann_prix, $this->usr_telephone, $ann_unique_id);
-     
+
           
      return true;
  
