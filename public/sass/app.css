@@ -37,6 +37,8 @@
   width: 50px;
   vertical-align: middle;
 }
-
+.border-size-5 {
+  border-width: 5px !important;
+}
 /* loader ellips in separate pen CSS */
 /*# sourceMappingURL=app.css.map */
