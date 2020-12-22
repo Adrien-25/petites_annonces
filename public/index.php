@@ -15,12 +15,23 @@ $router->map('GET', '/', function(){
 });
 
 $router->map('GET|POST', '/accueil', function(){
-    $value = \App\Lister::appelLister();
-    $AnnonceLimit = $value['DataLimit'];
-    $nbrAnnonce = sizeof($value['DataAll']);
-    $chargeTwig = new \App\Twig('pages/index.html.twig');
-    $categorie = new \App\Categorie();
-    $categories=$categorie->selectionCategorie();
+    var_dump($_POST) ;
+    // if (empty($_POST)){
+    if (('a'=='a')){
+        $value = \App\Lister::appelLister();
+        $AnnonceLimit = $value['DataLimit'];
+        $nbrAnnonce = sizeof($value['DataAll']);
+        $chargeTwig = new \App\Twig('pages/index.html.twig');
+        $categorie = new \App\Categorie();
+        $categories=$categorie->selectionCategorie();
+    } else{
+        $value = \App\Lister::appelListerSearch();
+        $AnnonceLimit = $value['DataLimit'];
+        $nbrAnnonce = sizeof($value['DataAll']);
+        $chargeTwig = new \App\Twig('pages/index.html.twig');
+        $categorie = new \App\Categorie();
+        $categories=$categorie->selectionCategorieById();
+    }
     $chargeTwig->render(['categories'=>$categories,'listes_annonces'=> $AnnonceLimit,'Nbr_annonces'=>$nbrAnnonce]);
 });
 
