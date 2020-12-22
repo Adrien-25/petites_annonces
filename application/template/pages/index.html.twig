@@ -3,9 +3,9 @@
 {% block add %}
 
 <div class="container bg-dark mt-3 py-3 text-white">
-  <form action="" method="" class="text-left">
+  <form action="" method="post" class="text-left">
     <label class="input-search m-0 fs-20 font-weight-bold text-left mb-2">Nom du produit :</label>
-    <input type="text" name="titre" class="form-control mb-4" required>
+    <input type="text" name="searchInput" class="form-control mb-4">
     <label class="categorie-select m-0 fs-20 font-weight-bold text-left">Choississez une catégorie :</label>
     <div class="pt-2 d-flex justify-content-center flex-wrap">
       {# <div class="check-item">
@@ -18,7 +18,7 @@
         {% for categorie in categories %}
         <li class="mx-2">
           <label class="label-checkbox">
-            <input class="input-checkbox" type="checkbox" id="Check{{categorie.id}}" value="{{categorie.id}}">
+            <input class="input-checkbox" name="{{categorie.id}}" type="checkbox" id="Check{{categorie.id}}" value="{{categorie.id}}">
             <div class="button-checkbox d-flex align-items-center">
               <i class="material-icons align-middle add">add</i>
               <i class="material-icons align-middle done">done</i>

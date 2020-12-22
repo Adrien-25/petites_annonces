@@ -2,10 +2,8 @@
 
 namespace App;
 
-class Lister
-{
-    public static function appelLister()
-    {
+class Lister{
+    public static function appelLister(){
 
         $db = new \App\Database();
         $dataSize = $db->query("SELECT * FROM annonce");
@@ -18,6 +16,11 @@ class Lister
             "DataAll" => $dataSize,
         ];
         return $dataAll;
+    }
+    public static function appelListerSearch(){
+        $db = new \App\Database();
+        $dataSize = $db->query("SELECT * FROM annonce");
+
     }
     public static function ajouterAnnonces($offset){
         // changer la variable pour l'objet connection en fonction des pages
