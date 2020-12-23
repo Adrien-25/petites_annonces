@@ -35,10 +35,10 @@ class Mailsupp
         $db = new \App\Database();
         $id = $ann_unique_id;
 
-        // $this->donnee = $db->query("SELECT `ann_id`,`ann_description`,`ann_titre`,`ann_prix`,`ann_date_ecriture`,`ann_image_url`,`ann_image_nom`,`cat_libelle`, `usr_prenom` ,`usr_nom` ,`usr_telephone` ,`email` ,`usr_adresse` ,`usr_ville` ,`usr_code_postale` 
+        // $this->donnee = $db->query("SELECT ann_id,ann_description,ann_titre,ann_prix,ann_date_ecriture,ann_image_url,ann_image_nom,cat_libelle, usr_prenom ,usr_nom ,usr_telephone ,email ,usr_adresse ,usr_ville ,usr_code_postale 
         // FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id  INNER JOIN utilisateur ON annonce.utilisateur_id = utilisateur.id WHERE ann_unique_id=$id;");
 
-      $this->donnee = $db->query( "SELECT `ann_id`,`ann_description`,`ann_titre`,`ann_prix`,`ann_date_ecriture`,`ann_image_url`,`ann_image_nom`,`cat_libelle`, `usr_prenom` ,`usr_nom` ,`usr_telephone` ,`email` ,`usr_adresse` ,`usr_ville` ,`usr_code_postale` 
+      $this->donnee = $db->query( "SELECT ann_id,ann_description,ann_titre,ann_prix,ann_date_ecriture,ann_image_url,ann_image_nom,cat_libelle, usr_prenom ,usr_nom ,usr_telephone ,email ,usr_adresse ,usr_ville ,usr_code_postale 
       FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id  INNER JOIN utilisateur ON annonce.utilisateur_id = utilisateur.id WHERE ann_unique_id= '$id'");
 
      
