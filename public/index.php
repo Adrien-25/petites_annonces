@@ -15,8 +15,7 @@ $router->map('GET', '/', function(){
 });
 
 $router->map('GET|POST', '/accueil', function(){
-    var_dump($_POST) ;
-    if (empty($_POST)){
+    if (empty($_POST) || count($_POST) == 1 && $_POST['searchInput'] == ''){
     // if (('a'=='a')){
         $value = \App\Lister::appelLister();
         $AnnonceLimit = $value['DataLimit'];
