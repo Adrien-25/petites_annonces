@@ -39,7 +39,7 @@ class Poster
 
     public  function addPosts($ann_prix, $ann_description, $ann_titre, $categorie_id)
     {
-     $this->sql = "INSERT INTO `annonce` ( `utilisateur_id`, `categorie_id`, `ann_description`, `ann_titre`, `ann_prix`, `ann_date_ecriture`, `ann_image_url`, `ann_image_nom`, `ann_unique_id`, `ann_est_valider`)
+     $this->sql = "INSERT INTO annonce ( utilisateur_id, categorie_id, ann_description, ann_titre, ann_prix, ann_date_ecriture, ann_image_url, ann_image_nom, ann_unique_id, ann_est_valider)
       VALUES (:utilisateur_id, :categorie_id, :ann_description, :ann_titre, :ann_prix, :ann_date_ecriture,:ann_image_url, :ann_image_nom, :ann_unique_id, :ann_est_valider);";
      $this->dbh = new \App\Database();
      $this->dbh->prepareSql($this->sql);
