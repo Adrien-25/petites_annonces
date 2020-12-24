@@ -41,17 +41,29 @@ function getMoreData(lastId) {
     $(window).off("scroll");
     var nbrAnnonceBDD = document.getElementById('first-loader').getAttribute('value');
     var nbrAnnonceHTML = document.getElementsByClassName('scroller-item').length;
+    var formulaire = document.querySelectorAll(".formContent");
     console.log('NBR annonce BDD = ' + nbrAnnonceBDD);
     console.log('NBR annnonce HTML = ' + nbrAnnonceHTML);
     console.log('Last id =' + lastId);
+    console.log(formulaire);
+    console.log(formulaire[1].value);
+    var formContent=[]
+    for (let i = 0; i < formulaire.length; i++) {
+        formContent.push(formulaire[i].value)
+    }
+    console.log(formContent);
     if (typeof i == 'undefined') {
         var i = 1;
     }
     if (nbrAnnonceBDD > nbrAnnonceHTML) {
         $('.ajax-loader').show();
         $.ajax({
-            url: 'getLastArticle/' + nbrAnnonceHTML,
-            type: "get",
+            url: 'getLastArticle',
+            type: "post",
+            data: {
+                offset: nbrAnnonceHTML,
+                formulaire: formContent
+            },
             beforeSend: function () {
                 $('.ajax-loader').show();
             },
@@ -66,7 +78,6 @@ function getMoreData(lastId) {
         });
 
     } else {
-        console.log('TEST');
         // SI PLUS DE VARIABLE ON CACHE LE LOADER
         var Nbrloader = $('.ajax-loader').length;
         var lastLoader = $('.ajax-loader')[Nbrloader - 1];
@@ -78,8 +89,7 @@ function getMoreData(lastId) {
         // BOUTON REMONTER HAUT DE LA PAGE
         var scrollupLongueur = $('.scrollup').length;
         var scrollup = $('.scrollup')[[scrollupLongueur - 1]];
-        console.log(scrollup);
-        
+
     }
 }
 $('.scrollup').click(function () {
