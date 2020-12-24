@@ -24,19 +24,24 @@ class Lister{
             $dataSize = $db->query("SELECT * FROM annonce WHERE ann_description LIKE '%".$input."%'");
             $db = new \App\Database();
             $data = $db->query("SELECT ann_id,ann_description,ann_titre,ann_prix,ann_date_ecriture,ann_image_url,ann_image_nom,cat_libelle, email FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id  INNER JOIN utilisateur ON annonce.utilisateur_id = utilisateur.id  WHERE ann_est_valider = 0 AND ann_description LIKE '%".$input."%' LIMIT 10"); 
-        } else if (empty($formData['searchInput']) && count($formData) > 0){
+        } else if (empty($formData['searchInput']) && count($formData) > 1){
             $tabCat = '';
             $size = count($formData) - 1;
+            $testOr = 0;
             for ($i = 1; $i <= $size; $i++){
-                $tabCat .= 'annonce.categorie_id = ' .$formData[$i];
-                if ($i < $size){
-                    $tabCat .= ' OR ';
+                if (isset($formData[$i])){
+                    if ($testOr > 0 ) {
+                        $tabCat .= ' OR ';
+                    }
+                    $tabCat .= 'annonce.categorie_id = ' .$formData[$i];  
+                    $testOr++;
                 }
             }
             $db = new \App\Database();
             $dataSize = $db->query("SELECT * FROM annonce INNER JOIN categorie WHERE $tabCat");
 
             $data = $db->query("SELECT ann_id,ann_description,ann_titre,ann_prix,ann_date_ecriture,ann_image_url,ann_image_nom,cat_libelle, email FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id  INNER JOIN utilisateur ON annonce.utilisateur_id = utilisateur.id  WHERE ann_est_valider = 0 AND (".$tabCat.") LIMIT 10"); 
+            
 
         } else {
             $input = $formData['searchInput'];
