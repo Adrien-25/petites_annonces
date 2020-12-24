@@ -45,13 +45,18 @@ function getMoreData(lastId) {
     console.log('NBR annonce BDD = ' + nbrAnnonceBDD);
     console.log('NBR annnonce HTML = ' + nbrAnnonceHTML);
     console.log('Last id =' + lastId);
-    console.log(formulaire);
-    console.log(formulaire[1].value);
-    var formContent=[]
-    for (let i = 0; i < formulaire.length; i++) {
-        formContent.push(formulaire[i].value)
+    console.log(formulaire.length);
+    if (formulaire.length == 0) {
+        formContent = 0;
+    } else {
+        var formContent = []
+        for (let i = 0; i < formulaire.length; i++) {
+            formContent.push(formulaire[i].value)
+        }
     }
-    console.log(formContent);
+
+    console.log('AJAX FORM = ' + formContent);
+
     if (typeof i == 'undefined') {
         var i = 1;
     }
@@ -59,7 +64,7 @@ function getMoreData(lastId) {
         $('.ajax-loader').show();
         $.ajax({
             url: 'getLastArticle',
-            type: "post",
+            type: "POST",
             data: {
                 offset: nbrAnnonceHTML,
                 formulaire: formContent
