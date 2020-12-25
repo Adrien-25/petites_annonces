@@ -20,6 +20,8 @@ class Lister{
     public static function appelListerSearch($formData){
         // Requête si input reçu et pas de catégorie sélectionnée
         if ($formData['searchInput'] && count($formData) == 1){
+            var_dump('TEST1');
+
             $input = $formData['searchInput'];
             $db = new \App\Database();
             $dataSize = $db->query("SELECT * FROM annonce WHERE ann_description LIKE '%".$input."%'");
@@ -28,22 +30,26 @@ class Lister{
         } 
         // Requête si input vide et catgorie sélectionnée
         else if (empty($formData['searchInput']) && count($formData) > 1){
+            
             $tabCat = '';
             $size = count($formData) - 1;
+            var_dump($size);
             $test = 0;
             $testOr = 0;
             foreach ($formData as $formItem) {
                 if ($test > 0){
-                    if ($testOr > 1 ) {
+                    if ($testOr > 0 ) {
                         $tabCat .= ' OR ';
                     }
-                    $tabCat .= 'annonce.categorie_id = ' .$formItem; 
+                    $tabCat .= ' annonce.categorie_id = ' .$formItem; 
                     $testOr++; 
                 }
                 $test++;
             }
             $db = new \App\Database();
+            var_dump($tabCat);
             $dataSize = $db->query("SELECT * FROM annonce INNER JOIN categorie WHERE $tabCat");
+            $db = new \App\Database();
             $data = $db->query("SELECT ann_id,ann_description,ann_titre,ann_prix,ann_date_ecriture,ann_image_url,ann_image_nom,cat_libelle, email FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id  INNER JOIN utilisateur ON annonce.utilisateur_id = utilisateur.id  WHERE ann_est_valider = 0 AND (".$tabCat.") LIMIT 10"); 
         } 
         // Requête si input reçu et catégorie sélectionnée
@@ -95,10 +101,12 @@ class Lister{
         if (empty($offset)){
             $offset = 0;
         }
+        $input = $formData[1];
+        var_dump ($input);
         $db = new \App\Database();
-        $data = $db->query("SELECT ann_id,ann_description,ann_titre,ann_prix,ann_date_ecriture,ann_image_url,ann_image_nom,cat_libelle, email FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id  INNER JOIN utilisateur ON annonce.utilisateur_id = utilisateur.id  WHERE ann_est_valider = 0 LIMIT 10 OFFSET ".$offset."");
-        // $offset+=10;
-        return $data;
+        // $data = $db->query("SELECT ann_id,ann_description,ann_titre,ann_prix,ann_date_ecriture,ann_image_url,ann_image_nom,cat_libelle, email FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id  INNER JOIN utilisateur ON annonce.utilisateur_id = utilisateur.id  WHERE ann_est_valider = 0 LIMIT 10 OFFSET ".$offset."");
+        // // $offset+=10;
+        // return $data;
     }
 }
 
