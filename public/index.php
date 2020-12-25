@@ -15,21 +15,15 @@ $router->map('GET', '/', function(){
 });
 
 $router->map('GET|POST', '/accueil', function(){
-    var_dump($_POST);
-    $form = [];
     if (empty($_POST) || count($_POST) == 1 && $_POST['searchInput'] == ''){
-    // if (('a'=='a')){
-        var_dump('POST VIDE');
         $value = \App\Lister::appelLister();
         $AnnonceLimit = $value['DataLimit'];
         $nbrAnnonce = sizeof($value['DataAll']);
     } else{
-        var_dump('POST RECU');
         $value = \App\Lister::appelListerSearch($_POST);
         $AnnonceLimit = $value['DataLimit'];
         $nbrAnnonce = sizeof($value['DataAll']);
     }
-    var_dump($nbrAnnonce);
     $chargeTwig = new \App\Twig('pages/index.html.twig');
     $categorie = new \App\Categorie();
     $categories=$categorie->selectionCategorie();
@@ -40,7 +34,7 @@ $router->map('GET', '/', function(){
 });
 
 $router->map('GET', '/annonce/[i:id]', function($id){
-    // dans le cas ou on est dans la page de détail
+    // Dans le cas ou on est dans la page de détail
     $donnee = \App\Annonce::donneeAnnonce($id);
     $chargeTwig = new \App\Twig('pages/annonce.html.twig');
     $chargeTwig->render(['annonce'=>$donnee]);
@@ -51,9 +45,9 @@ $router->map('GET|POST', '/getLastArticle', function(){
     if ($_POST['formulaire'] == 0){
         $ajout = \App\Lister::ajouterAnnonces($_POST['offset']);
     } else {
-        $ajout = \App\Lister::ajouterAnnoncesSearch($_POST['offset'], $_POST['formulaire']);
+        $ajout = \App\Lister::ajouterAnnoncesSearch($_POST['offset'],$_POST['formulaire']);
     }
-    // dans le cas ou on est dans la page de d'accueil
+    // Dans le cas ou on est dans la page de d'accueil
     $chargeTwig = new \App\Twig('pages/ajouterAnnonce.html.twig');
     $chargeTwig->render(['listes_annonces'=> $ajout]);
 });
