@@ -12,11 +12,10 @@ $(document).ready(function () {
 function windowOnScroll() {
     $(window).on("scroll", function (e) {
         buttonScroll($(window).scrollTop());
-        // console.log($(".scrollup"));
 
-        console.log($(window).scrollTop());
-        console.log($(window).height());
-        console.log($(document).height());
+        // console.log($(window).scrollTop());
+        // console.log($(window).height());
+        // console.log($(document).height());
         // if ($(window).scrollTop() == $(document).height() - $(window).height()) {
         if (($(window).scrollTop() + $(window).height() + 5) >= $(document).height()) {
             console.log('BAS PAGE');
@@ -37,15 +36,13 @@ function buttonScroll(hauteur) {
 }
 
 function getMoreData(lastId) {
-    console.log('NO SCROLL');
     $(window).off("scroll");
     var nbrAnnonceBDD = document.getElementById('first-loader').getAttribute('value');
     var nbrAnnonceHTML = document.getElementsByClassName('scroller-item').length;
     var formulaire = document.querySelectorAll(".formContent");
-    console.log('NBR annonce BDD = ' + nbrAnnonceBDD);
-    console.log('NBR annnonce HTML = ' + nbrAnnonceHTML);
-    console.log('Last id =' + lastId);
-    console.log(formulaire.length);
+    // console.log('NBR annonce BDD = ' + nbrAnnonceBDD);
+    // console.log('NBR annnonce HTML = ' + nbrAnnonceHTML);
+    // console.log('Last id =' + lastId);
     if (formulaire.length == 0) {
         formContent = 0;
     } else {
@@ -54,8 +51,7 @@ function getMoreData(lastId) {
             formContent.push(formulaire[i].value)
         }
     }
-
-    console.log('AJAX FORM = ' + formContent);
+    // console.log('AJAX FORM = ' + formContent);
 
     if (typeof i == 'undefined') {
         var i = 1;
@@ -101,6 +97,5 @@ $('.scrollup').click(function () {
     $("html, body").animate({
         scrollTop: 0
     }, 500);
-    console.log('CLIQUER')
     return false;
 });
