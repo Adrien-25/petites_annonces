@@ -41,7 +41,7 @@ class Lister{
                 $test++;
             }
             $db = new \App\Database();
-            $dataSize = $db->query("SELECT * FROM annonce INNER JOIN categorie WHERE $tabCat");
+            $dataSize = $db->query("SELECT * FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id WHERE $tabCat");
             $db = new \App\Database();
             $data = $db->query("SELECT ann_id,ann_description,ann_titre,ann_prix,ann_date_ecriture,ann_image_url,ann_image_nom,cat_libelle, email FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id  INNER JOIN utilisateur ON annonce.utilisateur_id = utilisateur.id  WHERE ann_est_valider = 0 AND (".$tabCat.") LIMIT 10"); 
         } 
@@ -62,7 +62,7 @@ class Lister{
             }
             $input = $formData['searchInput'];
             $db = new \App\Database();
-            $dataSize = $db->query("SELECT * FROM annonce INNER JOIN categorie WHERE ann_description LIKE '%".$input."%' AND $tabCat");
+            $dataSize = $db->query("SELECT * FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id WHERE ann_description LIKE '%".$input."%' AND $tabCat");
             $db = new \App\Database();
             $data = $db->query("SELECT ann_id,ann_description,ann_titre,ann_prix,ann_date_ecriture,ann_image_url,ann_image_nom,cat_libelle, email FROM annonce INNER JOIN categorie ON annonce.categorie_id = categorie.id  INNER JOIN utilisateur ON annonce.utilisateur_id = utilisateur.id  WHERE ann_est_valider = 0 AND ann_description LIKE '%".$input."%' AND  (".$tabCat.") LIMIT 10"); 
 
