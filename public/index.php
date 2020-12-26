@@ -24,6 +24,7 @@ $router->map('GET|POST', '/accueil', function(){
         $AnnonceLimit = $value['DataLimit'];
         $nbrAnnonce = sizeof($value['DataAll']);
     }
+    // var_dump($AnnonceLimit);
     $chargeTwig = new \App\Twig('pages/index.html.twig');
     $categorie = new \App\Categorie();
     $categories=$categorie->selectionCategorie();
