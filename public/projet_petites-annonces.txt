@@ -1,3 +1,9 @@
+A FAIRE:
+ReCaptcha
+Mail
+DROPZONE
+
+
 Début le 25/08/2020
 
 Projet - petites annonces 		
